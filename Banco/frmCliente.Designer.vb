@@ -23,28 +23,28 @@ Partial Class frmCliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCliente))
         Dim NOMBRELabel As System.Windows.Forms.Label
         Dim APELLIDOLabel As System.Windows.Forms.Label
         Dim DIRECCIONLabel As System.Windows.Forms.Label
         Dim TELEFONOLabel As System.Windows.Forms.Label
         Dim DPILabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCliente))
         Me.DS = New Banco.DS()
         Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CLIENTETableAdapter = New Banco.DSTableAdapters.CLIENTETableAdapter()
         Me.TableAdapterManager = New Banco.DSTableAdapters.TableAdapterManager()
         Me.CLIENTEBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.CLIENTEBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.CLIENTEDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,15 +55,15 @@ Partial Class frmCliente
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DPITextBox = New System.Windows.Forms.TextBox()
+        Me.TELEFONOTextBox = New System.Windows.Forms.TextBox()
+        Me.DIRECCIONTextBox = New System.Windows.Forms.TextBox()
+        Me.APELLIDOTextBox = New System.Windows.Forms.TextBox()
+        Me.NOMBRETextBox = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
-        Me.NOMBRETextBox = New System.Windows.Forms.TextBox()
-        Me.APELLIDOTextBox = New System.Windows.Forms.TextBox()
-        Me.DIRECCIONTextBox = New System.Windows.Forms.TextBox()
-        Me.TELEFONOTextBox = New System.Windows.Forms.TextBox()
-        Me.DPITextBox = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         NOMBRELabel = New System.Windows.Forms.Label()
         APELLIDOLabel = New System.Windows.Forms.Label()
         DIRECCIONLabel = New System.Windows.Forms.Label()
@@ -81,6 +81,51 @@ Partial Class frmCliente
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'NOMBRELabel
+        '
+        NOMBRELabel.AutoSize = True
+        NOMBRELabel.Location = New System.Drawing.Point(37, 111)
+        NOMBRELabel.Name = "NOMBRELabel"
+        NOMBRELabel.Size = New System.Drawing.Size(57, 13)
+        NOMBRELabel.TabIndex = 0
+        NOMBRELabel.Text = "NOMBRE:"
+        '
+        'APELLIDOLabel
+        '
+        APELLIDOLabel.AutoSize = True
+        APELLIDOLabel.Location = New System.Drawing.Point(224, 115)
+        APELLIDOLabel.Name = "APELLIDOLabel"
+        APELLIDOLabel.Size = New System.Drawing.Size(62, 13)
+        APELLIDOLabel.TabIndex = 2
+        APELLIDOLabel.Text = "APELLIDO:"
+        '
+        'DIRECCIONLabel
+        '
+        DIRECCIONLabel.AutoSize = True
+        DIRECCIONLabel.Location = New System.Drawing.Point(26, 148)
+        DIRECCIONLabel.Name = "DIRECCIONLabel"
+        DIRECCIONLabel.Size = New System.Drawing.Size(69, 13)
+        DIRECCIONLabel.TabIndex = 4
+        DIRECCIONLabel.Text = "DIRECCION:"
+        '
+        'TELEFONOLabel
+        '
+        TELEFONOLabel.AutoSize = True
+        TELEFONOLabel.Location = New System.Drawing.Point(224, 156)
+        TELEFONOLabel.Name = "TELEFONOLabel"
+        TELEFONOLabel.Size = New System.Drawing.Size(67, 13)
+        TELEFONOLabel.TabIndex = 6
+        TELEFONOLabel.Text = "TELEFONO:"
+        '
+        'DPILabel
+        '
+        DPILabel.AutoSize = True
+        DPILabel.Location = New System.Drawing.Point(66, 74)
+        DPILabel.Name = "DPILabel"
+        DPILabel.Size = New System.Drawing.Size(28, 13)
+        DPILabel.TabIndex = 8
+        DPILabel.Text = "DPI:"
         '
         'DS
         '
@@ -129,6 +174,31 @@ Partial Class frmCliente
         Me.CLIENTEBindingNavigator.TabIndex = 0
         Me.CLIENTEBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
+        Me.BindingNavigatorCountItem.Text = "de {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -161,16 +231,9 @@ Partial Class frmCliente
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -193,26 +256,8 @@ Partial Class frmCliente
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'CLIENTEBindingNavigatorSaveItem
         '
@@ -305,6 +350,66 @@ Partial Class frmCliente
         Me.TabPage1.Text = "Agregar"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(100, 201)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 54)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Guardar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(24, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(300, 25)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Agregar Usuario al Sistema"
+        '
+        'DPITextBox
+        '
+        Me.DPITextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DPITextBox.Location = New System.Drawing.Point(100, 71)
+        Me.DPITextBox.Name = "DPITextBox"
+        Me.DPITextBox.Size = New System.Drawing.Size(100, 24)
+        Me.DPITextBox.TabIndex = 1
+        '
+        'TELEFONOTextBox
+        '
+        Me.TELEFONOTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TELEFONOTextBox.Location = New System.Drawing.Point(292, 156)
+        Me.TELEFONOTextBox.Name = "TELEFONOTextBox"
+        Me.TELEFONOTextBox.Size = New System.Drawing.Size(100, 24)
+        Me.TELEFONOTextBox.TabIndex = 5
+        '
+        'DIRECCIONTextBox
+        '
+        Me.DIRECCIONTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DIRECCIONTextBox.Location = New System.Drawing.Point(101, 145)
+        Me.DIRECCIONTextBox.Name = "DIRECCIONTextBox"
+        Me.DIRECCIONTextBox.Size = New System.Drawing.Size(100, 24)
+        Me.DIRECCIONTextBox.TabIndex = 4
+        '
+        'APELLIDOTextBox
+        '
+        Me.APELLIDOTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.APELLIDOTextBox.Location = New System.Drawing.Point(292, 112)
+        Me.APELLIDOTextBox.Name = "APELLIDOTextBox"
+        Me.APELLIDOTextBox.Size = New System.Drawing.Size(100, 24)
+        Me.APELLIDOTextBox.TabIndex = 3
+        '
+        'NOMBRETextBox
+        '
+        Me.NOMBRETextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NOMBRETextBox.Location = New System.Drawing.Point(100, 108)
+        Me.NOMBRETextBox.Name = "NOMBRETextBox"
+        Me.NOMBRETextBox.Size = New System.Drawing.Size(100, 24)
+        Me.NOMBRETextBox.TabIndex = 2
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.ToolStripContainer1)
@@ -333,111 +438,6 @@ Partial Class frmCliente
         'ToolStripContainer1.TopToolStripPanel
         '
         Me.ToolStripContainer1.TopToolStripPanel.Controls.Add(Me.CLIENTEBindingNavigator)
-        '
-        'NOMBRELabel
-        '
-        NOMBRELabel.AutoSize = True
-        NOMBRELabel.Location = New System.Drawing.Point(37, 111)
-        NOMBRELabel.Name = "NOMBRELabel"
-        NOMBRELabel.Size = New System.Drawing.Size(57, 13)
-        NOMBRELabel.TabIndex = 0
-        NOMBRELabel.Text = "NOMBRE:"
-        '
-        'NOMBRETextBox
-        '
-        Me.NOMBRETextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NOMBRETextBox.Location = New System.Drawing.Point(100, 108)
-        Me.NOMBRETextBox.Name = "NOMBRETextBox"
-        Me.NOMBRETextBox.Size = New System.Drawing.Size(100, 24)
-        Me.NOMBRETextBox.TabIndex = 2
-        '
-        'APELLIDOLabel
-        '
-        APELLIDOLabel.AutoSize = True
-        APELLIDOLabel.Location = New System.Drawing.Point(224, 115)
-        APELLIDOLabel.Name = "APELLIDOLabel"
-        APELLIDOLabel.Size = New System.Drawing.Size(62, 13)
-        APELLIDOLabel.TabIndex = 2
-        APELLIDOLabel.Text = "APELLIDO:"
-        '
-        'APELLIDOTextBox
-        '
-        Me.APELLIDOTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.APELLIDOTextBox.Location = New System.Drawing.Point(292, 112)
-        Me.APELLIDOTextBox.Name = "APELLIDOTextBox"
-        Me.APELLIDOTextBox.Size = New System.Drawing.Size(100, 24)
-        Me.APELLIDOTextBox.TabIndex = 3
-        '
-        'DIRECCIONLabel
-        '
-        DIRECCIONLabel.AutoSize = True
-        DIRECCIONLabel.Location = New System.Drawing.Point(26, 148)
-        DIRECCIONLabel.Name = "DIRECCIONLabel"
-        DIRECCIONLabel.Size = New System.Drawing.Size(69, 13)
-        DIRECCIONLabel.TabIndex = 4
-        DIRECCIONLabel.Text = "DIRECCION:"
-        '
-        'DIRECCIONTextBox
-        '
-        Me.DIRECCIONTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DIRECCIONTextBox.Location = New System.Drawing.Point(101, 145)
-        Me.DIRECCIONTextBox.Name = "DIRECCIONTextBox"
-        Me.DIRECCIONTextBox.Size = New System.Drawing.Size(100, 24)
-        Me.DIRECCIONTextBox.TabIndex = 4
-        '
-        'TELEFONOLabel
-        '
-        TELEFONOLabel.AutoSize = True
-        TELEFONOLabel.Location = New System.Drawing.Point(224, 156)
-        TELEFONOLabel.Name = "TELEFONOLabel"
-        TELEFONOLabel.Size = New System.Drawing.Size(67, 13)
-        TELEFONOLabel.TabIndex = 6
-        TELEFONOLabel.Text = "TELEFONO:"
-        '
-        'TELEFONOTextBox
-        '
-        Me.TELEFONOTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TELEFONOTextBox.Location = New System.Drawing.Point(292, 156)
-        Me.TELEFONOTextBox.Name = "TELEFONOTextBox"
-        Me.TELEFONOTextBox.Size = New System.Drawing.Size(100, 24)
-        Me.TELEFONOTextBox.TabIndex = 5
-        '
-        'DPILabel
-        '
-        DPILabel.AutoSize = True
-        DPILabel.Location = New System.Drawing.Point(66, 74)
-        DPILabel.Name = "DPILabel"
-        DPILabel.Size = New System.Drawing.Size(28, 13)
-        DPILabel.TabIndex = 8
-        DPILabel.Text = "DPI:"
-        '
-        'DPITextBox
-        '
-        Me.DPITextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DPITextBox.Location = New System.Drawing.Point(100, 71)
-        Me.DPITextBox.Name = "DPITextBox"
-        Me.DPITextBox.Size = New System.Drawing.Size(100, 24)
-        Me.DPITextBox.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(24, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(300, 25)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Agregar Usuario al Sistema"
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(100, 201)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 54)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmCliente
         '

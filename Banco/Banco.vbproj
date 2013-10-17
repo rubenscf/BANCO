@@ -46,8 +46,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="Oracle.ManagedDataAccessDTC, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />
+    <Reference Include="Oracle.Web, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -107,6 +109,19 @@
     <Compile Include="frmCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmempleado.Designer.vb">
+      <DependentUpon>frmempleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmempleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtarjeta.Designer.vb">
+      <DependentUpon>frmtarjeta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmtarjeta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulofunciones.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -135,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCuenta.resx">
       <DependentUpon>frmCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmempleado.resx">
+      <DependentUpon>frmempleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtarjeta.resx">
+      <DependentUpon>frmtarjeta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
