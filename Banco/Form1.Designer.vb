@@ -40,7 +40,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCuenta, Me.mnuConsultarSaldo, Me.mnuTransaccion, Me.mnuAuditoria, Me.SISTEMAToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(596, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(792, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -54,19 +54,19 @@ Partial Class Form1
         'ClientesToolStripMenuItem1
         '
         Me.ClientesToolStripMenuItem1.Name = "ClientesToolStripMenuItem1"
-        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(149, 22)
         Me.ClientesToolStripMenuItem1.Text = "Clientes"
         '
         'NuevaCuentaToolStripMenuItem
         '
         Me.NuevaCuentaToolStripMenuItem.Name = "NuevaCuentaToolStripMenuItem"
-        Me.NuevaCuentaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaCuentaToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.NuevaCuentaToolStripMenuItem.Text = "Nueva Cuenta"
         '
         'NuevaTarjetaToolStripMenuItem
         '
         Me.NuevaTarjetaToolStripMenuItem.Name = "NuevaTarjetaToolStripMenuItem"
-        Me.NuevaTarjetaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaTarjetaToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.NuevaTarjetaToolStripMenuItem.Text = "Nueva Tarjeta"
         '
         'mnuConsultarSaldo
@@ -97,14 +97,14 @@ Partial Class Form1
         'EmpleadosToolStripMenuItem
         '
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
-        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
         Me.EmpleadosToolStripMenuItem.Text = "Empleados"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(596, 403)
+        Me.ClientSize = New System.Drawing.Size(792, 403)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1

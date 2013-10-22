@@ -28,8 +28,8 @@ Partial Class frmCliente
         Dim DIRECCIONLabel As System.Windows.Forms.Label
         Dim TELEFONOLabel As System.Windows.Forms.Label
         Dim DPILabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCliente))
         Dim Label4 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCliente))
         Me.DS = New Banco.DS()
         Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CLIENTETableAdapter = New Banco.DSTableAdapters.CLIENTETableAdapter()
@@ -43,6 +43,7 @@ Partial Class frmCliente
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DPITextBox = New System.Windows.Forms.TextBox()
@@ -64,7 +65,6 @@ Partial Class frmCliente
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.CLIENTEBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         NOMBRELabel = New System.Windows.Forms.Label()
         APELLIDOLabel = New System.Windows.Forms.Label()
         DIRECCIONLabel = New System.Windows.Forms.Label()
@@ -128,6 +128,16 @@ Partial Class frmCliente
         DPILabel.Size = New System.Drawing.Size(28, 13)
         DPILabel.TabIndex = 8
         DPILabel.Text = "DPI:"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Location = New System.Drawing.Point(206, 242)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(130, 13)
+        Label4.TabIndex = 32
+        Label4.Text = "MONTO  DE APERTURA"
+        Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'DS
         '
@@ -242,10 +252,18 @@ Partial Class frmCliente
         Me.TabPage1.Text = "Agregar"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(342, 235)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 24)
+        Me.TextBox2.TabIndex = 31
+        '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(100, 201)
+        Me.Button1.Location = New System.Drawing.Point(100, 205)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 54)
         Me.Button1.TabIndex = 5
@@ -433,23 +451,6 @@ Partial Class frmCliente
         Me.CLIENTEBindingNavigatorSaveItem.Name = "CLIENTEBindingNavigatorSaveItem"
         Me.CLIENTEBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.CLIENTEBindingNavigatorSaveItem.Text = "Guardar datos"
-        '
-        'Label4
-        '
-        Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(206, 242)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(85, 13)
-        Label4.TabIndex = 32
-        Label4.Text = "MONTO TOTAL"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(292, 231)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 24)
-        Me.TextBox2.TabIndex = 31
         '
         'frmCliente
         '
