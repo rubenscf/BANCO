@@ -45,6 +45,7 @@ Partial Class frmCuenta
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
         ESTADOLabel = New System.Windows.Forms.Label()
         SALDOLabel = New System.Windows.Forms.Label()
         IDTIPOCUENTALabel = New System.Windows.Forms.Label()
@@ -219,6 +220,7 @@ Partial Class frmCuenta
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.IDCLIENTEComboBox)
         Me.TabPage1.Controls.Add(Me.btGuardar)
         Me.TabPage1.Controls.Add(IDCLIENTELabel)
@@ -241,10 +243,19 @@ Partial Class frmCuenta
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(192, 69)
+        Me.TabPage2.Size = New System.Drawing.Size(630, 340)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(471, 98)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(68, 18)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "asdfasdg"
         '
         'frmCuenta
         '
@@ -285,4 +296,5 @@ Partial Class frmCuenta
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
