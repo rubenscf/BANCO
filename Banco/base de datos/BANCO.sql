@@ -1,11 +1,11 @@
 --------------------------------------------------------
--- Archivo creado  - lunes-octubre-21-2013   
+-- Archivo creado  - martes-octubre-22-2013   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence SEQ_IDCLIENTE
 --------------------------------------------------------
 
-   CREATE SEQUENCE  SEQ_IDCLIENTE  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 4 NOCACHE  ORDER  NOCYCLE ;
+   CREATE SEQUENCE  SEQ_IDCLIENTE  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 5 NOCACHE  ORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence SEQ_IDCUENTA
 --------------------------------------------------------
@@ -20,7 +20,7 @@
 --  DDL for Sequence SEQ_IDEMPLEADO
 --------------------------------------------------------
 
-   CREATE SEQUENCE  SEQ_IDEMPLEADO  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 3 NOCACHE  ORDER  NOCYCLE ;
+   CREATE SEQUENCE  SEQ_IDEMPLEADO  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 4 NOCACHE  ORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence SEQ_IDPUESTO
 --------------------------------------------------------
@@ -161,7 +161,9 @@
 	FECHA DATE, 
 	VALOR NUMBER(38,2), 
 	DETALLE VARCHAR2(200 BYTE), 
-	IDEMPLEADO NUMBER(38,0)
+	IDEMPLEADO NUMBER(38,0), 
+	VIENE_SALDO NUMBER(38,0), 
+	QUEDA_SALDO NUMBER(38,0)
    ) SEGMENT CREATION IMMEDIATE 
   PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
@@ -200,33 +202,31 @@
   TABLESPACE SYSTEM ;
 REM INSERTING into CLIENTE
 SET DEFINE OFF;
-Insert into CLIENTE (IDCLIENTE,NOMBRE,APELLIDO,DIRECCION,TELEFONO,DPI) values (2,'Rubens','Castillo','Mazatenango','51238111','987456321');
-Insert into CLIENTE (IDCLIENTE,NOMBRE,APELLIDO,DIRECCION,TELEFONO,DPI) values (3,'asf','asdf','asdfda','22222222222','1234125');
+Insert into CLIENTE (IDCLIENTE,NOMBRE,APELLIDO,DIRECCION,TELEFONO,DPI) values ('2','Rubens','Castillo','Mazatenango','51238111','987456321');
+Insert into CLIENTE (IDCLIENTE,NOMBRE,APELLIDO,DIRECCION,TELEFONO,DPI) values ('3','asf','asdf','asdfda','22222222222','1234125');
 REM INSERTING into CUENTA
 SET DEFINE OFF;
 REM INSERTING into DEPARTAMENTO
 SET DEFINE OFF;
-Insert into DEPARTAMENTO (IDDEPTO,DESCRIPCION) values (1,'Gerencia');
-Insert into DEPARTAMENTO (IDDEPTO,DESCRIPCION) values (2,'Administracio');
-Insert into DEPARTAMENTO (IDDEPTO,DESCRIPCION) values (3,'Servicio Al Cliente');
+Insert into DEPARTAMENTO (IDDEPTO,DESCRIPCION) values ('1','Gerencia');
+Insert into DEPARTAMENTO (IDDEPTO,DESCRIPCION) values ('2','Administracio');
+Insert into DEPARTAMENTO (IDDEPTO,DESCRIPCION) values ('3','Servicio Al Cliente');
 REM INSERTING into EMPLEADO
 SET DEFINE OFF;
-Insert into EMPLEADO (IDEMPLEADO,IDPUESTO,IDEPTOP,NOMBRE,APELLIDO,DPI,USUARIO,CONTRASENA) values (1,null,null,null,null,null,null,null);
-Insert into EMPLEADO (IDEMPLEADO,IDPUESTO,IDEPTOP,NOMBRE,APELLIDO,DPI,USUARIO,CONTRASENA) values (2,null,null,null,null,null,null,null);
 REM INSERTING into PUESTO
 SET DEFINE OFF;
-Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values (1,1,'Jefe');
-Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values (1,2,'Secretario');
-Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values (2,3,'Gerente');
-Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values (2,4,'Secretaria');
-Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values (3,5,'Secretaria');
-Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values (3,6,'Cajero');
+Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values ('1','1','Jefe');
+Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values ('1','2','Secretario');
+Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values ('2','3','Gerente');
+Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values ('2','4','Secretaria');
+Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values ('3','5','Secretaria');
+Insert into PUESTO (IDDEPTO,IDPUESTO,DESCRIPCION) values ('3','6','Cajero');
 REM INSERTING into TARJETA
 SET DEFINE OFF;
 REM INSERTING into TIPOCUENTA
 SET DEFINE OFF;
-Insert into TIPOCUENTA (IDTIPOCUENTA,TIPOCUENTA) values (1,'AHORRO');
-Insert into TIPOCUENTA (IDTIPOCUENTA,TIPOCUENTA) values (2,'MONETARIO');
+Insert into TIPOCUENTA (IDTIPOCUENTA,TIPOCUENTA) values ('1','AHORRO');
+Insert into TIPOCUENTA (IDTIPOCUENTA,TIPOCUENTA) values ('2','MONETARIO');
 REM INSERTING into TRANSACCION
 SET DEFINE OFF;
 REM INSERTING into TRANSACION
@@ -243,74 +243,10 @@ SET DEFINE OFF;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE SYSTEM ;
 --------------------------------------------------------
---  Constraints for Table PUESTO
---------------------------------------------------------
-
-  ALTER TABLE PUESTO ADD PRIMARY KEY (IDPUESTO)
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE SYSTEM  ENABLE;
---------------------------------------------------------
---  Constraints for Table DEPARTAMENTO
---------------------------------------------------------
-
-  ALTER TABLE DEPARTAMENTO ADD PRIMARY KEY (IDDEPTO)
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE SYSTEM  ENABLE;
---------------------------------------------------------
 --  Constraints for Table TIPOCUENTA
 --------------------------------------------------------
 
   ALTER TABLE TIPOCUENTA ADD PRIMARY KEY (IDTIPOCUENTA)
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE SYSTEM  ENABLE;
---------------------------------------------------------
---  Constraints for Table TARJETA
---------------------------------------------------------
-
-  ALTER TABLE TARJETA ADD CONSTRAINT SYS_C008196 PRIMARY KEY (IDCLIENTE, IDCUENTA, IDTARJETA)
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE SYSTEM  ENABLE;
---------------------------------------------------------
---  Constraints for Table TRANSACCION
---------------------------------------------------------
-
-  ALTER TABLE TRANSACCION ADD PRIMARY KEY (IDCLIENTE, IDCUENTA, IDTRANSACCION)
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE SYSTEM  ENABLE;
---------------------------------------------------------
---  Constraints for Table USUARIO
---------------------------------------------------------
-
-  ALTER TABLE USUARIO ADD PRIMARY KEY (IDUSER)
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE SYSTEM  ENABLE;
---------------------------------------------------------
---  Constraints for Table CUENTA
---------------------------------------------------------
-
-  ALTER TABLE CUENTA ADD PRIMARY KEY (IDCLIENTE, IDCUENTA)
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE SYSTEM  ENABLE;
-  ALTER TABLE CUENTA MODIFY (IDCLIENTE NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table TRANSACION
---------------------------------------------------------
-
-  ALTER TABLE TRANSACION ADD PRIMARY KEY (IDCLIENTE, IDCUENTA, IDTRANSACCION)
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
@@ -325,6 +261,71 @@ SET DEFINE OFF;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE SYSTEM  ENABLE;
 --------------------------------------------------------
+--  Constraints for Table PUESTO
+--------------------------------------------------------
+
+  ALTER TABLE PUESTO ADD PRIMARY KEY (IDPUESTO)
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE SYSTEM  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TRANSACCION
+--------------------------------------------------------
+
+  ALTER TABLE TRANSACCION MODIFY (VIENE_SALDO NOT NULL ENABLE);
+  ALTER TABLE TRANSACCION ADD PRIMARY KEY (IDCLIENTE, IDCUENTA, IDTRANSACCION)
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE SYSTEM  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TRANSACION
+--------------------------------------------------------
+
+  ALTER TABLE TRANSACION ADD PRIMARY KEY (IDCLIENTE, IDCUENTA, IDTRANSACCION)
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE SYSTEM  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DEPARTAMENTO
+--------------------------------------------------------
+
+  ALTER TABLE DEPARTAMENTO ADD PRIMARY KEY (IDDEPTO)
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE SYSTEM  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table USUARIO
+--------------------------------------------------------
+
+  ALTER TABLE USUARIO ADD PRIMARY KEY (IDUSER)
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE SYSTEM  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TARJETA
+--------------------------------------------------------
+
+  ALTER TABLE TARJETA ADD CONSTRAINT SYS_C008196 PRIMARY KEY (IDCLIENTE, IDCUENTA, IDTARJETA)
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE SYSTEM  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table CUENTA
+--------------------------------------------------------
+
+  ALTER TABLE CUENTA MODIFY (IDCLIENTE NOT NULL ENABLE);
+  ALTER TABLE CUENTA ADD PRIMARY KEY (IDCLIENTE, IDCUENTA)
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE SYSTEM  ENABLE;
+--------------------------------------------------------
 --  Constraints for Table CLIENTE
 --------------------------------------------------------
 
@@ -333,36 +334,83 @@ SET DEFINE OFF;
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE SYSTEM  ENABLE;
-
 --------------------------------------------------------
 --  Ref Constraints for Table CUENTA
 --------------------------------------------------------
 
   ALTER TABLE CUENTA ADD CONSTRAINT FK_CUENTA_TIPOCUENTA_1 FOREIGN KEY (IDTIPOCUENTA)
 	  REFERENCES TIPOCUENTA (IDTIPOCUENTA) ENABLE;
-
 --------------------------------------------------------
 --  Ref Constraints for Table EMPLEADO
 --------------------------------------------------------
 
   ALTER TABLE EMPLEADO ADD CONSTRAINT FK_EMPLEADOS_PUESTO_1 FOREIGN KEY (IDPUESTO)
 	  REFERENCES PUESTO (IDPUESTO) ENABLE;
-
 --------------------------------------------------------
 --  Ref Constraints for Table TARJETA
 --------------------------------------------------------
 
   ALTER TABLE TARJETA ADD CONSTRAINT FK_TARJETA_CUENTA_1 FOREIGN KEY (IDCLIENTE, IDCUENTA)
 	  REFERENCES CUENTA (IDCLIENTE, IDCUENTA) ENABLE;
-
-
 --------------------------------------------------------
 --  Ref Constraints for Table TRANSACION
 --------------------------------------------------------
 
   ALTER TABLE TRANSACION ADD CONSTRAINT FK_TRANSACIONES_EMPLEADOS_1 FOREIGN KEY (IDEMPLEADO)
 	  REFERENCES EMPLEADO (IDEMPLEADO) ENABLE;
+--------------------------------------------------------
+--  DDL for Function FN_TRANSACCION
+--------------------------------------------------------
 
+  CREATE OR REPLACE FUNCTION FN_TRANSACCION 
+              (vidtarjeta in transacion.idcliente%type
+                             ,vcantidad  in cuenta.saldo%TYPE
+                            )RETURN NUMBER IS
+VSALDO NUMBER;
+QSALDO NUMBER;
+NOHAY EXCEPTION;
+vidcliente number;
+vidcuenta number;
+BEGIN
+      SELECT SALDO, cuenta.idcliente, cuenta.idcuenta INTO VSALDO, vidcliente, vidcuenta FROM CUENTA 
+      INNER JOIN TARJETA ON tarjeta.idcuenta = cuenta.idcuenta AND tarjeta.idcliente = cuenta.idcliente
+      WHERE idtarjeta = vidtarjeta;
+      
+          if VSALDO >= vcantidad THEN
+              QSALDO := VSALDO - vcantidad;
+              UPDATE CUENTA SET saldo = QSALDO WHERE idcuenta = vidcuenta and idcliente = vidcliente;
+              insert into transaccion(idtransaccion, idcliente, idcuenta, tipo, fecha,  detalle, idempleado,viene_saldo, valor, queda_saldo ) 
+              values (seq_idtrans.nextval, vidcliente,vidcuenta, 1, sysdate, 'TRANSACCION CAJERO',3, VSALDO, vcantidad, QSALDO);
+          else
+              RAISE NOHAY;
+          END IF;
+     commit;
+    return 1;   
+    EXCEPTION
+      WHEN NOHAY THEN
+      ROLLBACK;
+      WHEN OTHERS THEN
+      ROLLBACK;
+    return 0;
+end;
+
+/
+--------------------------------------------------------
+--  DDL for Function VALIDA_TARJETA
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION VALIDA_TARJETA 
+(
+  VIDTARJETA IN NUMBER 
+, VPIN IN VARCHAR2 
+) RETURN NUMBER AS 
+reg number ;
+BEGIN
+select count ( tarjeta.idcuenta ) into reg FROM tarjeta where idtarjeta=vidtarjeta and pin=vpin ;
+  RETURN reg;
+END VALIDA_TARJETA;
+
+/
 --------------------------------------------------------
 --  DDL for Procedure SP_ADD_CLIENTE
 --------------------------------------------------------
@@ -458,11 +506,38 @@ set define off;
                             , vvalor in transacion.valor%type
                             , vdetalle in transacion.detalle%type
                             , vempleado in transacion.idempleado%type
-                           ) AS
+                            , vestado out number
+                           )IS
+
+VSALDO NUMBER;
+QSALDO NUMBER;
+NOHAY EXCEPTION;
 BEGIN
-   insert into transacion(idtransaccion, idcliente, idcuenta, tipo, fecha, valor, detalle, idempleado ) 
-   values (seq_idtrans.nextval, vcliente,vcuenta, vtipo, sysdate, vvalor,vdetalle,vempleado);
-  commit;
+      SELECT SALDO INTO VSALDO FROM CUENTA WHERE IDCLIENTE = vcliente AND idcuenta = vcuenta;
+      if vtipo = 1 then --pagar
+          if VSALDO >= vvalor THEN
+              QSALDO := VSALDO - vvalor;
+              UPDATE CUENTA SET saldo = (saldo - vvalor) WHERE IDCLIENTE = vcliente AND idcuenta = vcuenta;
+              insert into transaccion(idtransaccion, idcliente, idcuenta, tipo, fecha,  detalle, idempleado,viene_saldo, valor, queda_saldo ) 
+              values (seq_idtrans.nextval, vcliente,vcuenta, vtipo, sysdate,vdetalle,vempleado, VSALDO, vvalor, QSALDO);
+          else
+              RAISE NOHAY;
+          END IF;
+     ELSE --COBRAR
+      QSALDO := VSALDO + vvalor;
+        UPDATE CUENTA SET saldo = (saldo + vvalor) WHERE IDCLIENTE = vcliente AND idcuenta = vcuenta;
+              insert into transaccion(idtransaccion, idcliente, idcuenta, tipo, fecha,  detalle, idempleado,viene_saldo, valor, queda_saldo ) 
+              values (seq_idtrans.nextval, vcliente,vcuenta, vtipo, sysdate,vdetalle,vempleado, VSALDO, vvalor, QSALDO);      
+    END IF;
+    commit;
+    
+       dbms_output.put_line('TRANSACCION COMPLETA');
+    vestado := 1;
+    EXCEPTION
+      WHEN NOHAY THEN
+         dbms_output.put_line('NO HAY FONDOS EN LA CUENTA ');
+         vestado :=0;
+      ROLLBACK;
 end;
 
 /

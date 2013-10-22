@@ -18,4 +18,10 @@
         ventana.MdiParent = Me
         ventana.Show()
     End Sub
+
+    Private Sub mnuTransaccion_Click(sender As Object, e As EventArgs) Handles mnuTransaccion.Click
+        Dim ventana As New frm_Transaccion
+        ventana.MdiParent = Me
+        ventana.Show()
+    End Sub
 End Class
