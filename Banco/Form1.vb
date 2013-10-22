@@ -9,4 +9,10 @@
         ventana.MdiParent = Me
         ventana.Show()
     End Sub
+
+    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+        Dim ventana As New frmCuenta
+        ventana.MdiParent = Me
+        ventana.Show()
+    End Sub
 End Class
