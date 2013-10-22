@@ -88,6 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Encriptacion.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +108,19 @@
     <Compile Include="frmCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_Empleados.Designer.vb">
+      <DependentUpon>frm_Empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Transaccion.Designer.vb">
+      <DependentUpon>frm_Transaccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Transaccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funciones.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -135,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCuenta.resx">
       <DependentUpon>frmCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Empleados.resx">
+      <DependentUpon>frm_Empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Transaccion.resx">
+      <DependentUpon>frm_Transaccion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -22,9 +22,19 @@
     End Sub
 
 
-    Private Sub CUENTABindingNavigatorSaveItem_Click_2(sender As Object, e As EventArgs) Handles CUENTABindingNavigatorSaveItem.Click
+    Private Sub CUENTABindingNavigatorSaveItem_Click_2(sender As Object, e As EventArgs)
         Me.Validate()
         Me.CUENTABindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.DS)
+    End Sub
+
+    Private Sub SALDOTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles SALDOTextBox.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar = "." Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 End Class

@@ -6370,57 +6370,57 @@ Namespace DSTableAdapters
             Return returnValue
         End Function
     End Class
-    
+
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
     '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
+     Global.System.ComponentModel.ToolboxItem(True), _
+     Global.System.ComponentModel.DataObjectAttribute(True), _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" & _
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
     Partial Public Class DEPARTAMENTOTableAdapter
         Inherits Global.System.ComponentModel.Component
-        
+
         Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
-        
+
         Private _connection As Global.Oracle.ManagedDataAccess.Client.OracleConnection
-        
+
         Private _transaction As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
-        
+
         Private _commandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand
-        
+
         Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
+            MyBase.New()
+            Me.ClearBeforeFill = True
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Friend ReadOnly Property Adapter() As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
             Get
                 If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
+                    Me.InitAdapter()
                 End If
                 Return Me._adapter
             End Get
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Property Connection() As Global.Oracle.ManagedDataAccess.Client.OracleConnection
             Get
                 If (Me._connection Is Nothing) Then
-                    Me.InitConnection
+                    Me.InitConnection()
                 End If
                 Return Me._connection
             End Get
-            Set
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleConnection)
                 Me._connection = value
                 If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
                     Me.Adapter.InsertCommand.Connection = value
@@ -6434,65 +6434,65 @@ Namespace DSTableAdapters
                 Dim i As Integer = 0
                 Do While (i < Me.CommandCollection.Length)
                     If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
+                        CType(Me.CommandCollection(i), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
                     End If
                     i = (i + 1)
                 Loop
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Property Transaction() As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
             Get
                 Return Me._transaction
             End Get
-            Set
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleTransaction)
                 Me._transaction = value
                 Dim i As Integer = 0
                 Do While (i < Me.CommandCollection.Length)
                     Me.CommandCollection(i).Transaction = Me._transaction
                     i = (i + 1)
                 Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
+                If ((Not (Me.Adapter) Is Nothing) _
                             AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
                     Me.Adapter.DeleteCommand.Transaction = Me._transaction
                 End If
-                If ((Not (Me.Adapter) Is Nothing)  _
+                If ((Not (Me.Adapter) Is Nothing) _
                             AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
                     Me.Adapter.InsertCommand.Transaction = Me._transaction
                 End If
-                If ((Not (Me.Adapter) Is Nothing)  _
+                If ((Not (Me.Adapter) Is Nothing) _
                             AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
                     Me.Adapter.UpdateCommand.Transaction = Me._transaction
                 End If
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected ReadOnly Property CommandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Get
                 If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
+                    Me.InitCommandCollection()
                 End If
                 Return Me._commandCollection
             End Get
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Property ClearBeforeFill() As Boolean
             Get
                 Return Me._clearBeforeFill
             End Get
-            Set
+            Set(value As Boolean)
                 Me._clearBeforeFill = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitAdapter()
             Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
@@ -6503,8 +6503,8 @@ Namespace DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""BANCO"".""DEPARTAMENTO"" WHERE ((""IDDEPTO"" = :Original_IDDEPTO) AND ((:"& _ 
-                "IsNull_DESCRIPCION = 1 AND ""DESCRIPCION"" IS NULL) OR (""DESCRIPCION"" = :Original_"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""BANCO"".""DEPARTAMENTO"" WHERE ((""IDDEPTO"" = :Original_IDDEPTO) AND ((:" & _
+                "IsNull_DESCRIPCION = 1 AND ""DESCRIPCION"" IS NULL) OR (""DESCRIPCION"" = :Original_" & _
                 "DESCRIPCION)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -6512,7 +6512,7 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDDEPTO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -6521,22 +6521,22 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DESCRIPCION"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_DESCRIPCION"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DESCRIPCION"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""BANCO"".""DEPARTAMENTO"" (""IDDEPTO"", ""DESCRIPCION"") VALUES (:IDDEPTO, :"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""BANCO"".""DEPARTAMENTO"" (""IDDEPTO"", ""DESCRIPCION"") VALUES (:IDDEPTO, :" & _
                 "DESCRIPCION)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -6544,20 +6544,20 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDDEPTO"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "DESCRIPCION"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DESCRIPCION"
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""BANCO"".""DEPARTAMENTO"" SET ""IDDEPTO"" = :IDDEPTO, ""DESCRIPCION"" = :DESCRIPC"& _ 
-                "ION WHERE ((""IDDEPTO"" = :Original_IDDEPTO) AND ((:IsNull_DESCRIPCION = 1 AND ""DE"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""BANCO"".""DEPARTAMENTO"" SET ""IDDEPTO"" = :IDDEPTO, ""DESCRIPCION"" = :DESCRIPC" & _
+                "ION WHERE ((""IDDEPTO"" = :Original_IDDEPTO) AND ((:IsNull_DESCRIPCION = 1 AND ""DE" & _
                 "SCRIPCION"" IS NULL) OR (""DESCRIPCION"" = :Original_DESCRIPCION)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -6565,14 +6565,14 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDDEPTO"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "DESCRIPCION"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DESCRIPCION"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -6580,7 +6580,7 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDDEPTO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -6589,30 +6589,30 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DESCRIPCION"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_DESCRIPCION"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DESCRIPCION"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitConnection()
             Me._connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection()
             Me._connection.ConnectionString = Global.Banco.My.MySettings.Default._cnnBanco
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitCommandCollection()
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
@@ -6620,206 +6620,206 @@ Namespace DSTableAdapters
             Me._commandCollection(0).CommandText = "SELECT IDDEPTO, DESCRIPCION FROM BANCO.DEPARTAMENTO"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DS.DEPARTAMENTODataTable) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As DS.DEPARTAMENTODataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DS.DEPARTAMENTODataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+        Public Overridable Overloads Function GetData() As DS.DEPARTAMENTODataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Dim dataTable As DS.DEPARTAMENTODataTable = New DS.DEPARTAMENTODataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DS.DEPARTAMENTODataTable) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataTable As DS.DEPARTAMENTODataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DS) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataSet As DS) As Integer
             Return Me.Adapter.Update(dataSet, "DEPARTAMENTO")
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(dataRows)
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_IDDEPTO As Decimal, ByVal Original_DESCRIPCION As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_IDDEPTO,Decimal)
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, True)> _
+        Public Overridable Overloads Function Delete(ByVal Original_IDDEPTO As Decimal, ByVal Original_DESCRIPCION As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_IDDEPTO, Decimal)
             If (Original_DESCRIPCION Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_DESCRIPCION,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_DESCRIPCION, String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
+                Me.Adapter.DeleteCommand.Connection.Open()
             End If
-            Try 
+            Try
                 Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
+                    Me.Adapter.DeleteCommand.Connection.Close()
                 End If
             End Try
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal IDDEPTO As Decimal, ByVal DESCRIPCION As String) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(IDDEPTO,Decimal)
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, True)> _
+        Public Overridable Overloads Function Insert(ByVal IDDEPTO As Decimal, ByVal DESCRIPCION As String) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(IDDEPTO, Decimal)
             If (DESCRIPCION Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(DESCRIPCION,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(DESCRIPCION, String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
+                Me.Adapter.InsertCommand.Connection.Open()
             End If
-            Try 
+            Try
                 Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
+                    Me.Adapter.InsertCommand.Connection.Close()
                 End If
             End Try
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal IDDEPTO As Decimal, ByVal DESCRIPCION As String, ByVal Original_IDDEPTO As Decimal, ByVal Original_DESCRIPCION As String) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(IDDEPTO,Decimal)
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
+        Public Overridable Overloads Function Update(ByVal IDDEPTO As Decimal, ByVal DESCRIPCION As String, ByVal Original_IDDEPTO As Decimal, ByVal Original_DESCRIPCION As String) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(IDDEPTO, Decimal)
             If (DESCRIPCION Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(DESCRIPCION,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(DESCRIPCION, String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_IDDEPTO,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_IDDEPTO, Decimal)
             If (Original_DESCRIPCION Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_DESCRIPCION,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_DESCRIPCION, String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
+                Me.Adapter.UpdateCommand.Connection.Open()
             End If
-            Try 
+            Try
                 Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
+                    Me.Adapter.UpdateCommand.Connection.Close()
                 End If
             End Try
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal DESCRIPCION As String, ByVal Original_IDDEPTO As Decimal, ByVal Original_DESCRIPCION As String) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
+        Public Overridable Overloads Function Update(ByVal DESCRIPCION As String, ByVal Original_IDDEPTO As Decimal, ByVal Original_DESCRIPCION As String) As Integer
             Return Me.Update(Original_IDDEPTO, DESCRIPCION, Original_IDDEPTO, Original_DESCRIPCION)
         End Function
     End Class
-    
+
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
     '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
+     Global.System.ComponentModel.ToolboxItem(True), _
+     Global.System.ComponentModel.DataObjectAttribute(True), _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" & _
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
     Partial Public Class EMPLEADOTableAdapter
         Inherits Global.System.ComponentModel.Component
-        
+
         Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
-        
+
         Private _connection As Global.Oracle.ManagedDataAccess.Client.OracleConnection
-        
+
         Private _transaction As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
-        
+
         Private _commandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand
-        
+
         Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
+            MyBase.New()
+            Me.ClearBeforeFill = True
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Friend ReadOnly Property Adapter() As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
             Get
                 If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
+                    Me.InitAdapter()
                 End If
                 Return Me._adapter
             End Get
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Property Connection() As Global.Oracle.ManagedDataAccess.Client.OracleConnection
             Get
                 If (Me._connection Is Nothing) Then
-                    Me.InitConnection
+                    Me.InitConnection()
                 End If
                 Return Me._connection
             End Get
-            Set
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleConnection)
                 Me._connection = value
                 If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
                     Me.Adapter.InsertCommand.Connection = value
@@ -6833,65 +6833,65 @@ Namespace DSTableAdapters
                 Dim i As Integer = 0
                 Do While (i < Me.CommandCollection.Length)
                     If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
+                        CType(Me.CommandCollection(i), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
                     End If
                     i = (i + 1)
                 Loop
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Property Transaction() As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
             Get
                 Return Me._transaction
             End Get
-            Set
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleTransaction)
                 Me._transaction = value
                 Dim i As Integer = 0
                 Do While (i < Me.CommandCollection.Length)
                     Me.CommandCollection(i).Transaction = Me._transaction
                     i = (i + 1)
                 Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
+                If ((Not (Me.Adapter) Is Nothing) _
                             AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
                     Me.Adapter.DeleteCommand.Transaction = Me._transaction
                 End If
-                If ((Not (Me.Adapter) Is Nothing)  _
+                If ((Not (Me.Adapter) Is Nothing) _
                             AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
                     Me.Adapter.InsertCommand.Transaction = Me._transaction
                 End If
-                If ((Not (Me.Adapter) Is Nothing)  _
+                If ((Not (Me.Adapter) Is Nothing) _
                             AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
                     Me.Adapter.UpdateCommand.Transaction = Me._transaction
                 End If
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected ReadOnly Property CommandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Get
                 If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
+                    Me.InitCommandCollection()
                 End If
                 Return Me._commandCollection
             End Get
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Property ClearBeforeFill() As Boolean
             Get
                 Return Me._clearBeforeFill
             End Get
-            Set
+            Set(value As Boolean)
                 Me._clearBeforeFill = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitAdapter()
             Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
@@ -6908,14 +6908,14 @@ Namespace DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""BANCO"".""EMPLEADO"" WHERE ((""IDEMPLEADO"" = :Original_IDEMPLEADO) AND ("& _ 
-                "(:IsNull_IDPUESTO = 1 AND ""IDPUESTO"" IS NULL) OR (""IDPUESTO"" = :Original_IDPUEST"& _ 
-                "O)) AND ((:IsNull_IDEPTOP = 1 AND ""IDEPTOP"" IS NULL) OR (""IDEPTOP"" = :Original_I"& _ 
-                "DEPTOP)) AND ((:IsNull_NOMBRE = 1 AND ""NOMBRE"" IS NULL) OR (""NOMBRE"" = :Original"& _ 
-                "_NOMBRE)) AND ((:IsNull_APELLIDO = 1 AND ""APELLIDO"" IS NULL) OR (""APELLIDO"" = :O"& _ 
-                "riginal_APELLIDO)) AND ((:IsNull_DPI = 1 AND ""DPI"" IS NULL) OR (""DPI"" = :Origina"& _ 
-                "l_DPI)) AND ((:IsNull_USUARIO = 1 AND ""USUARIO"" IS NULL) OR (""USUARIO"" = :Origin"& _ 
-                "al_USUARIO)) AND ((:IsNull_CONTRASENA = 1 AND ""CONTRASENA"" IS NULL) OR (""CONTRAS"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""BANCO"".""EMPLEADO"" WHERE ((""IDEMPLEADO"" = :Original_IDEMPLEADO) AND (" & _
+                "(:IsNull_IDPUESTO = 1 AND ""IDPUESTO"" IS NULL) OR (""IDPUESTO"" = :Original_IDPUEST" & _
+                "O)) AND ((:IsNull_IDEPTOP = 1 AND ""IDEPTOP"" IS NULL) OR (""IDEPTOP"" = :Original_I" & _
+                "DEPTOP)) AND ((:IsNull_NOMBRE = 1 AND ""NOMBRE"" IS NULL) OR (""NOMBRE"" = :Original" & _
+                "_NOMBRE)) AND ((:IsNull_APELLIDO = 1 AND ""APELLIDO"" IS NULL) OR (""APELLIDO"" = :O" & _
+                "riginal_APELLIDO)) AND ((:IsNull_DPI = 1 AND ""DPI"" IS NULL) OR (""DPI"" = :Origina" & _
+                "l_DPI)) AND ((:IsNull_USUARIO = 1 AND ""USUARIO"" IS NULL) OR (""USUARIO"" = :Origin" & _
+                "al_USUARIO)) AND ((:IsNull_CONTRASENA = 1 AND ""CONTRASENA"" IS NULL) OR (""CONTRAS" & _
                 "ENA"" = :Original_CONTRASENA)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -6923,7 +6923,7 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEMPLEADO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -6932,17 +6932,17 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDPUESTO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_IDPUESTO"
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDPUESTO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -6951,17 +6951,17 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEPTOP"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_IDEPTOP"
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEPTOP"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -6970,16 +6970,16 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "NOMBRE"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_NOMBRE"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "NOMBRE"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -6988,16 +6988,16 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "APELLIDO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_APELLIDO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "APELLIDO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -7006,16 +7006,16 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DPI"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_DPI"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DPI"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -7024,16 +7024,16 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "USUARIO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_USUARIO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "USUARIO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -7042,23 +7042,23 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 500
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "CONTRASENA"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_CONTRASENA"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 500
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "CONTRASENA"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""BANCO"".""EMPLEADO"" (""IDEMPLEADO"", ""IDPUESTO"", ""IDEPTOP"", ""NOMBRE"", ""A"& _ 
-                "PELLIDO"", ""DPI"", ""USUARIO"", ""CONTRASENA"") VALUES (:IDEMPLEADO, :IDPUESTO, :IDEPT"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""BANCO"".""EMPLEADO"" (""IDEMPLEADO"", ""IDPUESTO"", ""IDEPTOP"", ""NOMBRE"", ""A" & _
+                "PELLIDO"", ""DPI"", ""USUARIO"", ""CONTRASENA"") VALUES (:IDEMPLEADO, :IDPUESTO, :IDEPT" & _
                 "OP, :NOMBRE, :APELLIDO, :DPI, :USUARIO, :CONTRASENA)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7066,7 +7066,7 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEMPLEADO"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7074,7 +7074,7 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDPUESTO"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7082,56 +7082,56 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEPTOP"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "NOMBRE"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "NOMBRE"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "APELLIDO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "APELLIDO"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "DPI"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DPI"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "USUARIO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "USUARIO"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "CONTRASENA"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 500
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "CONTRASENA"
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""BANCO"".""EMPLEADO"" SET ""IDEMPLEADO"" = :IDEMPLEADO, ""IDPUESTO"" = :IDPUESTO,"& _ 
-                " ""IDEPTOP"" = :IDEPTOP, ""NOMBRE"" = :NOMBRE, ""APELLIDO"" = :APELLIDO, ""DPI"" = :DPI,"& _ 
-                " ""USUARIO"" = :USUARIO, ""CONTRASENA"" = :CONTRASENA WHERE ((""IDEMPLEADO"" = :Origin"& _ 
-                "al_IDEMPLEADO) AND ((:IsNull_IDPUESTO = 1 AND ""IDPUESTO"" IS NULL) OR (""IDPUESTO"""& _ 
-                " = :Original_IDPUESTO)) AND ((:IsNull_IDEPTOP = 1 AND ""IDEPTOP"" IS NULL) OR (""ID"& _ 
-                "EPTOP"" = :Original_IDEPTOP)) AND ((:IsNull_NOMBRE = 1 AND ""NOMBRE"" IS NULL) OR ("& _ 
-                """NOMBRE"" = :Original_NOMBRE)) AND ((:IsNull_APELLIDO = 1 AND ""APELLIDO"" IS NULL)"& _ 
-                " OR (""APELLIDO"" = :Original_APELLIDO)) AND ((:IsNull_DPI = 1 AND ""DPI"" IS NULL) "& _ 
-                "OR (""DPI"" = :Original_DPI)) AND ((:IsNull_USUARIO = 1 AND ""USUARIO"" IS NULL) OR "& _ 
-                "(""USUARIO"" = :Original_USUARIO)) AND ((:IsNull_CONTRASENA = 1 AND ""CONTRASENA"" I"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""BANCO"".""EMPLEADO"" SET ""IDEMPLEADO"" = :IDEMPLEADO, ""IDPUESTO"" = :IDPUESTO," & _
+                " ""IDEPTOP"" = :IDEPTOP, ""NOMBRE"" = :NOMBRE, ""APELLIDO"" = :APELLIDO, ""DPI"" = :DPI," & _
+                " ""USUARIO"" = :USUARIO, ""CONTRASENA"" = :CONTRASENA WHERE ((""IDEMPLEADO"" = :Origin" & _
+                "al_IDEMPLEADO) AND ((:IsNull_IDPUESTO = 1 AND ""IDPUESTO"" IS NULL) OR (""IDPUESTO""" & _
+                " = :Original_IDPUESTO)) AND ((:IsNull_IDEPTOP = 1 AND ""IDEPTOP"" IS NULL) OR (""ID" & _
+                "EPTOP"" = :Original_IDEPTOP)) AND ((:IsNull_NOMBRE = 1 AND ""NOMBRE"" IS NULL) OR (" & _
+                """NOMBRE"" = :Original_NOMBRE)) AND ((:IsNull_APELLIDO = 1 AND ""APELLIDO"" IS NULL)" & _
+                " OR (""APELLIDO"" = :Original_APELLIDO)) AND ((:IsNull_DPI = 1 AND ""DPI"" IS NULL) " & _
+                "OR (""DPI"" = :Original_DPI)) AND ((:IsNull_USUARIO = 1 AND ""USUARIO"" IS NULL) OR " & _
+                "(""USUARIO"" = :Original_USUARIO)) AND ((:IsNull_CONTRASENA = 1 AND ""CONTRASENA"" I" & _
                 "S NULL) OR (""CONTRASENA"" = :Original_CONTRASENA)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7139,7 +7139,7 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEMPLEADO"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7147,7 +7147,7 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDPUESTO"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7155,42 +7155,42 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEPTOP"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "NOMBRE"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "NOMBRE"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "APELLIDO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "APELLIDO"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "DPI"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DPI"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "USUARIO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "USUARIO"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "CONTRASENA"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 500
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "CONTRASENA"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7198,7 +7198,7 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEMPLEADO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -7207,17 +7207,17 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDPUESTO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_IDPUESTO"
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDPUESTO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -7226,17 +7226,17 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEPTOP"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_IDEPTOP"
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "IDEPTOP"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -7245,16 +7245,16 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "NOMBRE"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_NOMBRE"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "NOMBRE"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -7263,16 +7263,16 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "APELLIDO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_APELLIDO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "APELLIDO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -7281,16 +7281,16 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DPI"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_DPI"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "DPI"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -7299,16 +7299,16 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "USUARIO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_USUARIO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "USUARIO"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -7317,345 +7317,456 @@ Namespace DSTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
             param.Size = 500
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "CONTRASENA"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
+            param.SourceColumnNullMapping = True
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_CONTRASENA"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 500
-            param.IsNullable = true
+            param.IsNullable = True
             param.SourceColumn = "CONTRASENA"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitConnection()
             Me._connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection()
             Me._connection.ConnectionString = Global.Banco.My.MySettings.Default._cnnBanco
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(1) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT IDEMPLEADO, IDPUESTO, IDEPTOP, NOMBRE, APELLIDO, DPI, USUARIO, CONTRASENA "& _ 
+            Me._commandCollection(0).CommandText = "SELECT IDEMPLEADO, IDPUESTO, IDEPTOP, NOMBRE, APELLIDO, DPI, USUARIO, CONTRASENA " & _
                 "FROM BANCO.EMPLEADO"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "BANCO.SP_ADD_EMPLEADO"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "VIDPUESTO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = True
+            param.SourceColumn = Nothing
+            Me._commandCollection(1).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "VIDPTOP"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = True
+            param.SourceColumn = Nothing
+            Me._commandCollection(1).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "VNOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 32767
+            param.IsNullable = True
+            param.SourceColumn = Nothing
+            Me._commandCollection(1).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "VAPELLIDO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 32767
+            param.IsNullable = True
+            param.SourceColumn = Nothing
+            Me._commandCollection(1).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "VDPI"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 32767
+            param.IsNullable = True
+            param.SourceColumn = Nothing
+            Me._commandCollection(1).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "VUSUARIO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 32767
+            param.IsNullable = True
+            param.SourceColumn = Nothing
+            Me._commandCollection(1).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "VCONTRASENA"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 32767
+            param.IsNullable = True
+            param.SourceColumn = Nothing
+            Me._commandCollection(1).Parameters.Add(param)
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DS.EMPLEADODataTable) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As DS.EMPLEADODataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DS.EMPLEADODataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+        Public Overridable Overloads Function GetData() As DS.EMPLEADODataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Dim dataTable As DS.EMPLEADODataTable = New DS.EMPLEADODataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DS.EMPLEADODataTable) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataTable As DS.EMPLEADODataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DS) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataSet As DS) As Integer
             Return Me.Adapter.Update(dataSet, "EMPLEADO")
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(dataRows)
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_IDEMPLEADO As Decimal, ByVal Original_IDPUESTO As Global.System.Nullable(Of Decimal), ByVal Original_IDEPTOP As Global.System.Nullable(Of Decimal), ByVal Original_NOMBRE As String, ByVal Original_APELLIDO As String, ByVal Original_DPI As String, ByVal Original_USUARIO As String, ByVal Original_CONTRASENA As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_IDEMPLEADO,Decimal)
-            If (Original_IDPUESTO.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_IDPUESTO.Value,Decimal)
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, True)> _
+        Public Overridable Overloads Function Delete(ByVal Original_IDEMPLEADO As Decimal, ByVal Original_IDPUESTO As Global.System.Nullable(Of Decimal), ByVal Original_IDEPTOP As Global.System.Nullable(Of Decimal), ByVal Original_NOMBRE As String, ByVal Original_APELLIDO As String, ByVal Original_DPI As String, ByVal Original_USUARIO As String, ByVal Original_CONTRASENA As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_IDEMPLEADO, Decimal)
+            If (Original_IDPUESTO.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_IDPUESTO.Value, Decimal)
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (Original_IDEPTOP.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_IDEPTOP.Value,Decimal)
+            If (Original_IDEPTOP.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_IDEPTOP.Value, Decimal)
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             If (Original_NOMBRE Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_NOMBRE,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_NOMBRE, String)
             End If
             If (Original_APELLIDO Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_APELLIDO,String)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_APELLIDO, String)
             End If
             If (Original_DPI Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_DPI,String)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_DPI, String)
             End If
             If (Original_USUARIO Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_USUARIO,String)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_USUARIO, String)
             End If
             If (Original_CONTRASENA Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_CONTRASENA,String)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_CONTRASENA, String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
+                Me.Adapter.DeleteCommand.Connection.Open()
             End If
-            Try 
+            Try
                 Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
+                    Me.Adapter.DeleteCommand.Connection.Close()
                 End If
             End Try
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal IDEMPLEADO As Decimal, ByVal IDPUESTO As Global.System.Nullable(Of Decimal), ByVal IDEPTOP As Global.System.Nullable(Of Decimal), ByVal NOMBRE As String, ByVal APELLIDO As String, ByVal DPI As String, ByVal USUARIO As String, ByVal CONTRASENA As String) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(IDEMPLEADO,Decimal)
-            If (IDPUESTO.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDPUESTO.Value,Decimal)
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, True)> _
+        Public Overridable Overloads Function Insert(ByVal IDEMPLEADO As Decimal, ByVal IDPUESTO As Global.System.Nullable(Of Decimal), ByVal IDEPTOP As Global.System.Nullable(Of Decimal), ByVal NOMBRE As String, ByVal APELLIDO As String, ByVal DPI As String, ByVal USUARIO As String, ByVal CONTRASENA As String) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(IDEMPLEADO, Decimal)
+            If (IDPUESTO.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDPUESTO.Value, Decimal)
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (IDEPTOP.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(IDEPTOP.Value,Decimal)
+            If (IDEPTOP.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(IDEPTOP.Value, Decimal)
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
             If (NOMBRE Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(NOMBRE,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(NOMBRE, String)
             End If
             If (APELLIDO Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(APELLIDO,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(APELLIDO, String)
             End If
             If (DPI Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(DPI,String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(DPI, String)
             End If
             If (USUARIO Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(USUARIO,String)
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(USUARIO, String)
             End If
             If (CONTRASENA Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(CONTRASENA,String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(CONTRASENA, String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
+                Me.Adapter.InsertCommand.Connection.Open()
             End If
-            Try 
+            Try
                 Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
+                    Me.Adapter.InsertCommand.Connection.Close()
                 End If
             End Try
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal IDEMPLEADO As Decimal,  _
-                    ByVal IDPUESTO As Global.System.Nullable(Of Decimal),  _
-                    ByVal IDEPTOP As Global.System.Nullable(Of Decimal),  _
-                    ByVal NOMBRE As String,  _
-                    ByVal APELLIDO As String,  _
-                    ByVal DPI As String,  _
-                    ByVal USUARIO As String,  _
-                    ByVal CONTRASENA As String,  _
-                    ByVal Original_IDEMPLEADO As Decimal,  _
-                    ByVal Original_IDPUESTO As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_IDEPTOP As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_NOMBRE As String,  _
-                    ByVal Original_APELLIDO As String,  _
-                    ByVal Original_DPI As String,  _
-                    ByVal Original_USUARIO As String,  _
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
+        Public Overridable Overloads Function Update( _
+                    ByVal IDEMPLEADO As Decimal, _
+                    ByVal IDPUESTO As Global.System.Nullable(Of Decimal), _
+                    ByVal IDEPTOP As Global.System.Nullable(Of Decimal), _
+                    ByVal NOMBRE As String, _
+                    ByVal APELLIDO As String, _
+                    ByVal DPI As String, _
+                    ByVal USUARIO As String, _
+                    ByVal CONTRASENA As String, _
+                    ByVal Original_IDEMPLEADO As Decimal, _
+                    ByVal Original_IDPUESTO As Global.System.Nullable(Of Decimal), _
+                    ByVal Original_IDEPTOP As Global.System.Nullable(Of Decimal), _
+                    ByVal Original_NOMBRE As String, _
+                    ByVal Original_APELLIDO As String, _
+                    ByVal Original_DPI As String, _
+                    ByVal Original_USUARIO As String, _
                     ByVal Original_CONTRASENA As String) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(IDEMPLEADO,Decimal)
-            If (IDPUESTO.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDPUESTO.Value,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(IDEMPLEADO, Decimal)
+            If (IDPUESTO.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDPUESTO.Value, Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (IDEPTOP.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(IDEPTOP.Value,Decimal)
+            If (IDEPTOP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(IDEPTOP.Value, Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
             If (NOMBRE Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(NOMBRE,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(NOMBRE, String)
             End If
             If (APELLIDO Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(APELLIDO,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(APELLIDO, String)
             End If
             If (DPI Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(DPI,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(DPI, String)
             End If
             If (USUARIO Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(USUARIO,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(USUARIO, String)
             End If
             If (CONTRASENA Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(CONTRASENA,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(CONTRASENA, String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_IDEMPLEADO,Decimal)
-            If (Original_IDPUESTO.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_IDPUESTO.Value,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_IDEMPLEADO, Decimal)
+            If (Original_IDPUESTO.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_IDPUESTO.Value, Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
-            If (Original_IDEPTOP.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_IDEPTOP.Value,Decimal)
+            If (Original_IDEPTOP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_IDEPTOP.Value, Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_NOMBRE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_NOMBRE,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_NOMBRE, String)
             End If
             If (Original_APELLIDO Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_APELLIDO,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_APELLIDO, String)
             End If
             If (Original_DPI Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_DPI,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_DPI, String)
             End If
             If (Original_USUARIO Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_USUARIO,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_USUARIO, String)
             End If
             If (Original_CONTRASENA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_CONTRASENA,String)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_CONTRASENA, String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
+                Me.Adapter.UpdateCommand.Connection.Open()
             End If
-            Try 
+            Try
                 Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
+                    Me.Adapter.UpdateCommand.Connection.Close()
                 End If
             End Try
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal IDPUESTO As Global.System.Nullable(Of Decimal), ByVal IDEPTOP As Global.System.Nullable(Of Decimal), ByVal NOMBRE As String, ByVal APELLIDO As String, ByVal DPI As String, ByVal USUARIO As String, ByVal CONTRASENA As String, ByVal Original_IDEMPLEADO As Decimal, ByVal Original_IDPUESTO As Global.System.Nullable(Of Decimal), ByVal Original_IDEPTOP As Global.System.Nullable(Of Decimal), ByVal Original_NOMBRE As String, ByVal Original_APELLIDO As String, ByVal Original_DPI As String, ByVal Original_USUARIO As String, ByVal Original_CONTRASENA As String) As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
+        Public Overridable Overloads Function Update(ByVal IDPUESTO As Global.System.Nullable(Of Decimal), ByVal IDEPTOP As Global.System.Nullable(Of Decimal), ByVal NOMBRE As String, ByVal APELLIDO As String, ByVal DPI As String, ByVal USUARIO As String, ByVal CONTRASENA As String, ByVal Original_IDEMPLEADO As Decimal, ByVal Original_IDPUESTO As Global.System.Nullable(Of Decimal), ByVal Original_IDEPTOP As Global.System.Nullable(Of Decimal), ByVal Original_NOMBRE As String, ByVal Original_APELLIDO As String, ByVal Original_DPI As String, ByVal Original_USUARIO As String, ByVal Original_CONTRASENA As String) As Integer
             Return Me.Update(Original_IDEMPLEADO, IDPUESTO, IDEPTOP, NOMBRE, APELLIDO, DPI, USUARIO, CONTRASENA, Original_IDEMPLEADO, Original_IDPUESTO, Original_IDEPTOP, Original_NOMBRE, Original_APELLIDO, Original_DPI, Original_USUARIO, Original_CONTRASENA)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function SP_ADD_EMPLEADO(ByVal VIDPUESTO As Global.System.Nullable(Of Decimal), ByVal VIDPTOP As Global.System.Nullable(Of Decimal), ByVal VNOMBRE As String, ByVal VAPELLIDO As String, ByVal VDPI As String, ByVal VUSUARIO As String, ByVal VCONTRASENA As String) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(1)
+            If (VIDPUESTO.HasValue = True) Then
+                command.Parameters(0).Value = CType(VIDPUESTO.Value, Decimal)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (VIDPTOP.HasValue = True) Then
+                command.Parameters(1).Value = CType(VIDPTOP.Value, Decimal)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (VNOMBRE Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(VNOMBRE, String)
+            End If
+            If (VAPELLIDO Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(VAPELLIDO, String)
+            End If
+            If (VDPI Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(VDPI, String)
+            End If
+            If (VUSUARIO Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(VUSUARIO, String)
+            End If
+            If (VCONTRASENA Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(VCONTRASENA, String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open()
+            End If
+            Dim returnValue As Integer
+            Try
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close()
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

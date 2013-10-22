@@ -23,29 +23,17 @@ Partial Class frmCliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCliente))
         Dim NOMBRELabel As System.Windows.Forms.Label
         Dim APELLIDOLabel As System.Windows.Forms.Label
         Dim DIRECCIONLabel As System.Windows.Forms.Label
         Dim TELEFONOLabel As System.Windows.Forms.Label
         Dim DPILabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCliente))
+        Dim Label4 As System.Windows.Forms.Label
         Me.DS = New Banco.DS()
         Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CLIENTETableAdapter = New Banco.DSTableAdapters.CLIENTETableAdapter()
         Me.TableAdapterManager = New Banco.DSTableAdapters.TableAdapterManager()
-        Me.CLIENTEBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.CLIENTEBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.CLIENTEDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,24 +43,36 @@ Partial Class frmCliente
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DPITextBox = New System.Windows.Forms.TextBox()
+        Me.TELEFONOTextBox = New System.Windows.Forms.TextBox()
+        Me.DIRECCIONTextBox = New System.Windows.Forms.TextBox()
+        Me.APELLIDOTextBox = New System.Windows.Forms.TextBox()
+        Me.NOMBRETextBox = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
-        Me.NOMBRETextBox = New System.Windows.Forms.TextBox()
-        Me.APELLIDOTextBox = New System.Windows.Forms.TextBox()
-        Me.DIRECCIONTextBox = New System.Windows.Forms.TextBox()
-        Me.TELEFONOTextBox = New System.Windows.Forms.TextBox()
-        Me.DPITextBox = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CLIENTEBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.CLIENTEBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         NOMBRELabel = New System.Windows.Forms.Label()
         APELLIDOLabel = New System.Windows.Forms.Label()
         DIRECCIONLabel = New System.Windows.Forms.Label()
         TELEFONOLabel = New System.Windows.Forms.Label()
         DPILabel = New System.Windows.Forms.Label()
+        Label4 = New System.Windows.Forms.Label()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CLIENTEBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CLIENTEBindingNavigator.SuspendLayout()
         CType(Me.CLIENTEDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -80,7 +80,54 @@ Partial Class frmCliente
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
+        CType(Me.CLIENTEBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CLIENTEBindingNavigator.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'NOMBRELabel
+        '
+        NOMBRELabel.AutoSize = True
+        NOMBRELabel.Location = New System.Drawing.Point(37, 111)
+        NOMBRELabel.Name = "NOMBRELabel"
+        NOMBRELabel.Size = New System.Drawing.Size(57, 13)
+        NOMBRELabel.TabIndex = 0
+        NOMBRELabel.Text = "NOMBRE:"
+        '
+        'APELLIDOLabel
+        '
+        APELLIDOLabel.AutoSize = True
+        APELLIDOLabel.Location = New System.Drawing.Point(224, 115)
+        APELLIDOLabel.Name = "APELLIDOLabel"
+        APELLIDOLabel.Size = New System.Drawing.Size(62, 13)
+        APELLIDOLabel.TabIndex = 2
+        APELLIDOLabel.Text = "APELLIDO:"
+        '
+        'DIRECCIONLabel
+        '
+        DIRECCIONLabel.AutoSize = True
+        DIRECCIONLabel.Location = New System.Drawing.Point(26, 148)
+        DIRECCIONLabel.Name = "DIRECCIONLabel"
+        DIRECCIONLabel.Size = New System.Drawing.Size(69, 13)
+        DIRECCIONLabel.TabIndex = 4
+        DIRECCIONLabel.Text = "DIRECCION:"
+        '
+        'TELEFONOLabel
+        '
+        TELEFONOLabel.AutoSize = True
+        TELEFONOLabel.Location = New System.Drawing.Point(224, 156)
+        TELEFONOLabel.Name = "TELEFONOLabel"
+        TELEFONOLabel.Size = New System.Drawing.Size(67, 13)
+        TELEFONOLabel.TabIndex = 6
+        TELEFONOLabel.Text = "TELEFONO:"
+        '
+        'DPILabel
+        '
+        DPILabel.AutoSize = True
+        DPILabel.Location = New System.Drawing.Point(66, 74)
+        DPILabel.Name = "DPILabel"
+        DPILabel.Size = New System.Drawing.Size(28, 13)
+        DPILabel.TabIndex = 8
+        DPILabel.Text = "DPI:"
         '
         'DS
         '
@@ -109,118 +156,6 @@ Partial Class frmCliente
         Me.TableAdapterManager.TRANSACIONTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Banco.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.USUARIOTableAdapter = Nothing
-        '
-        'CLIENTEBindingNavigator
-        '
-        Me.CLIENTEBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.CLIENTEBindingNavigator.BindingSource = Me.CLIENTEBindingSource
-        Me.CLIENTEBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.CLIENTEBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.CLIENTEBindingNavigator.Dock = System.Windows.Forms.DockStyle.None
-        Me.CLIENTEBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.CLIENTEBindingNavigatorSaveItem})
-        Me.CLIENTEBindingNavigator.Location = New System.Drawing.Point(3, 0)
-        Me.CLIENTEBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.CLIENTEBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.CLIENTEBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.CLIENTEBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.CLIENTEBindingNavigator.Name = "CLIENTEBindingNavigator"
-        Me.CLIENTEBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.CLIENTEBindingNavigator.Size = New System.Drawing.Size(280, 25)
-        Me.CLIENTEBindingNavigator.TabIndex = 0
-        Me.CLIENTEBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Posición"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Mover último"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
-        '
-        'CLIENTEBindingNavigatorSaveItem
-        '
-        Me.CLIENTEBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.CLIENTEBindingNavigatorSaveItem.Image = CType(resources.GetObject("CLIENTEBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.CLIENTEBindingNavigatorSaveItem.Name = "CLIENTEBindingNavigatorSaveItem"
-        Me.CLIENTEBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.CLIENTEBindingNavigatorSaveItem.Text = "Guardar datos"
         '
         'CLIENTEDataGridView
         '
@@ -285,6 +220,8 @@ Partial Class frmCliente
         'TabPage1
         '
         Me.TabPage1.AutoScroll = True
+        Me.TabPage1.Controls.Add(Label4)
+        Me.TabPage1.Controls.Add(Me.TextBox2)
         Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(DPILabel)
@@ -304,6 +241,66 @@ Partial Class frmCliente
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Agregar"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(100, 201)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 54)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Guardar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(24, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(300, 25)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Agregar Usuario al Sistema"
+        '
+        'DPITextBox
+        '
+        Me.DPITextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DPITextBox.Location = New System.Drawing.Point(100, 71)
+        Me.DPITextBox.Name = "DPITextBox"
+        Me.DPITextBox.Size = New System.Drawing.Size(100, 24)
+        Me.DPITextBox.TabIndex = 0
+        '
+        'TELEFONOTextBox
+        '
+        Me.TELEFONOTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TELEFONOTextBox.Location = New System.Drawing.Point(292, 156)
+        Me.TELEFONOTextBox.Name = "TELEFONOTextBox"
+        Me.TELEFONOTextBox.Size = New System.Drawing.Size(100, 24)
+        Me.TELEFONOTextBox.TabIndex = 4
+        '
+        'DIRECCIONTextBox
+        '
+        Me.DIRECCIONTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DIRECCIONTextBox.Location = New System.Drawing.Point(101, 145)
+        Me.DIRECCIONTextBox.Name = "DIRECCIONTextBox"
+        Me.DIRECCIONTextBox.Size = New System.Drawing.Size(100, 24)
+        Me.DIRECCIONTextBox.TabIndex = 3
+        '
+        'APELLIDOTextBox
+        '
+        Me.APELLIDOTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.APELLIDOTextBox.Location = New System.Drawing.Point(292, 112)
+        Me.APELLIDOTextBox.Name = "APELLIDOTextBox"
+        Me.APELLIDOTextBox.Size = New System.Drawing.Size(100, 24)
+        Me.APELLIDOTextBox.TabIndex = 2
+        '
+        'NOMBRETextBox
+        '
+        Me.NOMBRETextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NOMBRETextBox.Location = New System.Drawing.Point(100, 108)
+        Me.NOMBRETextBox.Name = "NOMBRETextBox"
+        Me.NOMBRETextBox.Size = New System.Drawing.Size(100, 24)
+        Me.NOMBRETextBox.TabIndex = 1
         '
         'TabPage2
         '
@@ -334,110 +331,125 @@ Partial Class frmCliente
         '
         Me.ToolStripContainer1.TopToolStripPanel.Controls.Add(Me.CLIENTEBindingNavigator)
         '
-        'NOMBRELabel
+        'CLIENTEBindingNavigator
         '
-        NOMBRELabel.AutoSize = True
-        NOMBRELabel.Location = New System.Drawing.Point(37, 111)
-        NOMBRELabel.Name = "NOMBRELabel"
-        NOMBRELabel.Size = New System.Drawing.Size(57, 13)
-        NOMBRELabel.TabIndex = 0
-        NOMBRELabel.Text = "NOMBRE:"
+        Me.CLIENTEBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.CLIENTEBindingNavigator.BindingSource = Me.CLIENTEBindingSource
+        Me.CLIENTEBindingNavigator.CountItem = Me.BindingNavigatorCountItem
+        Me.CLIENTEBindingNavigator.DeleteItem = Nothing
+        Me.CLIENTEBindingNavigator.Dock = System.Windows.Forms.DockStyle.None
+        Me.CLIENTEBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.CLIENTEBindingNavigatorSaveItem})
+        Me.CLIENTEBindingNavigator.Location = New System.Drawing.Point(3, 0)
+        Me.CLIENTEBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
+        Me.CLIENTEBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
+        Me.CLIENTEBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
+        Me.CLIENTEBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
+        Me.CLIENTEBindingNavigator.Name = "CLIENTEBindingNavigator"
+        Me.CLIENTEBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
+        Me.CLIENTEBindingNavigator.Size = New System.Drawing.Size(257, 25)
+        Me.CLIENTEBindingNavigator.TabIndex = 0
+        Me.CLIENTEBindingNavigator.Text = "BindingNavigator1"
         '
-        'NOMBRETextBox
+        'BindingNavigatorAddNewItem
         '
-        Me.NOMBRETextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NOMBRETextBox.Location = New System.Drawing.Point(100, 108)
-        Me.NOMBRETextBox.Name = "NOMBRETextBox"
-        Me.NOMBRETextBox.Size = New System.Drawing.Size(100, 24)
-        Me.NOMBRETextBox.TabIndex = 2
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
         '
-        'APELLIDOLabel
+        'BindingNavigatorCountItem
         '
-        APELLIDOLabel.AutoSize = True
-        APELLIDOLabel.Location = New System.Drawing.Point(224, 115)
-        APELLIDOLabel.Name = "APELLIDOLabel"
-        APELLIDOLabel.Size = New System.Drawing.Size(62, 13)
-        APELLIDOLabel.TabIndex = 2
-        APELLIDOLabel.Text = "APELLIDO:"
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
+        Me.BindingNavigatorCountItem.Text = "de {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
         '
-        'APELLIDOTextBox
+        'BindingNavigatorMoveFirstItem
         '
-        Me.APELLIDOTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.APELLIDOTextBox.Location = New System.Drawing.Point(292, 112)
-        Me.APELLIDOTextBox.Name = "APELLIDOTextBox"
-        Me.APELLIDOTextBox.Size = New System.Drawing.Size(100, 24)
-        Me.APELLIDOTextBox.TabIndex = 3
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
         '
-        'DIRECCIONLabel
+        'BindingNavigatorMovePreviousItem
         '
-        DIRECCIONLabel.AutoSize = True
-        DIRECCIONLabel.Location = New System.Drawing.Point(26, 148)
-        DIRECCIONLabel.Name = "DIRECCIONLabel"
-        DIRECCIONLabel.Size = New System.Drawing.Size(69, 13)
-        DIRECCIONLabel.TabIndex = 4
-        DIRECCIONLabel.Text = "DIRECCION:"
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
         '
-        'DIRECCIONTextBox
+        'BindingNavigatorSeparator
         '
-        Me.DIRECCIONTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DIRECCIONTextBox.Location = New System.Drawing.Point(101, 145)
-        Me.DIRECCIONTextBox.Name = "DIRECCIONTextBox"
-        Me.DIRECCIONTextBox.Size = New System.Drawing.Size(100, 24)
-        Me.DIRECCIONTextBox.TabIndex = 4
+        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
         '
-        'TELEFONOLabel
+        'BindingNavigatorPositionItem
         '
-        TELEFONOLabel.AutoSize = True
-        TELEFONOLabel.Location = New System.Drawing.Point(224, 156)
-        TELEFONOLabel.Name = "TELEFONOLabel"
-        TELEFONOLabel.Size = New System.Drawing.Size(67, 13)
-        TELEFONOLabel.TabIndex = 6
-        TELEFONOLabel.Text = "TELEFONO:"
+        Me.BindingNavigatorPositionItem.AccessibleName = "Posición"
+        Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
+        Me.BindingNavigatorPositionItem.Text = "0"
+        Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
         '
-        'TELEFONOTextBox
+        'BindingNavigatorSeparator1
         '
-        Me.TELEFONOTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TELEFONOTextBox.Location = New System.Drawing.Point(292, 156)
-        Me.TELEFONOTextBox.Name = "TELEFONOTextBox"
-        Me.TELEFONOTextBox.Size = New System.Drawing.Size(100, 24)
-        Me.TELEFONOTextBox.TabIndex = 5
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
-        'DPILabel
+        'BindingNavigatorMoveNextItem
         '
-        DPILabel.AutoSize = True
-        DPILabel.Location = New System.Drawing.Point(66, 74)
-        DPILabel.Name = "DPILabel"
-        DPILabel.Size = New System.Drawing.Size(28, 13)
-        DPILabel.TabIndex = 8
-        DPILabel.Text = "DPI:"
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
         '
-        'DPITextBox
+        'BindingNavigatorMoveLastItem
         '
-        Me.DPITextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DPITextBox.Location = New System.Drawing.Point(100, 71)
-        Me.DPITextBox.Name = "DPITextBox"
-        Me.DPITextBox.Size = New System.Drawing.Size(100, 24)
-        Me.DPITextBox.TabIndex = 1
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveLastItem.Text = "Mover último"
         '
-        'Label1
+        'BindingNavigatorSeparator2
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(24, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(300, 25)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Agregar Usuario al Sistema"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
-        'Button1
+        'CLIENTEBindingNavigatorSaveItem
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(100, 201)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 54)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.CLIENTEBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.CLIENTEBindingNavigatorSaveItem.Image = CType(resources.GetObject("CLIENTEBindingNavigatorSaveItem.Image"), System.Drawing.Image)
+        Me.CLIENTEBindingNavigatorSaveItem.Name = "CLIENTEBindingNavigatorSaveItem"
+        Me.CLIENTEBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
+        Me.CLIENTEBindingNavigatorSaveItem.Text = "Guardar datos"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Location = New System.Drawing.Point(206, 242)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(85, 13)
+        Label4.TabIndex = 32
+        Label4.Text = "MONTO TOTAL"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(292, 231)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 24)
+        Me.TextBox2.TabIndex = 31
         '
         'frmCliente
         '
@@ -449,9 +461,6 @@ Partial Class frmCliente
         Me.Text = "Clientes"
         CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CLIENTEBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CLIENTEBindingNavigator.ResumeLayout(False)
-        Me.CLIENTEBindingNavigator.PerformLayout()
         CType(Me.CLIENTEDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -462,6 +471,9 @@ Partial Class frmCliente
         Me.ToolStripContainer1.TopToolStripPanel.PerformLayout()
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
+        CType(Me.CLIENTEBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CLIENTEBindingNavigator.ResumeLayout(False)
+        Me.CLIENTEBindingNavigator.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -469,19 +481,6 @@ Partial Class frmCliente
     Friend WithEvents CLIENTEBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents CLIENTETableAdapter As Banco.DSTableAdapters.CLIENTETableAdapter
     Friend WithEvents TableAdapterManager As Banco.DSTableAdapters.TableAdapterManager
-    Friend WithEvents CLIENTEBindingNavigator As System.Windows.Forms.BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents CLIENTEBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
     Friend WithEvents CLIENTEDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -500,4 +499,17 @@ Partial Class frmCliente
     Friend WithEvents NOMBRETextBox As System.Windows.Forms.TextBox
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
+    Friend WithEvents CLIENTEBindingNavigator As System.Windows.Forms.BindingNavigator
+    Friend WithEvents BindingNavigatorAddNewItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorCountItem As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents BindingNavigatorMoveFirstItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorMovePreviousItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents BindingNavigatorSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BindingNavigatorMoveNextItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorMoveLastItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents CLIENTEBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
 End Class

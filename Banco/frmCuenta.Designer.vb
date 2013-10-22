@@ -26,36 +26,25 @@ Partial Class frmCuenta
         Dim ESTADOLabel As System.Windows.Forms.Label
         Dim SALDOLabel As System.Windows.Forms.Label
         Dim IDTIPOCUENTALabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCuenta))
         Dim IDCLIENTELabel As System.Windows.Forms.Label
         Me.DS = New Banco.DS()
         Me.CUENTABindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CUENTATableAdapter = New Banco.DSTableAdapters.CUENTATableAdapter()
         Me.TableAdapterManager = New Banco.DSTableAdapters.TableAdapterManager()
-        Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CLIENTETableAdapter = New Banco.DSTableAdapters.CLIENTETableAdapter()
-        Me.FKTARJETACUENTA1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TARJETATableAdapter = New Banco.DSTableAdapters.TARJETATableAdapter()
-        Me.TIPOCUENTABindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TIPOCUENTATableAdapter = New Banco.DSTableAdapters.TIPOCUENTATableAdapter()
+        Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.FKTARJETACUENTA1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TIPOCUENTABindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ESTADOTextBox = New System.Windows.Forms.TextBox()
         Me.SALDOTextBox = New System.Windows.Forms.TextBox()
         Me.IDTIPOCUENTAComboBox = New System.Windows.Forms.ComboBox()
-        Me.CUENTABindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.CUENTABindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.IDCLIENTEComboBox = New System.Windows.Forms.ComboBox()
         Me.btGuardar = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         ESTADOLabel = New System.Windows.Forms.Label()
         SALDOLabel = New System.Windows.Forms.Label()
         IDTIPOCUENTALabel = New System.Windows.Forms.Label()
@@ -65,9 +54,49 @@ Partial Class frmCuenta
         CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FKTARJETACUENTA1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TIPOCUENTABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CUENTABindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CUENTABindingNavigator.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'ESTADOLabel
+        '
+        ESTADOLabel.AutoSize = True
+        ESTADOLabel.Location = New System.Drawing.Point(73, 242)
+        ESTADOLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        ESTADOLabel.Name = "ESTADOLabel"
+        ESTADOLabel.Size = New System.Drawing.Size(73, 18)
+        ESTADOLabel.TabIndex = 16
+        ESTADOLabel.Text = "ESTADO:"
+        '
+        'SALDOLabel
+        '
+        SALDOLabel.AutoSize = True
+        SALDOLabel.Location = New System.Drawing.Point(73, 181)
+        SALDOLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        SALDOLabel.Name = "SALDOLabel"
+        SALDOLabel.Size = New System.Drawing.Size(62, 18)
+        SALDOLabel.TabIndex = 14
+        SALDOLabel.Text = "SALDO:"
+        '
+        'IDTIPOCUENTALabel
+        '
+        IDTIPOCUENTALabel.AutoSize = True
+        IDTIPOCUENTALabel.Location = New System.Drawing.Point(73, 111)
+        IDTIPOCUENTALabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        IDTIPOCUENTALabel.Name = "IDTIPOCUENTALabel"
+        IDTIPOCUENTALabel.Size = New System.Drawing.Size(111, 18)
+        IDTIPOCUENTALabel.TabIndex = 12
+        IDTIPOCUENTALabel.Text = "TIPO CUENTA:"
+        '
+        'IDCLIENTELabel
+        '
+        IDCLIENTELabel.AutoSize = True
+        IDCLIENTELabel.Location = New System.Drawing.Point(73, 57)
+        IDCLIENTELabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        IDCLIENTELabel.Name = "IDCLIENTELabel"
+        IDCLIENTELabel.Size = New System.Drawing.Size(74, 18)
+        IDCLIENTELabel.TabIndex = 9
+        IDCLIENTELabel.Text = "CLIENTE:"
         '
         'DS
         '
@@ -97,80 +126,50 @@ Partial Class frmCuenta
         Me.TableAdapterManager.UpdateOrder = Banco.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.USUARIOTableAdapter = Nothing
         '
+        'CLIENTETableAdapter
+        '
+        Me.CLIENTETableAdapter.ClearBeforeFill = True
+        '
+        'TARJETATableAdapter
+        '
+        Me.TARJETATableAdapter.ClearBeforeFill = True
+        '
+        'TIPOCUENTATableAdapter
+        '
+        Me.TIPOCUENTATableAdapter.ClearBeforeFill = True
+        '
         'CLIENTEBindingSource
         '
         Me.CLIENTEBindingSource.DataMember = "CLIENTE"
         Me.CLIENTEBindingSource.DataSource = Me.DS
-        '
-        'CLIENTETableAdapter
-        '
-        Me.CLIENTETableAdapter.ClearBeforeFill = True
         '
         'FKTARJETACUENTA1BindingSource
         '
         Me.FKTARJETACUENTA1BindingSource.DataMember = "FK_TARJETA_CUENTA_1"
         Me.FKTARJETACUENTA1BindingSource.DataSource = Me.CUENTABindingSource
         '
-        'TARJETATableAdapter
-        '
-        Me.TARJETATableAdapter.ClearBeforeFill = True
-        '
         'TIPOCUENTABindingSource
         '
         Me.TIPOCUENTABindingSource.DataMember = "TIPOCUENTA"
         Me.TIPOCUENTABindingSource.DataSource = Me.DS
         '
-        'TIPOCUENTATableAdapter
-        '
-        Me.TIPOCUENTATableAdapter.ClearBeforeFill = True
-        '
-        'ESTADOLabel
-        '
-        ESTADOLabel.AutoSize = True
-        ESTADOLabel.Location = New System.Drawing.Point(84, 295)
-        ESTADOLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        ESTADOLabel.Name = "ESTADOLabel"
-        ESTADOLabel.Size = New System.Drawing.Size(73, 18)
-        ESTADOLabel.TabIndex = 16
-        ESTADOLabel.Text = "ESTADO:"
-        '
         'ESTADOTextBox
         '
         Me.ESTADOTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CUENTABindingSource, "ESTADO", True))
-        Me.ESTADOTextBox.Location = New System.Drawing.Point(202, 292)
-        Me.ESTADOTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ESTADOTextBox.Location = New System.Drawing.Point(191, 239)
+        Me.ESTADOTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.ESTADOTextBox.Name = "ESTADOTextBox"
         Me.ESTADOTextBox.Size = New System.Drawing.Size(180, 24)
-        Me.ESTADOTextBox.TabIndex = 17
-        '
-        'SALDOLabel
-        '
-        SALDOLabel.AutoSize = True
-        SALDOLabel.Location = New System.Drawing.Point(84, 234)
-        SALDOLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        SALDOLabel.Name = "SALDOLabel"
-        SALDOLabel.Size = New System.Drawing.Size(62, 18)
-        SALDOLabel.TabIndex = 14
-        SALDOLabel.Text = "SALDO:"
+        Me.ESTADOTextBox.TabIndex = 3
         '
         'SALDOTextBox
         '
         Me.SALDOTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CUENTABindingSource, "SALDO", True))
-        Me.SALDOTextBox.Location = New System.Drawing.Point(202, 231)
-        Me.SALDOTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SALDOTextBox.Location = New System.Drawing.Point(191, 178)
+        Me.SALDOTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.SALDOTextBox.Name = "SALDOTextBox"
         Me.SALDOTextBox.Size = New System.Drawing.Size(180, 24)
-        Me.SALDOTextBox.TabIndex = 15
-        '
-        'IDTIPOCUENTALabel
-        '
-        IDTIPOCUENTALabel.AutoSize = True
-        IDTIPOCUENTALabel.Location = New System.Drawing.Point(84, 164)
-        IDTIPOCUENTALabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        IDTIPOCUENTALabel.Name = "IDTIPOCUENTALabel"
-        IDTIPOCUENTALabel.Size = New System.Drawing.Size(111, 18)
-        IDTIPOCUENTALabel.TabIndex = 12
-        IDTIPOCUENTALabel.Text = "TIPO CUENTA:"
+        Me.SALDOTextBox.TabIndex = 2
         '
         'IDTIPOCUENTAComboBox
         '
@@ -178,135 +177,12 @@ Partial Class frmCuenta
         Me.IDTIPOCUENTAComboBox.DataSource = Me.TIPOCUENTABindingSource
         Me.IDTIPOCUENTAComboBox.DisplayMember = "TIPOCUENTA"
         Me.IDTIPOCUENTAComboBox.FormattingEnabled = True
-        Me.IDTIPOCUENTAComboBox.Location = New System.Drawing.Point(203, 161)
-        Me.IDTIPOCUENTAComboBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.IDTIPOCUENTAComboBox.Location = New System.Drawing.Point(192, 108)
+        Me.IDTIPOCUENTAComboBox.Margin = New System.Windows.Forms.Padding(4)
         Me.IDTIPOCUENTAComboBox.Name = "IDTIPOCUENTAComboBox"
         Me.IDTIPOCUENTAComboBox.Size = New System.Drawing.Size(180, 26)
-        Me.IDTIPOCUENTAComboBox.TabIndex = 13
+        Me.IDTIPOCUENTAComboBox.TabIndex = 1
         Me.IDTIPOCUENTAComboBox.ValueMember = "IDTIPOCUENTA"
-        '
-        'CUENTABindingNavigator
-        '
-        Me.CUENTABindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.CUENTABindingNavigator.BindingSource = Me.CUENTABindingSource
-        Me.CUENTABindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.CUENTABindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.CUENTABindingNavigator.Dock = System.Windows.Forms.DockStyle.None
-        Me.CUENTABindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.CUENTABindingNavigatorSaveItem})
-        Me.CUENTABindingNavigator.Location = New System.Drawing.Point(36, 23)
-        Me.CUENTABindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.CUENTABindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.CUENTABindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.CUENTABindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.CUENTABindingNavigator.Name = "CUENTABindingNavigator"
-        Me.CUENTABindingNavigator.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.CUENTABindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.CUENTABindingNavigator.Size = New System.Drawing.Size(335, 25)
-        Me.CUENTABindingNavigator.TabIndex = 10
-        Me.CUENTABindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Posición"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(73, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Mover último"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'CUENTABindingNavigatorSaveItem
-        '
-        Me.CUENTABindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.CUENTABindingNavigatorSaveItem.Image = CType(resources.GetObject("CUENTABindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.CUENTABindingNavigatorSaveItem.Name = "CUENTABindingNavigatorSaveItem"
-        Me.CUENTABindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.CUENTABindingNavigatorSaveItem.Text = "Guardar datos"
-        '
-        'IDCLIENTELabel
-        '
-        IDCLIENTELabel.AutoSize = True
-        IDCLIENTELabel.Location = New System.Drawing.Point(84, 110)
-        IDCLIENTELabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        IDCLIENTELabel.Name = "IDCLIENTELabel"
-        IDCLIENTELabel.Size = New System.Drawing.Size(74, 18)
-        IDCLIENTELabel.TabIndex = 9
-        IDCLIENTELabel.Text = "CLIENTE:"
         '
         'IDCLIENTEComboBox
         '
@@ -314,39 +190,70 @@ Partial Class frmCuenta
         Me.IDCLIENTEComboBox.DataSource = Me.CLIENTEBindingSource
         Me.IDCLIENTEComboBox.DisplayMember = "NOMBRE"
         Me.IDCLIENTEComboBox.FormattingEnabled = True
-        Me.IDCLIENTEComboBox.Location = New System.Drawing.Point(202, 107)
-        Me.IDCLIENTEComboBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.IDCLIENTEComboBox.Location = New System.Drawing.Point(191, 54)
+        Me.IDCLIENTEComboBox.Margin = New System.Windows.Forms.Padding(4)
         Me.IDCLIENTEComboBox.Name = "IDCLIENTEComboBox"
         Me.IDCLIENTEComboBox.Size = New System.Drawing.Size(180, 26)
-        Me.IDCLIENTEComboBox.TabIndex = 11
+        Me.IDCLIENTEComboBox.TabIndex = 0
         Me.IDCLIENTEComboBox.ValueMember = "IDCLIENTE"
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(453, 272)
+        Me.btGuardar.Location = New System.Drawing.Point(423, 222)
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(127, 41)
-        Me.btGuardar.TabIndex = 18
+        Me.btGuardar.TabIndex = 4
         Me.btGuardar.Text = "Crear Cuenta"
         Me.btGuardar.UseVisualStyleBackColor = True
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(638, 371)
+        Me.TabControl1.TabIndex = 17
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.IDCLIENTEComboBox)
+        Me.TabPage1.Controls.Add(Me.btGuardar)
+        Me.TabPage1.Controls.Add(IDCLIENTELabel)
+        Me.TabPage1.Controls.Add(ESTADOLabel)
+        Me.TabPage1.Controls.Add(Me.IDTIPOCUENTAComboBox)
+        Me.TabPage1.Controls.Add(Me.ESTADOTextBox)
+        Me.TabPage1.Controls.Add(IDTIPOCUENTALabel)
+        Me.TabPage1.Controls.Add(SALDOLabel)
+        Me.TabPage1.Controls.Add(Me.SALDOTextBox)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(630, 340)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(192, 69)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'frmCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(638, 371)
-        Me.Controls.Add(Me.btGuardar)
-        Me.Controls.Add(ESTADOLabel)
-        Me.Controls.Add(Me.ESTADOTextBox)
-        Me.Controls.Add(SALDOLabel)
-        Me.Controls.Add(Me.SALDOTextBox)
-        Me.Controls.Add(IDTIPOCUENTALabel)
-        Me.Controls.Add(Me.IDTIPOCUENTAComboBox)
-        Me.Controls.Add(Me.CUENTABindingNavigator)
-        Me.Controls.Add(IDCLIENTELabel)
-        Me.Controls.Add(Me.IDCLIENTEComboBox)
+        Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmCuenta"
         Me.Text = "Funciones Con Cuentas"
         CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
@@ -354,11 +261,10 @@ Partial Class frmCuenta
         CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FKTARJETACUENTA1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TIPOCUENTABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CUENTABindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CUENTABindingNavigator.ResumeLayout(False)
-        Me.CUENTABindingNavigator.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents DS As Banco.DS
@@ -374,19 +280,9 @@ Partial Class frmCuenta
     Friend WithEvents ESTADOTextBox As System.Windows.Forms.TextBox
     Friend WithEvents SALDOTextBox As System.Windows.Forms.TextBox
     Friend WithEvents IDTIPOCUENTAComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents CUENTABindingNavigator As System.Windows.Forms.BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents CUENTABindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
     Friend WithEvents IDCLIENTEComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents btGuardar As System.Windows.Forms.Button
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
 End Class
