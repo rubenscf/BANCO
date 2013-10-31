@@ -27,6 +27,7 @@ Partial Class frmCuenta
         Dim SALDOLabel As System.Windows.Forms.Label
         Dim IDTIPOCUENTALabel As System.Windows.Forms.Label
         Dim IDCLIENTELabel As System.Windows.Forms.Label
+        Dim Label1 As System.Windows.Forms.Label
         Me.DS = New Banco.DS()
         Me.CUENTABindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CUENTATableAdapter = New Banco.DSTableAdapters.CUENTATableAdapter()
@@ -49,6 +50,7 @@ Partial Class frmCuenta
         SALDOLabel = New System.Windows.Forms.Label()
         IDTIPOCUENTALabel = New System.Windows.Forms.Label()
         IDCLIENTELabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CUENTABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -219,6 +221,7 @@ Partial Class frmCuenta
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Label1)
         Me.TabPage1.Controls.Add(Me.IDCLIENTEComboBox)
         Me.TabPage1.Controls.Add(Me.btGuardar)
         Me.TabPage1.Controls.Add(IDCLIENTELabel)
@@ -245,6 +248,16 @@ Partial Class frmCuenta
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(420, 80)
+        Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(73, 18)
+        Label1.TabIndex = 17
+        Label1.Text = "BORAME"
         '
         'frmCuenta
         '
