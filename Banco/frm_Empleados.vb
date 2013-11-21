@@ -75,5 +75,12 @@ Public Class frm_Empleados
         Me.EMPLEADOTableAdapter.Fill(Me.DS.EMPLEADO)
         EMPLEADODataGridView.Refresh()
 
+
+
+    End Sub
+
+
+    Private Sub EMPLEADODataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles EMPLEADODataGridView.CellContentClick
+
     End Sub
 End Class

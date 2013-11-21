@@ -35,8 +35,6 @@ Partial Class frm_Empleados
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CONTRASENATextBox = New System.Windows.Forms.TextBox()
-        Me.EMPLEADOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS = New Banco.DS()
         Me.USUARIOTextBox = New System.Windows.Forms.TextBox()
         Me.DPITextBox = New System.Windows.Forms.TextBox()
         Me.APELLIDOTextBox = New System.Windows.Forms.TextBox()
@@ -44,11 +42,7 @@ Partial Class frm_Empleados
         Me.IDEPTOPComboBox = New System.Windows.Forms.ComboBox()
         Me.IDPUESTOComboBox = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.EMPLEADOTableAdapter = New Banco.DSTableAdapters.EMPLEADOTableAdapter()
-        Me.TableAdapterManager = New Banco.DSTableAdapters.TableAdapterManager()
-        Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
-        Me.ToolStripContainer2 = New System.Windows.Forms.ToolStripContainer()
-        Me.ToolStripContainer3 = New System.Windows.Forms.ToolStripContainer()
+        Me.btUPDATE = New System.Windows.Forms.Button()
         Me.EMPLEADODataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,7 +50,13 @@ Partial Class frm_Empleados
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btUPDATE = New System.Windows.Forms.Button()
+        Me.EMPLEADOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS = New Banco.DS()
+        Me.EMPLEADOTableAdapter = New Banco.DSTableAdapters.EMPLEADOTableAdapter()
+        Me.TableAdapterManager = New Banco.DSTableAdapters.TableAdapterManager()
+        Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
+        Me.ToolStripContainer2 = New System.Windows.Forms.ToolStripContainer()
+        Me.ToolStripContainer3 = New System.Windows.Forms.ToolStripContainer()
         IDPUESTOLabel = New System.Windows.Forms.Label()
         IDEPTOPLabel = New System.Windows.Forms.Label()
         NOMBRELabel = New System.Windows.Forms.Label()
@@ -66,13 +66,13 @@ Partial Class frm_Empleados
         CONTRASENALabel = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.EMPLEADODataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EMPLEADOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         Me.ToolStripContainer2.SuspendLayout()
         Me.ToolStripContainer3.SuspendLayout()
-        CType(Me.EMPLEADODataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IDPUESTOLabel
@@ -202,16 +202,6 @@ Partial Class frm_Empleados
         Me.CONTRASENATextBox.Size = New System.Drawing.Size(131, 20)
         Me.CONTRASENATextBox.TabIndex = 13
         '
-        'EMPLEADOBindingSource
-        '
-        Me.EMPLEADOBindingSource.DataMember = "EMPLEADO"
-        Me.EMPLEADOBindingSource.DataSource = Me.DS
-        '
-        'DS
-        '
-        Me.DS.DataSetName = "DS"
-        Me.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'USUARIOTextBox
         '
         Me.USUARIOTextBox.Location = New System.Drawing.Point(389, 105)
@@ -269,6 +259,74 @@ Partial Class frm_Empleados
         Me.TabPage2.Text = "EDITAR"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btUPDATE
+        '
+        Me.btUPDATE.Location = New System.Drawing.Point(766, 6)
+        Me.btUPDATE.Name = "btUPDATE"
+        Me.btUPDATE.Size = New System.Drawing.Size(162, 30)
+        Me.btUPDATE.TabIndex = 2
+        Me.btUPDATE.Text = "GUARDAR CAMBIOS"
+        Me.btUPDATE.UseVisualStyleBackColor = True
+        '
+        'EMPLEADODataGridView
+        '
+        Me.EMPLEADODataGridView.AutoGenerateColumns = False
+        Me.EMPLEADODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.EMPLEADODataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
+        Me.EMPLEADODataGridView.DataSource = Me.EMPLEADOBindingSource
+        Me.EMPLEADODataGridView.Location = New System.Drawing.Point(6, 42)
+        Me.EMPLEADODataGridView.Name = "EMPLEADODataGridView"
+        Me.EMPLEADODataGridView.Size = New System.Drawing.Size(929, 326)
+        Me.EMPLEADODataGridView.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IDEMPLEADO"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "CODIGO"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "NOMBRE"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "NOMBRE"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "APELLIDO"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "APELLIDO"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "DPI"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "DPI"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "USUARIO"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "USUARIO"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "CONTRASENA"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "CONTRASENA"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        '
+        'EMPLEADOBindingSource
+        '
+        Me.EMPLEADOBindingSource.DataMember = "EMPLEADO"
+        Me.EMPLEADOBindingSource.DataSource = Me.DS
+        '
+        'DS
+        '
+        Me.DS.DataSetName = "DS"
+        Me.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'EMPLEADOTableAdapter
         '
         Me.EMPLEADOTableAdapter.ClearBeforeFill = True
@@ -324,64 +382,6 @@ Partial Class frm_Empleados
         Me.ToolStripContainer3.TabIndex = 0
         Me.ToolStripContainer3.Text = "ToolStripContainer3"
         '
-        'EMPLEADODataGridView
-        '
-        Me.EMPLEADODataGridView.AutoGenerateColumns = False
-        Me.EMPLEADODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EMPLEADODataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
-        Me.EMPLEADODataGridView.DataSource = Me.EMPLEADOBindingSource
-        Me.EMPLEADODataGridView.Location = New System.Drawing.Point(6, 42)
-        Me.EMPLEADODataGridView.Name = "EMPLEADODataGridView"
-        Me.EMPLEADODataGridView.Size = New System.Drawing.Size(929, 326)
-        Me.EMPLEADODataGridView.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IDEMPLEADO"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "CODIGO"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "NOMBRE"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "NOMBRE"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "APELLIDO"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "APELLIDO"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "DPI"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "DPI"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "USUARIO"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "USUARIO"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "CONTRASENA"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "CONTRASENA"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'btUPDATE
-        '
-        Me.btUPDATE.Location = New System.Drawing.Point(766, 6)
-        Me.btUPDATE.Name = "btUPDATE"
-        Me.btUPDATE.Size = New System.Drawing.Size(162, 30)
-        Me.btUPDATE.TabIndex = 2
-        Me.btUPDATE.Text = "GUARDAR CAMBIOS"
-        Me.btUPDATE.UseVisualStyleBackColor = True
-        '
         'frm_Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -396,16 +396,16 @@ Partial Class frm_Empleados
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.EMPLEADODataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EMPLEADOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
         Me.ToolStripContainer2.ResumeLayout(False)
         Me.ToolStripContainer2.PerformLayout()
         Me.ToolStripContainer3.ResumeLayout(False)
         Me.ToolStripContainer3.PerformLayout()
-        CType(Me.EMPLEADODataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

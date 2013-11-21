@@ -24,36 +24,103 @@ Partial Class frmtarjeta
     Private Sub InitializeComponent()
         Dim IDEPTOPLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
-        Dim Label3 As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
-        Dim Label7 As System.Windows.Forms.Label
         Dim Label8 As System.Windows.Forms.Label
+        Dim Label3 As System.Windows.Forms.Label
+        Dim Label5 As System.Windows.Forms.Label
+        Dim Label9 As System.Windows.Forms.Label
+        Dim Label10 As System.Windows.Forms.Label
+        Dim Label11 As System.Windows.Forms.Label
+        Dim Label12 As System.Windows.Forms.Label
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TBPIN = New System.Windows.Forms.TextBox()
+        Me.TBLIMITE = New System.Windows.Forms.TextBox()
+        Me.CBTTARJETA = New System.Windows.Forms.ComboBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TBCLIENTE = New System.Windows.Forms.TextBox()
+        Me.TBNCUENTA = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TBAPELLIDO = New System.Windows.Forms.TextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TBAPELLIDO1 = New System.Windows.Forms.TextBox()
+        Me.TBLIMITE1 = New System.Windows.Forms.TextBox()
+        Me.TBNOMBRE1 = New System.Windows.Forms.TextBox()
+        Me.TBNCUENTA1 = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TBBCUENTA = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.TBTTARJETA = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         IDEPTOPLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
-        Label3 = New System.Windows.Forms.Label()
         Label4 = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
-        Label7 = New System.Windows.Forms.Label()
         Label8 = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
+        Label5 = New System.Windows.Forms.Label()
+        Label9 = New System.Windows.Forms.Label()
+        Label10 = New System.Windows.Forms.Label()
+        Label11 = New System.Windows.Forms.Label()
+        Label12 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'IDEPTOPLabel
+        '
+        IDEPTOPLabel.AutoSize = True
+        IDEPTOPLabel.Location = New System.Drawing.Point(12, 22)
+        IDEPTOPLabel.Name = "IDEPTOPLabel"
+        IDEPTOPLabel.Size = New System.Drawing.Size(64, 13)
+        IDEPTOPLabel.TabIndex = 16
+        IDEPTOPLabel.Text = "No. Cuenta:"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(12, 60)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(57, 13)
+        Label1.TabIndex = 18
+        Label1.Text = "NOMBRE:"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Location = New System.Drawing.Point(291, 94)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(86, 13)
+        Label4.TabIndex = 22
+        Label4.Text = "TIPO TARJETA:"
+        '
+        'Label6
+        '
+        Label6.AutoSize = True
+        Label6.Location = New System.Drawing.Point(291, 22)
+        Label6.Name = "Label6"
+        Label6.Size = New System.Drawing.Size(96, 13)
+        Label6.TabIndex = 27
+        Label6.Text = "LIMITE TARJETA:"
+        '
+        'Label8
+        '
+        Label8.AutoSize = True
+        Label8.Location = New System.Drawing.Point(291, 60)
+        Label8.Name = "Label8"
+        Label8.Size = New System.Drawing.Size(48, 13)
+        Label8.TabIndex = 31
+        Label8.Text = "No. PIN:"
         '
         'TabControl1
         '
@@ -67,21 +134,11 @@ Partial Class frmtarjeta
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button3)
+        Me.TabPage1.Controls.Add(Me.Button4)
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.Button1)
-        Me.TabPage1.Controls.Add(Me.TextBox6)
-        Me.TabPage1.Controls.Add(Label8)
-        Me.TabPage1.Controls.Add(Me.ComboBox2)
-        Me.TabPage1.Controls.Add(Label7)
-        Me.TabPage1.Controls.Add(Me.TextBox4)
-        Me.TabPage1.Controls.Add(Label6)
-        Me.TabPage1.Controls.Add(Me.ComboBox1)
-        Me.TabPage1.Controls.Add(Label4)
-        Me.TabPage1.Controls.Add(Me.TextBox3)
-        Me.TabPage1.Controls.Add(Label3)
-        Me.TabPage1.Controls.Add(Me.TextBox2)
-        Me.TabPage1.Controls.Add(Label1)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
-        Me.TabPage1.Controls.Add(IDEPTOPLabel)
+        Me.TabPage1.Controls.Add(Me.TextBox8)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -91,16 +148,61 @@ Partial Class frmtarjeta
         Me.TabPage1.Text = "NUEVA TARJETA:"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'Button1
         '
-        Me.TabPage2.Controls.Add(Me.DataGridView1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(607, 349)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "EDITAR"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(382, 241)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(195, 49)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "GUARDAR"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TBPIN
+        '
+        Me.TBPIN.Location = New System.Drawing.Point(393, 57)
+        Me.TBPIN.Name = "TBPIN"
+        Me.TBPIN.Size = New System.Drawing.Size(141, 20)
+        Me.TBPIN.TabIndex = 32
+        '
+        'TBLIMITE
+        '
+        Me.TBLIMITE.Location = New System.Drawing.Point(393, 19)
+        Me.TBLIMITE.Name = "TBLIMITE"
+        Me.TBLIMITE.Size = New System.Drawing.Size(141, 20)
+        Me.TBLIMITE.TabIndex = 28
+        '
+        'CBTTARJETA
+        '
+        Me.CBTTARJETA.FormattingEnabled = True
+        Me.CBTTARJETA.Items.AddRange(New Object() {"CREDITO", "DEBITO"})
+        Me.CBTTARJETA.Location = New System.Drawing.Point(393, 86)
+        Me.CBTTARJETA.Name = "CBTTARJETA"
+        Me.CBTTARJETA.Size = New System.Drawing.Size(141, 21)
+        Me.CBTTARJETA.TabIndex = 26
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(145, 24)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(141, 20)
+        Me.TextBox8.TabIndex = 21
+        '
+        'TBCLIENTE
+        '
+        Me.TBCLIENTE.Enabled = False
+        Me.TBCLIENTE.Location = New System.Drawing.Point(105, 57)
+        Me.TBCLIENTE.Name = "TBCLIENTE"
+        Me.TBCLIENTE.Size = New System.Drawing.Size(141, 20)
+        Me.TBCLIENTE.TabIndex = 19
+        '
+        'TBNCUENTA
+        '
+        Me.TBNCUENTA.Enabled = False
+        Me.TBNCUENTA.Location = New System.Drawing.Point(105, 19)
+        Me.TBNCUENTA.Name = "TBNCUENTA"
+        Me.TBNCUENTA.Size = New System.Drawing.Size(141, 20)
+        Me.TBNCUENTA.TabIndex = 17
         '
         'Label2
         '
@@ -108,141 +210,236 @@ Partial Class frmtarjeta
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(19, 18)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(147, 25)
+        Me.Label2.Size = New System.Drawing.Size(120, 25)
         Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Nueva Tarjeta"
+        Me.Label2.Text = "No. Cuenta"
         '
-        'IDEPTOPLabel
+        'TabPage2
         '
-        IDEPTOPLabel.AutoSize = True
-        IDEPTOPLabel.Location = New System.Drawing.Point(32, 64)
-        IDEPTOPLabel.Name = "IDEPTOPLabel"
-        IDEPTOPLabel.Size = New System.Drawing.Size(78, 13)
-        IDEPTOPLabel.TabIndex = 16
-        IDEPTOPLabel.Text = "No. TARJETA:"
+        Me.TabPage2.Controls.Add(Me.Button2)
+        Me.TabPage2.Controls.Add(Me.Button5)
+        Me.TabPage2.Controls.Add(Me.GroupBox2)
+        Me.TabPage2.Controls.Add(Me.Button6)
+        Me.TabPage2.Controls.Add(Me.TBBCUENTA)
+        Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(607, 349)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "BLOQUEAR TARJETA"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'GroupBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(125, 61)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox1.TabIndex = 17
+        Me.GroupBox1.Controls.Add(Me.TBAPELLIDO)
+        Me.GroupBox1.Controls.Add(Label3)
+        Me.GroupBox1.Controls.Add(Me.TBPIN)
+        Me.GroupBox1.Controls.Add(Label8)
+        Me.GroupBox1.Controls.Add(Me.TBLIMITE)
+        Me.GroupBox1.Controls.Add(Label6)
+        Me.GroupBox1.Controls.Add(Me.CBTTARJETA)
+        Me.GroupBox1.Controls.Add(Label4)
+        Me.GroupBox1.Controls.Add(Me.TBCLIENTE)
+        Me.GroupBox1.Controls.Add(Label1)
+        Me.GroupBox1.Controls.Add(Me.TBNCUENTA)
+        Me.GroupBox1.Controls.Add(IDEPTOPLabel)
+        Me.GroupBox1.Location = New System.Drawing.Point(24, 72)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(553, 146)
+        Me.GroupBox1.TabIndex = 34
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Datos de tarjeta"
         '
-        'TextBox2
+        'TBAPELLIDO
         '
-        Me.TextBox2.Location = New System.Drawing.Point(125, 99)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox2.TabIndex = 19
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(32, 102)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(55, 13)
-        Label1.TabIndex = 18
-        Label1.Text = "CLIENTE:"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(125, 141)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox3.TabIndex = 21
+        Me.TBAPELLIDO.Enabled = False
+        Me.TBAPELLIDO.Location = New System.Drawing.Point(105, 91)
+        Me.TBAPELLIDO.Name = "TBAPELLIDO"
+        Me.TBAPELLIDO.Size = New System.Drawing.Size(141, 20)
+        Me.TBAPELLIDO.TabIndex = 34
         '
         'Label3
         '
         Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(32, 144)
+        Label3.Location = New System.Drawing.Point(12, 94)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(54, 13)
-        Label3.TabIndex = 20
-        Label3.Text = "CUENTA:"
+        Label3.Size = New System.Drawing.Size(62, 13)
+        Label3.TabIndex = 33
+        Label3.Text = "APELLIDO:"
         '
-        'Label4
+        'GroupBox2
         '
-        Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(33, 184)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(86, 13)
-        Label4.TabIndex = 22
-        Label4.Text = "TIPO TARJETA:"
+        Me.GroupBox2.Controls.Add(Me.TBTTARJETA)
+        Me.GroupBox2.Controls.Add(Me.TBAPELLIDO1)
+        Me.GroupBox2.Controls.Add(Label5)
+        Me.GroupBox2.Controls.Add(Me.TBLIMITE1)
+        Me.GroupBox2.Controls.Add(Label9)
+        Me.GroupBox2.Controls.Add(Label10)
+        Me.GroupBox2.Controls.Add(Me.TBNOMBRE1)
+        Me.GroupBox2.Controls.Add(Label11)
+        Me.GroupBox2.Controls.Add(Me.TBNCUENTA1)
+        Me.GroupBox2.Controls.Add(Label12)
+        Me.GroupBox2.Location = New System.Drawing.Point(20, 75)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(553, 146)
+        Me.GroupBox2.TabIndex = 49
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Datos de tarjeta"
         '
-        'ComboBox1
+        'TBAPELLIDO1
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(125, 175)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(141, 21)
-        Me.ComboBox1.TabIndex = 26
+        Me.TBAPELLIDO1.Enabled = False
+        Me.TBAPELLIDO1.Location = New System.Drawing.Point(105, 91)
+        Me.TBAPELLIDO1.Name = "TBAPELLIDO1"
+        Me.TBAPELLIDO1.Size = New System.Drawing.Size(141, 20)
+        Me.TBAPELLIDO1.TabIndex = 34
         '
-        'TextBox4
+        'Label5
         '
-        Me.TextBox4.Location = New System.Drawing.Point(413, 61)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox4.TabIndex = 28
+        Label5.AutoSize = True
+        Label5.Location = New System.Drawing.Point(12, 94)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(62, 13)
+        Label5.TabIndex = 33
+        Label5.Text = "APELLIDO:"
         '
-        'Label6
+        'TBLIMITE1
         '
-        Label6.AutoSize = True
-        Label6.Location = New System.Drawing.Point(311, 64)
-        Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(96, 13)
-        Label6.TabIndex = 27
-        Label6.Text = "LIMITE TARJETA:"
+        Me.TBLIMITE1.Enabled = False
+        Me.TBLIMITE1.Location = New System.Drawing.Point(393, 19)
+        Me.TBLIMITE1.Name = "TBLIMITE1"
+        Me.TBLIMITE1.Size = New System.Drawing.Size(141, 20)
+        Me.TBLIMITE1.TabIndex = 28
         '
-        'Label7
+        'Label9
         '
-        Label7.AutoSize = True
-        Label7.Location = New System.Drawing.Point(311, 102)
-        Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(105, 13)
-        Label7.TabIndex = 29
-        Label7.Text = "ESTADO TARJETA:"
+        Label9.AutoSize = True
+        Label9.Location = New System.Drawing.Point(291, 22)
+        Label9.Name = "Label9"
+        Label9.Size = New System.Drawing.Size(96, 13)
+        Label9.TabIndex = 27
+        Label9.Text = "LIMITE TARJETA:"
         '
-        'ComboBox2
+        'Label10
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(413, 98)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(141, 21)
-        Me.ComboBox2.TabIndex = 30
+        Label10.AutoSize = True
+        Label10.Location = New System.Drawing.Point(291, 60)
+        Label10.Name = "Label10"
+        Label10.Size = New System.Drawing.Size(86, 13)
+        Label10.TabIndex = 22
+        Label10.Text = "TIPO TARJETA:"
         '
-        'TextBox6
+        'TBNOMBRE1
         '
-        Me.TextBox6.Location = New System.Drawing.Point(413, 137)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox6.TabIndex = 32
+        Me.TBNOMBRE1.Enabled = False
+        Me.TBNOMBRE1.Location = New System.Drawing.Point(105, 57)
+        Me.TBNOMBRE1.Name = "TBNOMBRE1"
+        Me.TBNOMBRE1.Size = New System.Drawing.Size(141, 20)
+        Me.TBNOMBRE1.TabIndex = 19
         '
-        'Label8
+        'Label11
         '
-        Label8.AutoSize = True
-        Label8.Location = New System.Drawing.Point(311, 140)
-        Label8.Name = "Label8"
-        Label8.Size = New System.Drawing.Size(48, 13)
-        Label8.TabIndex = 31
-        Label8.Text = "No. PIN:"
+        Label11.AutoSize = True
+        Label11.Location = New System.Drawing.Point(12, 60)
+        Label11.Name = "Label11"
+        Label11.Size = New System.Drawing.Size(57, 13)
+        Label11.TabIndex = 18
+        Label11.Text = "NOMBRE:"
         '
-        'Button1
+        'TBNCUENTA1
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(258, 243)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(195, 49)
-        Me.Button1.TabIndex = 33
-        Me.Button1.Text = "GUARDAR"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TBNCUENTA1.Enabled = False
+        Me.TBNCUENTA1.Location = New System.Drawing.Point(105, 19)
+        Me.TBNCUENTA1.Name = "TBNCUENTA1"
+        Me.TBNCUENTA1.Size = New System.Drawing.Size(141, 20)
+        Me.TBNCUENTA1.TabIndex = 17
         '
-        'DataGridView1
+        'Label12
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(601, 346)
-        Me.DataGridView1.TabIndex = 0
+        Label12.AutoSize = True
+        Label12.Location = New System.Drawing.Point(12, 22)
+        Label12.Name = "Label12"
+        Label12.Size = New System.Drawing.Size(64, 13)
+        Label12.TabIndex = 16
+        Label12.Text = "No. Cuenta:"
+        '
+        'Button6
+        '
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(378, 244)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(195, 49)
+        Me.Button6.TabIndex = 48
+        Me.Button6.Text = "GUARDAR"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'TBBCUENTA
+        '
+        Me.TBBCUENTA.Location = New System.Drawing.Point(141, 27)
+        Me.TBBCUENTA.Name = "TBBCUENTA"
+        Me.TBBCUENTA.Size = New System.Drawing.Size(141, 20)
+        Me.TBBCUENTA.TabIndex = 47
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(15, 21)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(120, 25)
+        Me.Label13.TabIndex = 46
+        Me.Label13.Text = "No. Cuenta"
+        '
+        'TBTTARJETA
+        '
+        Me.TBTTARJETA.Enabled = False
+        Me.TBTTARJETA.Location = New System.Drawing.Point(393, 53)
+        Me.TBTTARJETA.Name = "TBTTARJETA"
+        Me.TBTTARJETA.Size = New System.Drawing.Size(141, 20)
+        Me.TBTTARJETA.TabIndex = 35
+        '
+        'Button3
+        '
+        Me.Button3.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(360, 12)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(50, 41)
+        Me.Button3.TabIndex = 45
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Image = Global.Banco.My.Resources.Resources.search
+        Me.Button4.Location = New System.Drawing.Point(304, 12)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(50, 41)
+        Me.Button4.TabIndex = 44
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(356, 15)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(50, 41)
+        Me.Button2.TabIndex = 51
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Image = Global.Banco.My.Resources.Resources.search
+        Me.Button5.Location = New System.Drawing.Point(300, 15)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(50, 41)
+        Me.Button5.TabIndex = 50
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'frmtarjeta
         '
@@ -256,7 +453,11 @@ Partial Class frmtarjeta
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -264,13 +465,26 @@ Partial Class frmtarjeta
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TBNCUENTA As System.Windows.Forms.TextBox
+    Friend WithEvents TBPIN As System.Windows.Forms.TextBox
+    Friend WithEvents TBLIMITE As System.Windows.Forms.TextBox
+    Friend WithEvents CBTTARJETA As System.Windows.Forms.ComboBox
+    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents TBCLIENTE As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents TBAPELLIDO As System.Windows.Forms.TextBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents TBTTARJETA As System.Windows.Forms.TextBox
+    Friend WithEvents TBAPELLIDO1 As System.Windows.Forms.TextBox
+    Friend WithEvents TBLIMITE1 As System.Windows.Forms.TextBox
+    Friend WithEvents TBNOMBRE1 As System.Windows.Forms.TextBox
+    Friend WithEvents TBNCUENTA1 As System.Windows.Forms.TextBox
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents TBBCUENTA As System.Windows.Forms.TextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
 End Class
