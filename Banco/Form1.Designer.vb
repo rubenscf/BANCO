@@ -44,6 +44,7 @@ Partial Class Form1
         Me.TSFECHA = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TBHORA = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -153,7 +154,7 @@ Partial Class Form1
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.TBUSER, Me.TBRANGO, Me.ToolStripStatusLabel4, Me.TSFECHA, Me.TBHORA})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.TBUSER, Me.TBRANGO, Me.ToolStripStatusLabel4, Me.TSFECHA, Me.ToolStripStatusLabel3, Me.TBHORA})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 381)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(792, 22)
@@ -164,8 +165,8 @@ Partial Class Form1
         '
         Me.ToolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(47, 17)
-        Me.ToolStripStatusLabel1.Text = "Usuario"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(59, 17)
+        Me.ToolStripStatusLabel1.Text = "USUARIO:"
         '
         'ToolStripStatusLabel2
         '
@@ -190,8 +191,8 @@ Partial Class Form1
         '
         Me.ToolStripStatusLabel4.BackColor = System.Drawing.Color.Transparent
         Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
-        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(38, 17)
-        Me.ToolStripStatusLabel4.Text = "Fecha"
+        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(47, 17)
+        Me.ToolStripStatusLabel4.Text = "FECHA:"
         '
         'TSFECHA
         '
@@ -209,6 +210,13 @@ Partial Class Form1
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(43, 17)
+        Me.ToolStripStatusLabel3.Text = "HORA:"
         '
         'Form1
         '
@@ -254,5 +262,6 @@ Partial Class Form1
     Friend WithEvents TBRANGO As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents TBHORA As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
 
 End Class
