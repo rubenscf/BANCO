@@ -11,7 +11,7 @@ Public Class frmCliente
     Dim cos As String
     Dim codigoc As String
 
-    Private Sub CLIENTEBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles CLIENTEBindingNavigatorSaveItem.Click
+    Private Sub CLIENTEBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.CLIENTEBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.DS)
@@ -42,7 +42,7 @@ Public Class frmCliente
             Me.TableAdapterManager.UpdateAll(Me.DS)
             MsgBox("Datos Guardados", vbInformation)
             Me.CLIENTETableAdapter.Fill(Me.DS.CLIENTE)
-            CLIENTEDataGridView.Refresh()
+
         Else
             MsgBox("No pueden haber campos vacios", vbCritical)
         End If
@@ -113,10 +113,10 @@ Public Class frmCliente
             MsgBox("El campo Numero de Cuenta  NO puede estar Vacio")
 
         Else
-
-
-            cadena = "SELECT  CLIENTE.DPI, CLIENTE.NOMBRE, CLIENTE.APELLIDO,CLIENTE.TELEFONO,CLIENTE.DIRECCION, TIPOCUENTA.TIPOCUENTA,  CUENTA.SALDO FROM CLIENTE, CUENTA,TIPOCUENTA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND  CUENTA.IDTIPOCUENTA  = TIPOCUENTA.IDTIPOCUENTA  AND  CUENTA.IDCUENTA  = '" + TextBox8.Text.ToString() + "' "
             Try
+
+                cadena = "SELECT  CLIENTE.DPI, CLIENTE.NOMBRE, CLIENTE.APELLIDO,CLIENTE.TELEFONO,CLIENTE.DIRECCION, TIPOCUENTA.TIPOCUENTA,  CUENTA.SALDO FROM CLIENTE, CUENTA,TIPOCUENTA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND CUENTA.ESTADO= 1 AND  CUENTA.IDTIPOCUENTA  = TIPOCUENTA.IDTIPOCUENTA  AND  CUENTA.IDCUENTA  = '" + TextBox8.Text.ToString() + "' "
+
 
                 DTS = datos.llenar(cadena)
                 TBDPI.Text = DTS.Tables(0).Rows(0)(0).ToString
@@ -133,7 +133,7 @@ Public Class frmCliente
 
             Catch ex As Exception
 
-                MessageBox.Show(ex.Message.ToString(), "No. de Cuenta no existe")
+                MessageBox.Show("Cuenta Desabilitada", ex.Message.ToString())
 
 
                 Return

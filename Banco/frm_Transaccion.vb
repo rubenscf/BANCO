@@ -24,7 +24,7 @@ Public Class frm_Transaccion
         Else
 
 
-            cadena = "SELECT  CLIENTE.NOMBRE, CLIENTE.APELLIDO, CUENTA.IDCUENTA, CUENTA.SALDO, CLIENTE.IDCLIENTE FROM CLIENTE, CUENTA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND  CUENTA.IDCUENTA  = '" + TextBox8.Text.ToString() + "' "
+            cadena = "SELECT  CLIENTE.NOMBRE, CLIENTE.APELLIDO, CUENTA.IDCUENTA, CUENTA.SALDO, CLIENTE.IDCLIENTE FROM CLIENTE, CUENTA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND CUENTA.ESTADO = 1 AND  CUENTA.IDCUENTA  = '" + TextBox8.Text.ToString() + "' "
             Try
 
                 DTS = datos.llenar(cadena)
@@ -38,7 +38,7 @@ Public Class frm_Transaccion
 
             Catch ex As Exception
 
-                MessageBox.Show(ex.Message.ToString(), "No. de Cuenta no existe")
+                MessageBox.Show(ex.Message.ToString(), "La Cuenta no existe O se encuentra deshabilitada ")
 
 
                 Return
@@ -69,6 +69,8 @@ Public Class frm_Transaccion
     Private Sub frm_Transaccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TBFECHA.Text = DateTime.Now.ToString("dd/MM/yyyy").ToString
         TBFECHA1.Text = DateTime.Now.ToString("dd/MM/yyyy").ToString
+        TextBox8.Focus()
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -80,7 +82,7 @@ Public Class frm_Transaccion
         Else
 
 
-            cadena = "SELECT  CLIENTE.NOMBRE, CLIENTE.APELLIDO, CUENTA.IDCUENTA, CUENTA.SALDO, CLIENTE.IDCLIENTE FROM CLIENTE, CUENTA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND  CUENTA.IDCUENTA  = '" + TextBox6.Text.ToString() + "' "
+            cadena = "SELECT  CLIENTE.NOMBRE, CLIENTE.APELLIDO, CUENTA.IDCUENTA, CUENTA.SALDO, CLIENTE.IDCLIENTE FROM CLIENTE, CUENTA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND CUENTA.ESTADO= 1 AND  CUENTA.IDCUENTA  = '" + TextBox6.Text.ToString() + "' "
 
             Try
 
@@ -93,7 +95,7 @@ Public Class frm_Transaccion
 
             Catch ex As Exception
 
-                MessageBox.Show(ex.Message.ToString(), "No. de Cuenta no existe")
+                MessageBox.Show(ex.Message.ToString(), "La Cuenta no existe O Se encuentra deshabilitada")
 
 
                 Return

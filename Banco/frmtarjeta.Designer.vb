@@ -35,18 +35,23 @@ Partial Class frmtarjeta
         Dim Label12 As System.Windows.Forms.Label
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TBAPELLIDO = New System.Windows.Forms.TextBox()
         Me.TBPIN = New System.Windows.Forms.TextBox()
         Me.TBLIMITE = New System.Windows.Forms.TextBox()
         Me.CBTTARJETA = New System.Windows.Forms.ComboBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TBCLIENTE = New System.Windows.Forms.TextBox()
         Me.TBNCUENTA = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TBAPELLIDO = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TBTTARJETA = New System.Windows.Forms.TextBox()
         Me.TBAPELLIDO1 = New System.Windows.Forms.TextBox()
         Me.TBLIMITE1 = New System.Windows.Forms.TextBox()
         Me.TBNOMBRE1 = New System.Windows.Forms.TextBox()
@@ -54,11 +59,6 @@ Partial Class frmtarjeta
         Me.Button6 = New System.Windows.Forms.Button()
         Me.TBBCUENTA = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TBTTARJETA = New System.Windows.Forms.TextBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
         IDEPTOPLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Label4 = New System.Windows.Forms.Label()
@@ -72,8 +72,8 @@ Partial Class frmtarjeta
         Label12 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -83,7 +83,7 @@ Partial Class frmtarjeta
         IDEPTOPLabel.Location = New System.Drawing.Point(12, 22)
         IDEPTOPLabel.Name = "IDEPTOPLabel"
         IDEPTOPLabel.Size = New System.Drawing.Size(64, 13)
-        IDEPTOPLabel.TabIndex = 16
+        IDEPTOPLabel.TabIndex = 0
         IDEPTOPLabel.Text = "No. Cuenta:"
         '
         'Label1
@@ -92,7 +92,7 @@ Partial Class frmtarjeta
         Label1.Location = New System.Drawing.Point(12, 60)
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(57, 13)
-        Label1.TabIndex = 18
+        Label1.TabIndex = 4
         Label1.Text = "NOMBRE:"
         '
         'Label4
@@ -101,7 +101,7 @@ Partial Class frmtarjeta
         Label4.Location = New System.Drawing.Point(291, 94)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(86, 13)
-        Label4.TabIndex = 22
+        Label4.TabIndex = 10
         Label4.Text = "TIPO TARJETA:"
         '
         'Label6
@@ -110,7 +110,7 @@ Partial Class frmtarjeta
         Label6.Location = New System.Drawing.Point(291, 22)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(96, 13)
-        Label6.TabIndex = 27
+        Label6.TabIndex = 2
         Label6.Text = "LIMITE TARJETA:"
         '
         'Label8
@@ -119,8 +119,62 @@ Partial Class frmtarjeta
         Label8.Location = New System.Drawing.Point(291, 60)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(48, 13)
-        Label8.TabIndex = 31
+        Label8.TabIndex = 6
         Label8.Text = "No. PIN:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Location = New System.Drawing.Point(12, 94)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(62, 13)
+        Label3.TabIndex = 8
+        Label3.Text = "APELLIDO:"
+        '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.Location = New System.Drawing.Point(12, 94)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(62, 13)
+        Label5.TabIndex = 8
+        Label5.Text = "APELLIDO:"
+        '
+        'Label9
+        '
+        Label9.AutoSize = True
+        Label9.Location = New System.Drawing.Point(291, 22)
+        Label9.Name = "Label9"
+        Label9.Size = New System.Drawing.Size(96, 13)
+        Label9.TabIndex = 2
+        Label9.Text = "LIMITE TARJETA:"
+        '
+        'Label10
+        '
+        Label10.AutoSize = True
+        Label10.Location = New System.Drawing.Point(291, 60)
+        Label10.Name = "Label10"
+        Label10.Size = New System.Drawing.Size(86, 13)
+        Label10.TabIndex = 6
+        Label10.Text = "TIPO TARJETA:"
+        '
+        'Label11
+        '
+        Label11.AutoSize = True
+        Label11.Location = New System.Drawing.Point(12, 60)
+        Label11.Name = "Label11"
+        Label11.Size = New System.Drawing.Size(57, 13)
+        Label11.TabIndex = 4
+        Label11.Text = "NOMBRE:"
+        '
+        'Label12
+        '
+        Label12.AutoSize = True
+        Label12.Location = New System.Drawing.Point(12, 22)
+        Label12.Name = "Label12"
+        Label12.Size = New System.Drawing.Size(64, 13)
+        Label12.TabIndex = 0
+        Label12.Text = "No. Cuenta:"
         '
         'TabControl1
         '
@@ -148,87 +202,26 @@ Partial Class frmtarjeta
         Me.TabPage1.Text = "NUEVA TARJETA:"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'Button1
+        'Button3
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(382, 241)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(195, 49)
-        Me.Button1.TabIndex = 33
-        Me.Button1.Text = "GUARDAR"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button3.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(360, 12)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(50, 41)
+        Me.Button3.TabIndex = 3
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'TBPIN
+        'Button4
         '
-        Me.TBPIN.Location = New System.Drawing.Point(393, 57)
-        Me.TBPIN.Name = "TBPIN"
-        Me.TBPIN.Size = New System.Drawing.Size(141, 20)
-        Me.TBPIN.TabIndex = 32
-        '
-        'TBLIMITE
-        '
-        Me.TBLIMITE.Location = New System.Drawing.Point(393, 19)
-        Me.TBLIMITE.Name = "TBLIMITE"
-        Me.TBLIMITE.Size = New System.Drawing.Size(141, 20)
-        Me.TBLIMITE.TabIndex = 28
-        '
-        'CBTTARJETA
-        '
-        Me.CBTTARJETA.FormattingEnabled = True
-        Me.CBTTARJETA.Items.AddRange(New Object() {"CREDITO", "DEBITO"})
-        Me.CBTTARJETA.Location = New System.Drawing.Point(393, 86)
-        Me.CBTTARJETA.Name = "CBTTARJETA"
-        Me.CBTTARJETA.Size = New System.Drawing.Size(141, 21)
-        Me.CBTTARJETA.TabIndex = 26
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(145, 24)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox8.TabIndex = 21
-        '
-        'TBCLIENTE
-        '
-        Me.TBCLIENTE.Enabled = False
-        Me.TBCLIENTE.Location = New System.Drawing.Point(105, 57)
-        Me.TBCLIENTE.Name = "TBCLIENTE"
-        Me.TBCLIENTE.Size = New System.Drawing.Size(141, 20)
-        Me.TBCLIENTE.TabIndex = 19
-        '
-        'TBNCUENTA
-        '
-        Me.TBNCUENTA.Enabled = False
-        Me.TBNCUENTA.Location = New System.Drawing.Point(105, 19)
-        Me.TBNCUENTA.Name = "TBNCUENTA"
-        Me.TBNCUENTA.Size = New System.Drawing.Size(141, 20)
-        Me.TBNCUENTA.TabIndex = 17
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(19, 18)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(120, 25)
-        Me.Label2.TabIndex = 15
-        Me.Label2.Text = "No. Cuenta"
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.Button2)
-        Me.TabPage2.Controls.Add(Me.Button5)
-        Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Controls.Add(Me.Button6)
-        Me.TabPage2.Controls.Add(Me.TBBCUENTA)
-        Me.TabPage2.Controls.Add(Me.Label13)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(607, 349)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "BLOQUEAR TARJETA"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Image = Global.Banco.My.Resources.Resources.search
+        Me.Button4.Location = New System.Drawing.Point(304, 12)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(50, 41)
+        Me.Button4.TabIndex = 2
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -247,7 +240,7 @@ Partial Class frmtarjeta
         Me.GroupBox1.Location = New System.Drawing.Point(24, 72)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(553, 146)
-        Me.GroupBox1.TabIndex = 34
+        Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de tarjeta"
         '
@@ -257,16 +250,110 @@ Partial Class frmtarjeta
         Me.TBAPELLIDO.Location = New System.Drawing.Point(105, 91)
         Me.TBAPELLIDO.Name = "TBAPELLIDO"
         Me.TBAPELLIDO.Size = New System.Drawing.Size(141, 20)
-        Me.TBAPELLIDO.TabIndex = 34
+        Me.TBAPELLIDO.TabIndex = 9
         '
-        'Label3
+        'TBPIN
         '
-        Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(12, 94)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(62, 13)
-        Label3.TabIndex = 33
-        Label3.Text = "APELLIDO:"
+        Me.TBPIN.Location = New System.Drawing.Point(393, 57)
+        Me.TBPIN.Name = "TBPIN"
+        Me.TBPIN.Size = New System.Drawing.Size(141, 20)
+        Me.TBPIN.TabIndex = 7
+        '
+        'TBLIMITE
+        '
+        Me.TBLIMITE.Location = New System.Drawing.Point(393, 19)
+        Me.TBLIMITE.Name = "TBLIMITE"
+        Me.TBLIMITE.Size = New System.Drawing.Size(141, 20)
+        Me.TBLIMITE.TabIndex = 3
+        '
+        'CBTTARJETA
+        '
+        Me.CBTTARJETA.FormattingEnabled = True
+        Me.CBTTARJETA.Items.AddRange(New Object() {"CREDITO", "DEBITO"})
+        Me.CBTTARJETA.Location = New System.Drawing.Point(393, 86)
+        Me.CBTTARJETA.Name = "CBTTARJETA"
+        Me.CBTTARJETA.Size = New System.Drawing.Size(141, 21)
+        Me.CBTTARJETA.TabIndex = 11
+        '
+        'TBCLIENTE
+        '
+        Me.TBCLIENTE.Enabled = False
+        Me.TBCLIENTE.Location = New System.Drawing.Point(105, 57)
+        Me.TBCLIENTE.Name = "TBCLIENTE"
+        Me.TBCLIENTE.Size = New System.Drawing.Size(141, 20)
+        Me.TBCLIENTE.TabIndex = 5
+        '
+        'TBNCUENTA
+        '
+        Me.TBNCUENTA.Enabled = False
+        Me.TBNCUENTA.Location = New System.Drawing.Point(105, 19)
+        Me.TBNCUENTA.Name = "TBNCUENTA"
+        Me.TBNCUENTA.Size = New System.Drawing.Size(141, 20)
+        Me.TBNCUENTA.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(382, 241)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(195, 49)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "GUARDAR"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(145, 24)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(141, 20)
+        Me.TextBox8.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(19, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(120, 25)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "No. Cuenta"
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.Button2)
+        Me.TabPage2.Controls.Add(Me.Button5)
+        Me.TabPage2.Controls.Add(Me.GroupBox2)
+        Me.TabPage2.Controls.Add(Me.Button6)
+        Me.TabPage2.Controls.Add(Me.TBBCUENTA)
+        Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(607, 349)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "BLOQUEAR TARJETA"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(356, 15)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(50, 41)
+        Me.Button2.TabIndex = 3
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Image = Global.Banco.My.Resources.Resources.search
+        Me.Button5.Location = New System.Drawing.Point(300, 15)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(50, 41)
+        Me.Button5.TabIndex = 2
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -283,9 +370,17 @@ Partial Class frmtarjeta
         Me.GroupBox2.Location = New System.Drawing.Point(20, 75)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(553, 146)
-        Me.GroupBox2.TabIndex = 49
+        Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de tarjeta"
+        '
+        'TBTTARJETA
+        '
+        Me.TBTTARJETA.Enabled = False
+        Me.TBTTARJETA.Location = New System.Drawing.Point(393, 53)
+        Me.TBTTARJETA.Name = "TBTTARJETA"
+        Me.TBTTARJETA.Size = New System.Drawing.Size(141, 20)
+        Me.TBTTARJETA.TabIndex = 7
         '
         'TBAPELLIDO1
         '
@@ -293,16 +388,7 @@ Partial Class frmtarjeta
         Me.TBAPELLIDO1.Location = New System.Drawing.Point(105, 91)
         Me.TBAPELLIDO1.Name = "TBAPELLIDO1"
         Me.TBAPELLIDO1.Size = New System.Drawing.Size(141, 20)
-        Me.TBAPELLIDO1.TabIndex = 34
-        '
-        'Label5
-        '
-        Label5.AutoSize = True
-        Label5.Location = New System.Drawing.Point(12, 94)
-        Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(62, 13)
-        Label5.TabIndex = 33
-        Label5.Text = "APELLIDO:"
+        Me.TBAPELLIDO1.TabIndex = 9
         '
         'TBLIMITE1
         '
@@ -310,25 +396,7 @@ Partial Class frmtarjeta
         Me.TBLIMITE1.Location = New System.Drawing.Point(393, 19)
         Me.TBLIMITE1.Name = "TBLIMITE1"
         Me.TBLIMITE1.Size = New System.Drawing.Size(141, 20)
-        Me.TBLIMITE1.TabIndex = 28
-        '
-        'Label9
-        '
-        Label9.AutoSize = True
-        Label9.Location = New System.Drawing.Point(291, 22)
-        Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(96, 13)
-        Label9.TabIndex = 27
-        Label9.Text = "LIMITE TARJETA:"
-        '
-        'Label10
-        '
-        Label10.AutoSize = True
-        Label10.Location = New System.Drawing.Point(291, 60)
-        Label10.Name = "Label10"
-        Label10.Size = New System.Drawing.Size(86, 13)
-        Label10.TabIndex = 22
-        Label10.Text = "TIPO TARJETA:"
+        Me.TBLIMITE1.TabIndex = 3
         '
         'TBNOMBRE1
         '
@@ -336,16 +404,7 @@ Partial Class frmtarjeta
         Me.TBNOMBRE1.Location = New System.Drawing.Point(105, 57)
         Me.TBNOMBRE1.Name = "TBNOMBRE1"
         Me.TBNOMBRE1.Size = New System.Drawing.Size(141, 20)
-        Me.TBNOMBRE1.TabIndex = 19
-        '
-        'Label11
-        '
-        Label11.AutoSize = True
-        Label11.Location = New System.Drawing.Point(12, 60)
-        Label11.Name = "Label11"
-        Label11.Size = New System.Drawing.Size(57, 13)
-        Label11.TabIndex = 18
-        Label11.Text = "NOMBRE:"
+        Me.TBNOMBRE1.TabIndex = 5
         '
         'TBNCUENTA1
         '
@@ -353,16 +412,7 @@ Partial Class frmtarjeta
         Me.TBNCUENTA1.Location = New System.Drawing.Point(105, 19)
         Me.TBNCUENTA1.Name = "TBNCUENTA1"
         Me.TBNCUENTA1.Size = New System.Drawing.Size(141, 20)
-        Me.TBNCUENTA1.TabIndex = 17
-        '
-        'Label12
-        '
-        Label12.AutoSize = True
-        Label12.Location = New System.Drawing.Point(12, 22)
-        Label12.Name = "Label12"
-        Label12.Size = New System.Drawing.Size(64, 13)
-        Label12.TabIndex = 16
-        Label12.Text = "No. Cuenta:"
+        Me.TBNCUENTA1.TabIndex = 1
         '
         'Button6
         '
@@ -370,7 +420,7 @@ Partial Class frmtarjeta
         Me.Button6.Location = New System.Drawing.Point(378, 244)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(195, 49)
-        Me.Button6.TabIndex = 48
+        Me.Button6.TabIndex = 5
         Me.Button6.Text = "GUARDAR"
         Me.Button6.UseVisualStyleBackColor = True
         '
@@ -379,7 +429,7 @@ Partial Class frmtarjeta
         Me.TBBCUENTA.Location = New System.Drawing.Point(141, 27)
         Me.TBBCUENTA.Name = "TBBCUENTA"
         Me.TBBCUENTA.Size = New System.Drawing.Size(141, 20)
-        Me.TBBCUENTA.TabIndex = 47
+        Me.TBBCUENTA.TabIndex = 1
         '
         'Label13
         '
@@ -388,58 +438,8 @@ Partial Class frmtarjeta
         Me.Label13.Location = New System.Drawing.Point(15, 21)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(120, 25)
-        Me.Label13.TabIndex = 46
+        Me.Label13.TabIndex = 0
         Me.Label13.Text = "No. Cuenta"
-        '
-        'TBTTARJETA
-        '
-        Me.TBTTARJETA.Enabled = False
-        Me.TBTTARJETA.Location = New System.Drawing.Point(393, 53)
-        Me.TBTTARJETA.Name = "TBTTARJETA"
-        Me.TBTTARJETA.Size = New System.Drawing.Size(141, 20)
-        Me.TBTTARJETA.TabIndex = 35
-        '
-        'Button3
-        '
-        Me.Button3.BackgroundImage = Global.Banco.My.Resources.Resources._38
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(360, 12)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(50, 41)
-        Me.Button3.TabIndex = 45
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Image = Global.Banco.My.Resources.Resources.search
-        Me.Button4.Location = New System.Drawing.Point(304, 12)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(50, 41)
-        Me.Button4.TabIndex = 44
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = Global.Banco.My.Resources.Resources._38
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(356, 15)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(50, 41)
-        Me.Button2.TabIndex = 51
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Image = Global.Banco.My.Resources.Resources.search
-        Me.Button5.Location = New System.Drawing.Point(300, 15)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(50, 41)
-        Me.Button5.TabIndex = 50
-        Me.Button5.UseVisualStyleBackColor = True
         '
         'frmtarjeta
         '
@@ -452,10 +452,10 @@ Partial Class frmtarjeta
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)

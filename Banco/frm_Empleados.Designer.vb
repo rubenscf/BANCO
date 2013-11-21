@@ -23,24 +23,14 @@ Partial Class frm_Empleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim CONTRASENALabel As System.Windows.Forms.Label
+        Dim USUARIOLabel As System.Windows.Forms.Label
+        Dim APELLIDOLabel As System.Windows.Forms.Label
+        Dim NOMBRELabel As System.Windows.Forms.Label
+        Dim DPILabel As System.Windows.Forms.Label
         Dim IDPUESTOLabel As System.Windows.Forms.Label
         Dim IDEPTOPLabel As System.Windows.Forms.Label
-        Dim NOMBRELabel As System.Windows.Forms.Label
-        Dim APELLIDOLabel As System.Windows.Forms.Label
-        Dim DPILabel As System.Windows.Forms.Label
-        Dim USUARIOLabel As System.Windows.Forms.Label
-        Dim CONTRASENALabel As System.Windows.Forms.Label
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.btGuardar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.CONTRASENATextBox = New System.Windows.Forms.TextBox()
-        Me.USUARIOTextBox = New System.Windows.Forms.TextBox()
-        Me.DPITextBox = New System.Windows.Forms.TextBox()
-        Me.APELLIDOTextBox = New System.Windows.Forms.TextBox()
-        Me.NOMBRETextBox = New System.Windows.Forms.TextBox()
-        Me.IDEPTOPComboBox = New System.Windows.Forms.ComboBox()
-        Me.IDPUESTOComboBox = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.btUPDATE = New System.Windows.Forms.Button()
         Me.EMPLEADODataGridView = New System.Windows.Forms.DataGridView()
@@ -57,15 +47,26 @@ Partial Class frm_Empleados
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
         Me.ToolStripContainer2 = New System.Windows.Forms.ToolStripContainer()
         Me.ToolStripContainer3 = New System.Windows.Forms.ToolStripContainer()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btGuardar = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CONTRASENATextBox = New System.Windows.Forms.TextBox()
+        Me.USUARIOTextBox = New System.Windows.Forms.TextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.APELLIDOTextBox = New System.Windows.Forms.TextBox()
+        Me.DPITextBox = New System.Windows.Forms.TextBox()
+        Me.NOMBRETextBox = New System.Windows.Forms.TextBox()
+        Me.IDEPTOPComboBox = New System.Windows.Forms.ComboBox()
+        Me.IDPUESTOComboBox = New System.Windows.Forms.ComboBox()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        CONTRASENALabel = New System.Windows.Forms.Label()
+        USUARIOLabel = New System.Windows.Forms.Label()
+        APELLIDOLabel = New System.Windows.Forms.Label()
+        NOMBRELabel = New System.Windows.Forms.Label()
+        DPILabel = New System.Windows.Forms.Label()
         IDPUESTOLabel = New System.Windows.Forms.Label()
         IDEPTOPLabel = New System.Windows.Forms.Label()
-        NOMBRELabel = New System.Windows.Forms.Label()
-        APELLIDOLabel = New System.Windows.Forms.Label()
-        DPILabel = New System.Windows.Forms.Label()
-        USUARIOLabel = New System.Windows.Forms.Label()
-        CONTRASENALabel = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.EMPLEADODataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EMPLEADOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,70 +74,10 @@ Partial Class frm_Empleados
         Me.ToolStripContainer1.SuspendLayout()
         Me.ToolStripContainer2.SuspendLayout()
         Me.ToolStripContainer3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'IDPUESTOLabel
-        '
-        IDPUESTOLabel.AutoSize = True
-        IDPUESTOLabel.Location = New System.Drawing.Point(29, 98)
-        IDPUESTOLabel.Name = "IDPUESTOLabel"
-        IDPUESTOLabel.Size = New System.Drawing.Size(54, 13)
-        IDPUESTOLabel.TabIndex = 0
-        IDPUESTOLabel.Text = "PUESTO:"
-        '
-        'IDEPTOPLabel
-        '
-        IDEPTOPLabel.AutoSize = True
-        IDEPTOPLabel.Location = New System.Drawing.Point(29, 63)
-        IDEPTOPLabel.Name = "IDEPTOPLabel"
-        IDEPTOPLabel.Size = New System.Drawing.Size(100, 13)
-        IDEPTOPLabel.TabIndex = 2
-        IDEPTOPLabel.Text = "DEPARTAMENTO:"
-        '
-        'NOMBRELabel
-        '
-        NOMBRELabel.AutoSize = True
-        NOMBRELabel.Location = New System.Drawing.Point(29, 131)
-        NOMBRELabel.Name = "NOMBRELabel"
-        NOMBRELabel.Size = New System.Drawing.Size(57, 13)
-        NOMBRELabel.TabIndex = 4
-        NOMBRELabel.Text = "NOMBRE:"
-        '
-        'APELLIDOLabel
-        '
-        APELLIDOLabel.AutoSize = True
-        APELLIDOLabel.Location = New System.Drawing.Point(31, 162)
-        APELLIDOLabel.Name = "APELLIDOLabel"
-        APELLIDOLabel.Size = New System.Drawing.Size(62, 13)
-        APELLIDOLabel.TabIndex = 6
-        APELLIDOLabel.Text = "APELLIDO:"
-        '
-        'DPILabel
-        '
-        DPILabel.AutoSize = True
-        DPILabel.Location = New System.Drawing.Point(299, 63)
-        DPILabel.Name = "DPILabel"
-        DPILabel.Size = New System.Drawing.Size(28, 13)
-        DPILabel.TabIndex = 8
-        DPILabel.Text = "DPI:"
-        '
-        'USUARIOLabel
-        '
-        USUARIOLabel.AutoSize = True
-        USUARIOLabel.Location = New System.Drawing.Point(299, 108)
-        USUARIOLabel.Name = "USUARIOLabel"
-        USUARIOLabel.Size = New System.Drawing.Size(59, 13)
-        USUARIOLabel.TabIndex = 10
-        USUARIOLabel.Text = "USUARIO:"
-        '
-        'CONTRASENALabel
-        '
-        CONTRASENALabel.AutoSize = True
-        CONTRASENALabel.Location = New System.Drawing.Point(299, 146)
-        CONTRASENALabel.Name = "CONTRASENALabel"
-        CONTRASENALabel.Size = New System.Drawing.Size(84, 13)
-        CONTRASENALabel.TabIndex = 12
-        CONTRASENALabel.Text = "CONTRASENA:"
         '
         'TabControl1
         '
@@ -148,103 +89,6 @@ Partial Class frm_Empleados
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(951, 402)
         Me.TabControl1.TabIndex = 0
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.btGuardar)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(CONTRASENALabel)
-        Me.TabPage1.Controls.Add(Me.CONTRASENATextBox)
-        Me.TabPage1.Controls.Add(USUARIOLabel)
-        Me.TabPage1.Controls.Add(Me.USUARIOTextBox)
-        Me.TabPage1.Controls.Add(DPILabel)
-        Me.TabPage1.Controls.Add(Me.DPITextBox)
-        Me.TabPage1.Controls.Add(APELLIDOLabel)
-        Me.TabPage1.Controls.Add(Me.APELLIDOTextBox)
-        Me.TabPage1.Controls.Add(NOMBRELabel)
-        Me.TabPage1.Controls.Add(Me.NOMBRETextBox)
-        Me.TabPage1.Controls.Add(IDEPTOPLabel)
-        Me.TabPage1.Controls.Add(Me.IDEPTOPComboBox)
-        Me.TabPage1.Controls.Add(IDPUESTOLabel)
-        Me.TabPage1.Controls.Add(Me.IDPUESTOComboBox)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(943, 376)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "AGREGAR"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'btGuardar
-        '
-        Me.btGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btGuardar.Location = New System.Drawing.Point(389, 202)
-        Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(131, 46)
-        Me.btGuardar.TabIndex = 15
-        Me.btGuardar.Text = "Guardar"
-        Me.btGuardar.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(20, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(176, 25)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Nuevo Empleado"
-        '
-        'CONTRASENATextBox
-        '
-        Me.CONTRASENATextBox.Location = New System.Drawing.Point(389, 143)
-        Me.CONTRASENATextBox.Name = "CONTRASENATextBox"
-        Me.CONTRASENATextBox.Size = New System.Drawing.Size(131, 20)
-        Me.CONTRASENATextBox.TabIndex = 13
-        '
-        'USUARIOTextBox
-        '
-        Me.USUARIOTextBox.Location = New System.Drawing.Point(389, 105)
-        Me.USUARIOTextBox.Name = "USUARIOTextBox"
-        Me.USUARIOTextBox.Size = New System.Drawing.Size(131, 20)
-        Me.USUARIOTextBox.TabIndex = 11
-        '
-        'DPITextBox
-        '
-        Me.DPITextBox.Location = New System.Drawing.Point(389, 63)
-        Me.DPITextBox.Name = "DPITextBox"
-        Me.DPITextBox.Size = New System.Drawing.Size(131, 20)
-        Me.DPITextBox.TabIndex = 9
-        '
-        'APELLIDOTextBox
-        '
-        Me.APELLIDOTextBox.Location = New System.Drawing.Point(136, 159)
-        Me.APELLIDOTextBox.Name = "APELLIDOTextBox"
-        Me.APELLIDOTextBox.Size = New System.Drawing.Size(120, 20)
-        Me.APELLIDOTextBox.TabIndex = 7
-        '
-        'NOMBRETextBox
-        '
-        Me.NOMBRETextBox.Location = New System.Drawing.Point(134, 128)
-        Me.NOMBRETextBox.Name = "NOMBRETextBox"
-        Me.NOMBRETextBox.Size = New System.Drawing.Size(121, 20)
-        Me.NOMBRETextBox.TabIndex = 5
-        '
-        'IDEPTOPComboBox
-        '
-        Me.IDEPTOPComboBox.FormattingEnabled = True
-        Me.IDEPTOPComboBox.Location = New System.Drawing.Point(135, 63)
-        Me.IDEPTOPComboBox.Name = "IDEPTOPComboBox"
-        Me.IDEPTOPComboBox.Size = New System.Drawing.Size(121, 21)
-        Me.IDEPTOPComboBox.TabIndex = 3
-        '
-        'IDPUESTOComboBox
-        '
-        Me.IDPUESTOComboBox.FormattingEnabled = True
-        Me.IDPUESTOComboBox.Location = New System.Drawing.Point(134, 95)
-        Me.IDPUESTOComboBox.Name = "IDPUESTOComboBox"
-        Me.IDPUESTOComboBox.Size = New System.Drawing.Size(121, 21)
-        Me.IDPUESTOComboBox.TabIndex = 1
         '
         'TabPage2
         '
@@ -354,7 +198,7 @@ Partial Class frm_Empleados
         Me.ToolStripContainer1.Location = New System.Drawing.Point(727, 132)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
         Me.ToolStripContainer1.Size = New System.Drawing.Size(150, 175)
-        Me.ToolStripContainer1.TabIndex = 1
+        Me.ToolStripContainer1.TabIndex = 0
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         '
         'ToolStripContainer2
@@ -382,6 +226,186 @@ Partial Class frm_Empleados
         Me.ToolStripContainer3.TabIndex = 0
         Me.ToolStripContainer3.Text = "ToolStripContainer3"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(20, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(176, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nuevo Empleado"
+        '
+        'btGuardar
+        '
+        Me.btGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btGuardar.Location = New System.Drawing.Point(353, 178)
+        Me.btGuardar.Name = "btGuardar"
+        Me.btGuardar.Size = New System.Drawing.Size(131, 46)
+        Me.btGuardar.TabIndex = 3
+        Me.btGuardar.Text = "Aceptar"
+        Me.btGuardar.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(USUARIOLabel)
+        Me.GroupBox1.Controls.Add(Me.USUARIOTextBox)
+        Me.GroupBox1.Controls.Add(Me.CONTRASENATextBox)
+        Me.GroupBox1.Controls.Add(CONTRASENALabel)
+        Me.GroupBox1.Location = New System.Drawing.Point(321, 51)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(249, 100)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Agregar Usuario"
+        '
+        'CONTRASENALabel
+        '
+        CONTRASENALabel.AutoSize = True
+        CONTRASENALabel.Location = New System.Drawing.Point(6, 54)
+        CONTRASENALabel.Name = "CONTRASENALabel"
+        CONTRASENALabel.Size = New System.Drawing.Size(84, 13)
+        CONTRASENALabel.TabIndex = 2
+        CONTRASENALabel.Text = "CONTRASENA:"
+        '
+        'CONTRASENATextBox
+        '
+        Me.CONTRASENATextBox.Location = New System.Drawing.Point(96, 51)
+        Me.CONTRASENATextBox.Name = "CONTRASENATextBox"
+        Me.CONTRASENATextBox.Size = New System.Drawing.Size(131, 20)
+        Me.CONTRASENATextBox.TabIndex = 3
+        '
+        'USUARIOTextBox
+        '
+        Me.USUARIOTextBox.Location = New System.Drawing.Point(96, 13)
+        Me.USUARIOTextBox.Name = "USUARIOTextBox"
+        Me.USUARIOTextBox.Size = New System.Drawing.Size(131, 20)
+        Me.USUARIOTextBox.TabIndex = 1
+        '
+        'USUARIOLabel
+        '
+        USUARIOLabel.AutoSize = True
+        USUARIOLabel.Location = New System.Drawing.Point(6, 16)
+        USUARIOLabel.Name = "USUARIOLabel"
+        USUARIOLabel.Size = New System.Drawing.Size(59, 13)
+        USUARIOLabel.TabIndex = 0
+        USUARIOLabel.Text = "USUARIO:"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(IDEPTOPLabel)
+        Me.GroupBox2.Controls.Add(Me.IDPUESTOComboBox)
+        Me.GroupBox2.Controls.Add(IDPUESTOLabel)
+        Me.GroupBox2.Controls.Add(Me.IDEPTOPComboBox)
+        Me.GroupBox2.Controls.Add(DPILabel)
+        Me.GroupBox2.Controls.Add(Me.NOMBRETextBox)
+        Me.GroupBox2.Controls.Add(Me.DPITextBox)
+        Me.GroupBox2.Controls.Add(NOMBRELabel)
+        Me.GroupBox2.Controls.Add(APELLIDOLabel)
+        Me.GroupBox2.Controls.Add(Me.APELLIDOTextBox)
+        Me.GroupBox2.Location = New System.Drawing.Point(25, 46)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(290, 239)
+        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Datos  Generales"
+        '
+        'APELLIDOTextBox
+        '
+        Me.APELLIDOTextBox.Location = New System.Drawing.Point(133, 179)
+        Me.APELLIDOTextBox.Name = "APELLIDOTextBox"
+        Me.APELLIDOTextBox.Size = New System.Drawing.Size(122, 20)
+        Me.APELLIDOTextBox.TabIndex = 9
+        '
+        'APELLIDOLabel
+        '
+        APELLIDOLabel.AutoSize = True
+        APELLIDOLabel.Location = New System.Drawing.Point(30, 182)
+        APELLIDOLabel.Name = "APELLIDOLabel"
+        APELLIDOLabel.Size = New System.Drawing.Size(62, 13)
+        APELLIDOLabel.TabIndex = 8
+        APELLIDOLabel.Text = "APELLIDO:"
+        '
+        'NOMBRELabel
+        '
+        NOMBRELabel.AutoSize = True
+        NOMBRELabel.Location = New System.Drawing.Point(28, 151)
+        NOMBRELabel.Name = "NOMBRELabel"
+        NOMBRELabel.Size = New System.Drawing.Size(57, 13)
+        NOMBRELabel.TabIndex = 6
+        NOMBRELabel.Text = "NOMBRE:"
+        '
+        'DPITextBox
+        '
+        Me.DPITextBox.Location = New System.Drawing.Point(133, 115)
+        Me.DPITextBox.Name = "DPITextBox"
+        Me.DPITextBox.Size = New System.Drawing.Size(122, 20)
+        Me.DPITextBox.TabIndex = 5
+        '
+        'NOMBRETextBox
+        '
+        Me.NOMBRETextBox.Location = New System.Drawing.Point(133, 148)
+        Me.NOMBRETextBox.Name = "NOMBRETextBox"
+        Me.NOMBRETextBox.Size = New System.Drawing.Size(121, 20)
+        Me.NOMBRETextBox.TabIndex = 7
+        '
+        'DPILabel
+        '
+        DPILabel.AutoSize = True
+        DPILabel.Location = New System.Drawing.Point(30, 115)
+        DPILabel.Name = "DPILabel"
+        DPILabel.Size = New System.Drawing.Size(28, 13)
+        DPILabel.TabIndex = 4
+        DPILabel.Text = "DPI:"
+        '
+        'IDEPTOPComboBox
+        '
+        Me.IDEPTOPComboBox.FormattingEnabled = True
+        Me.IDEPTOPComboBox.Location = New System.Drawing.Point(134, 52)
+        Me.IDEPTOPComboBox.Name = "IDEPTOPComboBox"
+        Me.IDEPTOPComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.IDEPTOPComboBox.TabIndex = 1
+        '
+        'IDPUESTOLabel
+        '
+        IDPUESTOLabel.AutoSize = True
+        IDPUESTOLabel.Location = New System.Drawing.Point(28, 87)
+        IDPUESTOLabel.Name = "IDPUESTOLabel"
+        IDPUESTOLabel.Size = New System.Drawing.Size(54, 13)
+        IDPUESTOLabel.TabIndex = 2
+        IDPUESTOLabel.Text = "PUESTO:"
+        '
+        'IDPUESTOComboBox
+        '
+        Me.IDPUESTOComboBox.FormattingEnabled = True
+        Me.IDPUESTOComboBox.Location = New System.Drawing.Point(133, 84)
+        Me.IDPUESTOComboBox.Name = "IDPUESTOComboBox"
+        Me.IDPUESTOComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.IDPUESTOComboBox.TabIndex = 3
+        '
+        'IDEPTOPLabel
+        '
+        IDEPTOPLabel.AutoSize = True
+        IDEPTOPLabel.Location = New System.Drawing.Point(28, 52)
+        IDEPTOPLabel.Name = "IDEPTOPLabel"
+        IDEPTOPLabel.Size = New System.Drawing.Size(100, 13)
+        IDEPTOPLabel.TabIndex = 0
+        IDEPTOPLabel.Text = "DEPARTAMENTO:"
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.GroupBox2)
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.btGuardar)
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(943, 376)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "AGREGAR"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
         'frm_Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -394,8 +418,6 @@ Partial Class frm_Empleados
         Me.Name = "frm_Empleados"
         Me.Text = "Empleados"
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.EMPLEADODataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EMPLEADOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -406,25 +428,21 @@ Partial Class frm_Empleados
         Me.ToolStripContainer2.PerformLayout()
         Me.ToolStripContainer3.ResumeLayout(False)
         Me.ToolStripContainer3.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents DS As Banco.DS
     Friend WithEvents EMPLEADOBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents EMPLEADOTableAdapter As Banco.DSTableAdapters.EMPLEADOTableAdapter
     Friend WithEvents TableAdapterManager As Banco.DSTableAdapters.TableAdapterManager
-    Friend WithEvents CONTRASENATextBox As System.Windows.Forms.TextBox
-    Friend WithEvents USUARIOTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents DPITextBox As System.Windows.Forms.TextBox
-    Friend WithEvents APELLIDOTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents NOMBRETextBox As System.Windows.Forms.TextBox
-    Friend WithEvents IDEPTOPComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents IDPUESTOComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents btGuardar As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents ToolStripContainer2 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents ToolStripContainer3 As System.Windows.Forms.ToolStripContainer
@@ -436,4 +454,16 @@ Partial Class frm_Empleados
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents IDPUESTOComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents IDEPTOPComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents NOMBRETextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DPITextBox As System.Windows.Forms.TextBox
+    Friend WithEvents APELLIDOTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents USUARIOTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents CONTRASENATextBox As System.Windows.Forms.TextBox
+    Friend WithEvents btGuardar As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

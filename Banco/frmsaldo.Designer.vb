@@ -43,6 +43,42 @@ Partial Class frmsaldo
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.Location = New System.Drawing.Point(199, 29)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(59, 13)
+        Label2.TabIndex = 2
+        Label2.Text = "APELLIDO"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Location = New System.Drawing.Point(199, 63)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(43, 13)
+        Label3.TabIndex = 6
+        Label3.Text = "SALDO"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Location = New System.Drawing.Point(15, 29)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(54, 13)
+        Label4.TabIndex = 0
+        Label4.Text = "NOMBRE"
+        '
+        'Label10
+        '
+        Label10.AutoSize = True
+        Label10.Location = New System.Drawing.Point(16, 63)
+        Label10.Name = "Label10"
+        Label10.Size = New System.Drawing.Size(51, 13)
+        Label10.TabIndex = 4
+        Label10.Text = "CUENTA"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Label2)
@@ -57,18 +93,9 @@ Partial Class frmsaldo
         Me.GroupBox1.Location = New System.Drawing.Point(17, 108)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(489, 97)
-        Me.GroupBox1.TabIndex = 7
+        Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
-        '
-        'Label2
-        '
-        Label2.AutoSize = True
-        Label2.Location = New System.Drawing.Point(199, 29)
-        Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(59, 13)
-        Label2.TabIndex = 38
-        Label2.Text = "APELLIDO"
         '
         'TBAPELLIDO
         '
@@ -76,16 +103,7 @@ Partial Class frmsaldo
         Me.TBAPELLIDO.Location = New System.Drawing.Point(269, 22)
         Me.TBAPELLIDO.Name = "TBAPELLIDO"
         Me.TBAPELLIDO.Size = New System.Drawing.Size(100, 24)
-        Me.TBAPELLIDO.TabIndex = 37
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(199, 63)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(43, 13)
-        Label3.TabIndex = 36
-        Label3.Text = "SALDO"
+        Me.TBAPELLIDO.TabIndex = 3
         '
         'TBSALDO
         '
@@ -93,16 +111,7 @@ Partial Class frmsaldo
         Me.TBSALDO.Location = New System.Drawing.Point(269, 59)
         Me.TBSALDO.Name = "TBSALDO"
         Me.TBSALDO.Size = New System.Drawing.Size(100, 24)
-        Me.TBSALDO.TabIndex = 35
-        '
-        'Label4
-        '
-        Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(15, 29)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(54, 13)
-        Label4.TabIndex = 34
-        Label4.Text = "NOMBRE"
+        Me.TBSALDO.TabIndex = 7
         '
         'TBNOMBRE
         '
@@ -110,16 +119,7 @@ Partial Class frmsaldo
         Me.TBNOMBRE.Location = New System.Drawing.Point(89, 22)
         Me.TBNOMBRE.Name = "TBNOMBRE"
         Me.TBNOMBRE.Size = New System.Drawing.Size(100, 24)
-        Me.TBNOMBRE.TabIndex = 29
-        '
-        'Label10
-        '
-        Label10.AutoSize = True
-        Label10.Location = New System.Drawing.Point(16, 63)
-        Label10.Name = "Label10"
-        Label10.Size = New System.Drawing.Size(51, 13)
-        Label10.TabIndex = 32
-        Label10.Text = "CUENTA"
+        Me.TBNOMBRE.TabIndex = 1
         '
         'TBCUENTA
         '
@@ -127,7 +127,7 @@ Partial Class frmsaldo
         Me.TBCUENTA.Location = New System.Drawing.Point(89, 59)
         Me.TBCUENTA.Name = "TBCUENTA"
         Me.TBCUENTA.Size = New System.Drawing.Size(100, 24)
-        Me.TBCUENTA.TabIndex = 30
+        Me.TBCUENTA.TabIndex = 5
         '
         'TextBox8
         '
@@ -135,7 +135,7 @@ Partial Class frmsaldo
         Me.TextBox8.Location = New System.Drawing.Point(17, 48)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(155, 24)
-        Me.TextBox8.TabIndex = 5
+        Me.TextBox8.TabIndex = 1
         '
         'Label5
         '
@@ -144,7 +144,7 @@ Partial Class frmsaldo
         Me.Label5.Location = New System.Drawing.Point(12, 20)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(151, 25)
-        Me.Label5.TabIndex = 4
+        Me.Label5.TabIndex = 0
         Me.Label5.Text = "NO. CUENTA"
         '
         'TBFECHA
@@ -164,7 +164,7 @@ Partial Class frmsaldo
         Me.Button1.Location = New System.Drawing.Point(265, 31)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(50, 41)
-        Me.Button1.TabIndex = 9
+        Me.Button1.TabIndex = 4
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button3
@@ -174,7 +174,7 @@ Partial Class frmsaldo
         Me.Button3.Location = New System.Drawing.Point(209, 31)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(50, 41)
-        Me.Button3.TabIndex = 6
+        Me.Button3.TabIndex = 2
         Me.Button3.UseVisualStyleBackColor = True
         '
         'frmsaldo

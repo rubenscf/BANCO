@@ -39,7 +39,7 @@ Partial Class login
         Me.Button2.Location = New System.Drawing.Point(158, 101)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(41, 38)
-        Me.Button2.TabIndex = 11
+        Me.Button2.TabIndex = 5
         Me.Button2.UseVisualStyleBackColor = True
         '
         'userbox
@@ -47,7 +47,7 @@ Partial Class login
         Me.userbox.Location = New System.Drawing.Point(103, 18)
         Me.userbox.Name = "userbox"
         Me.userbox.Size = New System.Drawing.Size(113, 20)
-        Me.userbox.TabIndex = 7
+        Me.userbox.TabIndex = 1
         '
         'passbox
         '
@@ -55,7 +55,7 @@ Partial Class login
         Me.passbox.Name = "passbox"
         Me.passbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.passbox.Size = New System.Drawing.Size(113, 20)
-        Me.passbox.TabIndex = 9
+        Me.passbox.TabIndex = 3
         '
         'Label6
         '
@@ -65,7 +65,7 @@ Partial Class login
         Me.Label6.Location = New System.Drawing.Point(39, 56)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(60, 13)
-        Me.Label6.TabIndex = 8
+        Me.Label6.TabIndex = 2
         Me.Label6.Text = "contraseña"
         '
         'Label5
@@ -76,7 +76,7 @@ Partial Class login
         Me.Label5.Location = New System.Drawing.Point(39, 21)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(43, 13)
-        Me.Label5.TabIndex = 6
+        Me.Label5.TabIndex = 0
         Me.Label5.Text = "Usuario"
         '
         'Button1
@@ -88,7 +88,7 @@ Partial Class login
         Me.Button1.Location = New System.Drawing.Point(82, 101)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(43, 38)
-        Me.Button1.TabIndex = 10
+        Me.Button1.TabIndex = 4
         Me.Button1.UseVisualStyleBackColor = True
         '
         'login

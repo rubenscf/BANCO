@@ -2,7 +2,7 @@
 
 Public Class funcionesvarias
     Dim conex As String = "Data Source=localhost; User Id=BANCO; Password=BANCO;"
-    Dim oracle As New OracleConnection(conex)
+    Public oracle As New OracleConnection(conex)
     Dim com As New OracleCommand
     Dim da As New OracleDataAdapter
     Dim dst As New DataSet
@@ -107,11 +107,11 @@ Public Class funcionesvarias
                 da = New OracleDataAdapter(cadena, oracle)
                 da.Fill(resultado)
 
-                MessageBox.Show("si proceso consulta=", resultado.ToString)
+
                 desconexion()
                 Return resultado
             Else
-                MessageBox.Show("no se conecto clase cone")
+                MessageBox.Show("No se encuentra Servidor")
                 oracle.Close()
                 Return False
             End If

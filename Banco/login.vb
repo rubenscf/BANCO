@@ -27,7 +27,7 @@ Public Class login
                 Form1.TBUSER.Text = DTS.Tables(0).Rows(0)(1).ToString
                 Form1.TBRANGO.Text = DTS.Tables(0).Rows(0)(2).ToString
 
-                cadena = "SELECT EMPLEADO.IDPUESTO FROM EMPLEADO, USUARIO WHERE EMPLEADO.USUARIO = '" + datos.limpia(userbox.Text) + "'AND EMPLEADO.CONTRASENA ='" + hash + "'"
+                cadena = "SELECT EMPLEADO.IDPUESTO FROM EMPLEADO WHERE EMPLEADO.USUARIO = '" + datos.limpia(userbox.Text) + "'AND EMPLEADO.CONTRASENA ='" + hash + "'"
                 ID = datos.consulta(cadena)
                 If ID Is Nothing Then
                     userbox.Text = ""

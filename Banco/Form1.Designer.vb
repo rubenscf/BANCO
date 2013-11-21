@@ -42,9 +42,9 @@ Partial Class Form1
         Me.TBRANGO = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSFECHA = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TBHORA = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -52,7 +52,7 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCuenta, Me.mnuConsultarSaldo, Me.mnuTransaccion, Me.mnuAuditoria, Me.mnuEmpleados, Me.SesionToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SesionToolStripMenuItem, Me.mnuCuenta, Me.mnuConsultarSaldo, Me.mnuTransaccion, Me.mnuAuditoria, Me.mnuEmpleados})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(792, 56)
@@ -124,8 +124,10 @@ Partial Class Form1
         '
         'EmpleadosToolStripMenuItem
         '
+        Me.EmpleadosToolStripMenuItem.Image = Global.Banco.My.Resources.Resources.user_add
+        Me.EmpleadosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
-        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(168, 38)
         Me.EmpleadosToolStripMenuItem.Text = "Empleados"
         '
         'SesionToolStripMenuItem
@@ -141,7 +143,7 @@ Partial Class Form1
         Me.IniciaS.Image = Global.Banco.My.Resources.Resources.connect
         Me.IniciaS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IniciaS.Name = "IniciaS"
-        Me.IniciaS.Size = New System.Drawing.Size(143, 22)
+        Me.IniciaS.Size = New System.Drawing.Size(152, 22)
         Me.IniciaS.Text = "Iniciar Sesión"
         '
         'CerarS
@@ -149,7 +151,7 @@ Partial Class Form1
         Me.CerarS.Image = Global.Banco.My.Resources.Resources.cancel
         Me.CerarS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CerarS.Name = "CerarS"
-        Me.CerarS.Size = New System.Drawing.Size(143, 22)
+        Me.CerarS.Size = New System.Drawing.Size(152, 22)
         Me.CerarS.Text = "Cerrar Sesión"
         '
         'StatusStrip1
@@ -200,6 +202,13 @@ Partial Class Form1
         Me.TSFECHA.Name = "TSFECHA"
         Me.TSFECHA.Size = New System.Drawing.Size(0, 17)
         '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(43, 17)
+        Me.ToolStripStatusLabel3.Text = "HORA:"
+        '
         'TBHORA
         '
         Me.TBHORA.BackColor = System.Drawing.Color.Transparent
@@ -210,13 +219,6 @@ Partial Class Form1
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
-        '
-        'ToolStripStatusLabel3
-        '
-        Me.ToolStripStatusLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(43, 17)
-        Me.ToolStripStatusLabel3.Text = "HORA:"
         '
         'Form1
         '
