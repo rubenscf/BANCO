@@ -10,6 +10,7 @@ Public Class frmCliente
     Dim com As New OracleCommand
     Dim cos As String
     Dim codigoc As String
+    Dim codigoc1 As String
 
     Private Sub CLIENTEBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
@@ -21,24 +22,43 @@ Public Class frmCliente
         'TODO: esta línea de código carga datos en la tabla 'DS.CLIENTE' Puede moverla o quitarla según sea necesario.
         Me.CLIENTETableAdapter.Fill(Me.DS.CLIENTE)
         combotipo()
+        codigo1()
+
+
+
 
 
     End Sub
+    Private Sub codigo1()
+        cadena = "SELECT MAX(idcliente) FROM cliente"
+        codigoc1 = datos.consulta(cadena).ToString
+        Tbnc.Text = codigoc1 + 1
+
+    End Sub
+
+
     Private Sub codigo()
-        cadena = "SELECT COUNT(idcliente) FROM cliente"
+        cadena = "SELECT MAX(idcliente) FROM cliente"
         codigoc = datos.consulta(cadena).ToString
+        If codigoc = 0 Then
+            codigoc = codigoc + 1
+        End If
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If DPITextBox.Text <> "" And NOMBRETextBox.Text <> "" Then
             Me.CLIENTETableAdapter.SP_ADD_CLIENTE(NOMBRETextBox.Text, APELLIDOTextBox.Text, DIRECCIONTextBox.Text, TELEFONOTextBox.Text, DPITextBox.Text)
-            codigo()
+
             cuenta()
             DPITextBox.Text = ""
             NOMBRETextBox.Text = ""
             APELLIDOTextBox.Text = ""
             DIRECCIONTextBox.Text = ""
             TELEFONOTextBox.Text = ""
+            TBMONTOA.Text = ""
+            codigo1()
+
+
             Me.TableAdapterManager.UpdateAll(Me.DS)
             MsgBox("Datos Guardados", vbInformation)
             Me.CLIENTETableAdapter.Fill(Me.DS.CLIENTE)
@@ -49,6 +69,7 @@ Public Class frmCliente
     End Sub
     Private Sub cuenta()
         Dim x As Exception
+        codigo()
         If datos.conectar = True Then
             Try
                 Conexionbanco.Open()

@@ -11,15 +11,17 @@ Public Class frmtarjeta
     Dim com As New OracleCommand
     Dim cos As String
     Dim codigoc As String
+
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
+    
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim hash As String
 
-        Using md5Hash As MD5 = MD5.Create()
-            hash = _ObtieneMd5Hash(md5Hash, TBPIN.Text)
+        Using umgmazate As MD5 = MD5.Create()
+            hash = _ObtieneMd5Hash(umgmazate, TBPIN.Text)
         End Using
         Dim x As Exception
         If datos.conectar = True Then
@@ -39,9 +41,15 @@ Public Class frmtarjeta
                 com.Parameters.Add(New OracleParameter("VPIN", OracleDbType.Varchar2, ParameterDirection.Input)).Value = hash
 
                 com.ExecuteNonQuery()
-                MsgBox("solicitud enviada")
+               
+                MsgBox("Procesando Solicitud")
+
+
                 datos.desconexion()
                 limpiar()
+                codigo()
+
+
 
 
 
@@ -64,6 +72,15 @@ Public Class frmtarjeta
 
 
     End Sub
+    Private Sub codigo()
+        cadena = "SELECT MAX(idtarjeta) FROM tarjeta"
+        codigoc = datos.consulta(cadena).ToString
+          MsgBox("Su numero de Tarjeta es:"+codigoc)
+        If codigoc = 0 Then
+            codigoc = codigoc + 1
+        End If
+
+    End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         If TextBox8.Text = "" Then
@@ -81,6 +98,8 @@ Public Class frmtarjeta
                 TBCLIENTE.Text = DTS.Tables(0).Rows(0)(1).ToString
                 TBNCUENTA.Text = DTS.Tables(0).Rows(0)(2).ToString
                 TBAPELLIDO.Text = DTS.Tables(0).Rows(0)(3).ToString
+
+
                 
             Catch ex As Exception
 
@@ -127,6 +146,7 @@ Public Class frmtarjeta
         TBNOMBRE1.Text = ""
         TBNCUENTA1.Text = ""
         TBAPELLIDO1.Text = ""
+        TBLIMITE.Text = ""
         TBLIMITE1.Text = ""
         TBTTARJETA.Text = ""
         TBCLIENTE.Text = ""

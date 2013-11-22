@@ -80,7 +80,7 @@ Partial Class frmtarjeta
         'IDEPTOPLabel
         '
         IDEPTOPLabel.AutoSize = True
-        IDEPTOPLabel.Location = New System.Drawing.Point(12, 22)
+        IDEPTOPLabel.Location = New System.Drawing.Point(19, 43)
         IDEPTOPLabel.Name = "IDEPTOPLabel"
         IDEPTOPLabel.Size = New System.Drawing.Size(64, 13)
         IDEPTOPLabel.TabIndex = 0
@@ -89,7 +89,7 @@ Partial Class frmtarjeta
         'Label1
         '
         Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(12, 60)
+        Label1.Location = New System.Drawing.Point(19, 81)
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(57, 13)
         Label1.TabIndex = 4
@@ -98,7 +98,7 @@ Partial Class frmtarjeta
         'Label4
         '
         Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(291, 94)
+        Label4.Location = New System.Drawing.Point(298, 115)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(86, 13)
         Label4.TabIndex = 10
@@ -107,7 +107,7 @@ Partial Class frmtarjeta
         'Label6
         '
         Label6.AutoSize = True
-        Label6.Location = New System.Drawing.Point(291, 22)
+        Label6.Location = New System.Drawing.Point(298, 43)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(96, 13)
         Label6.TabIndex = 2
@@ -116,7 +116,7 @@ Partial Class frmtarjeta
         'Label8
         '
         Label8.AutoSize = True
-        Label8.Location = New System.Drawing.Point(291, 60)
+        Label8.Location = New System.Drawing.Point(298, 81)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(48, 13)
         Label8.TabIndex = 6
@@ -125,7 +125,7 @@ Partial Class frmtarjeta
         'Label3
         '
         Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(12, 94)
+        Label3.Location = New System.Drawing.Point(19, 115)
         Label3.Name = "Label3"
         Label3.Size = New System.Drawing.Size(62, 13)
         Label3.TabIndex = 8
@@ -239,7 +239,7 @@ Partial Class frmtarjeta
         Me.GroupBox1.Controls.Add(IDEPTOPLabel)
         Me.GroupBox1.Location = New System.Drawing.Point(24, 72)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(553, 146)
+        Me.GroupBox1.Size = New System.Drawing.Size(553, 144)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de tarjeta"
@@ -247,21 +247,21 @@ Partial Class frmtarjeta
         'TBAPELLIDO
         '
         Me.TBAPELLIDO.Enabled = False
-        Me.TBAPELLIDO.Location = New System.Drawing.Point(105, 91)
+        Me.TBAPELLIDO.Location = New System.Drawing.Point(112, 112)
         Me.TBAPELLIDO.Name = "TBAPELLIDO"
         Me.TBAPELLIDO.Size = New System.Drawing.Size(141, 20)
         Me.TBAPELLIDO.TabIndex = 9
         '
         'TBPIN
         '
-        Me.TBPIN.Location = New System.Drawing.Point(393, 57)
+        Me.TBPIN.Location = New System.Drawing.Point(400, 78)
         Me.TBPIN.Name = "TBPIN"
         Me.TBPIN.Size = New System.Drawing.Size(141, 20)
         Me.TBPIN.TabIndex = 7
         '
         'TBLIMITE
         '
-        Me.TBLIMITE.Location = New System.Drawing.Point(393, 19)
+        Me.TBLIMITE.Location = New System.Drawing.Point(400, 40)
         Me.TBLIMITE.Name = "TBLIMITE"
         Me.TBLIMITE.Size = New System.Drawing.Size(141, 20)
         Me.TBLIMITE.TabIndex = 3
@@ -270,7 +270,7 @@ Partial Class frmtarjeta
         '
         Me.CBTTARJETA.FormattingEnabled = True
         Me.CBTTARJETA.Items.AddRange(New Object() {"CREDITO", "DEBITO"})
-        Me.CBTTARJETA.Location = New System.Drawing.Point(393, 86)
+        Me.CBTTARJETA.Location = New System.Drawing.Point(400, 107)
         Me.CBTTARJETA.Name = "CBTTARJETA"
         Me.CBTTARJETA.Size = New System.Drawing.Size(141, 21)
         Me.CBTTARJETA.TabIndex = 11
@@ -278,7 +278,7 @@ Partial Class frmtarjeta
         'TBCLIENTE
         '
         Me.TBCLIENTE.Enabled = False
-        Me.TBCLIENTE.Location = New System.Drawing.Point(105, 57)
+        Me.TBCLIENTE.Location = New System.Drawing.Point(112, 78)
         Me.TBCLIENTE.Name = "TBCLIENTE"
         Me.TBCLIENTE.Size = New System.Drawing.Size(141, 20)
         Me.TBCLIENTE.TabIndex = 5
@@ -286,7 +286,7 @@ Partial Class frmtarjeta
         'TBNCUENTA
         '
         Me.TBNCUENTA.Enabled = False
-        Me.TBNCUENTA.Location = New System.Drawing.Point(105, 19)
+        Me.TBNCUENTA.Location = New System.Drawing.Point(112, 40)
         Me.TBNCUENTA.Name = "TBNCUENTA"
         Me.TBNCUENTA.Size = New System.Drawing.Size(141, 20)
         Me.TBNCUENTA.TabIndex = 1

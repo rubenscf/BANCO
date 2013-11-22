@@ -47,8 +47,8 @@ Public Class frm_Empleados
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim hash As String
 
-        Using md5Hash As MD5 = MD5.Create()
-            hash = _ObtieneMd5Hash(md5Hash, CONTRASENATextBox.Text)
+        Using umgmazate As MD5 = MD5.Create()
+            hash = _ObtieneMd5Hash(umgmazate, CONTRASENATextBox.Text)
         End Using
 
         Me.EMPLEADOTableAdapter.SP_ADD_EMPLEADO(IDPUESTOComboBox.SelectedValue, IDEPTOPComboBox.SelectedValue, NOMBRETextBox.Text, APELLIDOTextBox.Text, DPITextBox.Text, USUARIOTextBox.Text, hash)
