@@ -38,7 +38,6 @@ Partial Class frm_Transaccion
         Dim Label12 As System.Windows.Forms.Label
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.cobros = New System.Windows.Forms.TabPage()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.CBDOC = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TBAPELLIDO = New System.Windows.Forms.TextBox()
@@ -46,13 +45,11 @@ Partial Class frm_Transaccion
         Me.TBNOMBRE = New System.Windows.Forms.TextBox()
         Me.TBFECHA = New System.Windows.Forms.TextBox()
         Me.TBCUENTA = New System.Windows.Forms.TextBox()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TBMONTOR = New System.Windows.Forms.TextBox()
         Me.pagos = New System.Windows.Forms.TabPage()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.CBDOC1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TBAPELLIDO1 = New System.Windows.Forms.TextBox()
@@ -64,6 +61,9 @@ Partial Class frm_Transaccion
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TBMONTOD = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Label6 = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
@@ -92,7 +92,7 @@ Partial Class frm_Transaccion
         Label6.Location = New System.Drawing.Point(436, 79)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(122, 13)
-        Label6.TabIndex = 4
+        Label6.TabIndex = 5
         Label6.Text = "MONTO A DEPOSITAR"
         '
         'Label1
@@ -101,7 +101,7 @@ Partial Class frm_Transaccion
         Label1.Location = New System.Drawing.Point(200, 65)
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(43, 13)
-        Label1.TabIndex = 26
+        Label1.TabIndex = 6
         Label1.Text = "SALDO"
         '
         'DPILabel
@@ -110,7 +110,7 @@ Partial Class frm_Transaccion
         DPILabel.Location = New System.Drawing.Point(16, 31)
         DPILabel.Name = "DPILabel"
         DPILabel.Size = New System.Drawing.Size(54, 13)
-        DPILabel.TabIndex = 20
+        DPILabel.TabIndex = 0
         DPILabel.Text = "NOMBRE"
         '
         'DIRECCIONLabel
@@ -119,7 +119,7 @@ Partial Class frm_Transaccion
         DIRECCIONLabel.Location = New System.Drawing.Point(16, 105)
         DIRECCIONLabel.Name = "DIRECCIONLabel"
         DIRECCIONLabel.Size = New System.Drawing.Size(42, 13)
-        DIRECCIONLabel.TabIndex = 18
+        DIRECCIONLabel.TabIndex = 8
         DIRECCIONLabel.Text = "FECHA"
         '
         'NOMBRELabel
@@ -128,7 +128,7 @@ Partial Class frm_Transaccion
         NOMBRELabel.Location = New System.Drawing.Point(17, 65)
         NOMBRELabel.Name = "NOMBRELabel"
         NOMBRELabel.Size = New System.Drawing.Size(51, 13)
-        NOMBRELabel.TabIndex = 12
+        NOMBRELabel.TabIndex = 4
         NOMBRELabel.Text = "CUENTA"
         '
         'APELLIDOLabel
@@ -137,7 +137,7 @@ Partial Class frm_Transaccion
         APELLIDOLabel.Location = New System.Drawing.Point(446, 82)
         APELLIDOLabel.Name = "APELLIDOLabel"
         APELLIDOLabel.Size = New System.Drawing.Size(108, 13)
-        APELLIDOLabel.TabIndex = 4
+        APELLIDOLabel.TabIndex = 5
         APELLIDOLabel.Text = "MONTO A RETIRAR"
         '
         'Label9
@@ -146,7 +146,7 @@ Partial Class frm_Transaccion
         Label9.Location = New System.Drawing.Point(200, 31)
         Label9.Name = "Label9"
         Label9.Size = New System.Drawing.Size(59, 13)
-        Label9.TabIndex = 28
+        Label9.TabIndex = 2
         Label9.Text = "APELLIDO"
         '
         'Label2
@@ -155,7 +155,7 @@ Partial Class frm_Transaccion
         Label2.Location = New System.Drawing.Point(199, 29)
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(59, 13)
-        Label2.TabIndex = 38
+        Label2.TabIndex = 2
         Label2.Text = "APELLIDO"
         '
         'Label3
@@ -164,7 +164,7 @@ Partial Class frm_Transaccion
         Label3.Location = New System.Drawing.Point(199, 63)
         Label3.Name = "Label3"
         Label3.Size = New System.Drawing.Size(43, 13)
-        Label3.TabIndex = 36
+        Label3.TabIndex = 6
         Label3.Text = "SALDO"
         '
         'Label4
@@ -173,7 +173,7 @@ Partial Class frm_Transaccion
         Label4.Location = New System.Drawing.Point(15, 29)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(54, 13)
-        Label4.TabIndex = 34
+        Label4.TabIndex = 0
         Label4.Text = "NOMBRE"
         '
         'Label8
@@ -182,7 +182,7 @@ Partial Class frm_Transaccion
         Label8.Location = New System.Drawing.Point(15, 103)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(42, 13)
-        Label8.TabIndex = 33
+        Label8.TabIndex = 8
         Label8.Text = "FECHA"
         '
         'Label10
@@ -191,7 +191,7 @@ Partial Class frm_Transaccion
         Label10.Location = New System.Drawing.Point(16, 63)
         Label10.Name = "Label10"
         Label10.Size = New System.Drawing.Size(51, 13)
-        Label10.TabIndex = 32
+        Label10.TabIndex = 4
         Label10.Text = "CUENTA"
         '
         'Label11
@@ -200,7 +200,7 @@ Partial Class frm_Transaccion
         Label11.Location = New System.Drawing.Point(465, 142)
         Label11.Name = "Label11"
         Label11.Size = New System.Drawing.Size(77, 13)
-        Label11.TabIndex = 30
+        Label11.TabIndex = 7
         Label11.Text = "DOCUMENTO"
         '
         'Label12
@@ -209,7 +209,7 @@ Partial Class frm_Transaccion
         Label12.Location = New System.Drawing.Point(455, 122)
         Label12.Name = "Label12"
         Label12.Size = New System.Drawing.Size(77, 13)
-        Label12.TabIndex = 32
+        Label12.TabIndex = 7
         Label12.Text = "DOCUMENTO"
         '
         'TabControl1
@@ -225,6 +225,7 @@ Partial Class frm_Transaccion
         '
         'cobros
         '
+        Me.cobros.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.cobros.Controls.Add(Me.Button2)
         Me.cobros.Controls.Add(Label11)
         Me.cobros.Controls.Add(Me.CBDOC)
@@ -241,18 +242,6 @@ Partial Class frm_Transaccion
         Me.cobros.Size = New System.Drawing.Size(607, 310)
         Me.cobros.TabIndex = 0
         Me.cobros.Text = "RETIROS"
-        Me.cobros.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = Global.Banco.My.Resources.Resources._38
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(383, 18)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(50, 41)
-        Me.Button2.TabIndex = 44
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'CBDOC
         '
@@ -261,7 +250,7 @@ Partial Class frm_Transaccion
         Me.CBDOC.Location = New System.Drawing.Point(435, 158)
         Me.CBDOC.Name = "CBDOC"
         Me.CBDOC.Size = New System.Drawing.Size(141, 21)
-        Me.CBDOC.TabIndex = 29
+        Me.CBDOC.TabIndex = 8
         '
         'GroupBox2
         '
@@ -279,7 +268,7 @@ Partial Class frm_Transaccion
         Me.GroupBox2.Location = New System.Drawing.Point(10, 82)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(398, 198)
-        Me.GroupBox2.TabIndex = 3
+        Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos"
         '
@@ -289,7 +278,7 @@ Partial Class frm_Transaccion
         Me.TBAPELLIDO.Location = New System.Drawing.Point(270, 24)
         Me.TBAPELLIDO.Name = "TBAPELLIDO"
         Me.TBAPELLIDO.Size = New System.Drawing.Size(100, 24)
-        Me.TBAPELLIDO.TabIndex = 27
+        Me.TBAPELLIDO.TabIndex = 3
         '
         'TBSALDO
         '
@@ -297,7 +286,7 @@ Partial Class frm_Transaccion
         Me.TBSALDO.Location = New System.Drawing.Point(270, 61)
         Me.TBSALDO.Name = "TBSALDO"
         Me.TBSALDO.Size = New System.Drawing.Size(100, 24)
-        Me.TBSALDO.TabIndex = 25
+        Me.TBSALDO.TabIndex = 7
         '
         'TBNOMBRE
         '
@@ -305,7 +294,7 @@ Partial Class frm_Transaccion
         Me.TBNOMBRE.Location = New System.Drawing.Point(90, 24)
         Me.TBNOMBRE.Name = "TBNOMBRE"
         Me.TBNOMBRE.Size = New System.Drawing.Size(100, 24)
-        Me.TBNOMBRE.TabIndex = 0
+        Me.TBNOMBRE.TabIndex = 1
         '
         'TBFECHA
         '
@@ -313,7 +302,7 @@ Partial Class frm_Transaccion
         Me.TBFECHA.Location = New System.Drawing.Point(91, 98)
         Me.TBFECHA.Name = "TBFECHA"
         Me.TBFECHA.Size = New System.Drawing.Size(100, 24)
-        Me.TBFECHA.TabIndex = 2
+        Me.TBFECHA.TabIndex = 9
         '
         'TBCUENTA
         '
@@ -321,17 +310,7 @@ Partial Class frm_Transaccion
         Me.TBCUENTA.Location = New System.Drawing.Point(90, 61)
         Me.TBCUENTA.Name = "TBCUENTA"
         Me.TBCUENTA.Size = New System.Drawing.Size(100, 24)
-        Me.TBCUENTA.TabIndex = 1
-        '
-        'Button5
-        '
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Image = Global.Banco.My.Resources.Resources.search
-        Me.Button5.Location = New System.Drawing.Point(327, 18)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(50, 41)
-        Me.Button5.TabIndex = 2
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.TBCUENTA.TabIndex = 5
         '
         'TextBox8
         '
@@ -347,7 +326,7 @@ Partial Class frm_Transaccion
         Me.Button6.Location = New System.Drawing.Point(435, 241)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(141, 39)
-        Me.Button6.TabIndex = 6
+        Me.Button6.TabIndex = 9
         Me.Button6.Text = "Realizar"
         Me.Button6.UseVisualStyleBackColor = True
         '
@@ -367,10 +346,11 @@ Partial Class frm_Transaccion
         Me.TBMONTOR.Location = New System.Drawing.Point(435, 98)
         Me.TBMONTOR.Name = "TBMONTOR"
         Me.TBMONTOR.Size = New System.Drawing.Size(141, 24)
-        Me.TBMONTOR.TabIndex = 5
+        Me.TBMONTOR.TabIndex = 6
         '
         'pagos
         '
+        Me.pagos.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.pagos.Controls.Add(Me.Button4)
         Me.pagos.Controls.Add(Label12)
         Me.pagos.Controls.Add(Me.CBDOC1)
@@ -387,18 +367,6 @@ Partial Class frm_Transaccion
         Me.pagos.Size = New System.Drawing.Size(607, 310)
         Me.pagos.TabIndex = 1
         Me.pagos.Text = "DEPOSITOS"
-        Me.pagos.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.BackgroundImage = Global.Banco.My.Resources.Resources._38
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(383, 13)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(50, 41)
-        Me.Button4.TabIndex = 45
-        Me.Button4.UseVisualStyleBackColor = True
         '
         'CBDOC1
         '
@@ -407,7 +375,7 @@ Partial Class frm_Transaccion
         Me.CBDOC1.Location = New System.Drawing.Point(425, 138)
         Me.CBDOC1.Name = "CBDOC1"
         Me.CBDOC1.Size = New System.Drawing.Size(141, 21)
-        Me.CBDOC1.TabIndex = 31
+        Me.CBDOC1.TabIndex = 8
         '
         'GroupBox1
         '
@@ -425,7 +393,7 @@ Partial Class frm_Transaccion
         Me.GroupBox1.Location = New System.Drawing.Point(10, 79)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(384, 194)
-        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
         '
@@ -435,7 +403,7 @@ Partial Class frm_Transaccion
         Me.TBAPELLIDO1.Location = New System.Drawing.Point(269, 22)
         Me.TBAPELLIDO1.Name = "TBAPELLIDO1"
         Me.TBAPELLIDO1.Size = New System.Drawing.Size(100, 24)
-        Me.TBAPELLIDO1.TabIndex = 37
+        Me.TBAPELLIDO1.TabIndex = 3
         '
         'TBSALDO1
         '
@@ -443,7 +411,7 @@ Partial Class frm_Transaccion
         Me.TBSALDO1.Location = New System.Drawing.Point(269, 59)
         Me.TBSALDO1.Name = "TBSALDO1"
         Me.TBSALDO1.Size = New System.Drawing.Size(100, 24)
-        Me.TBSALDO1.TabIndex = 35
+        Me.TBSALDO1.TabIndex = 7
         '
         'TBNOMBRE1
         '
@@ -451,7 +419,7 @@ Partial Class frm_Transaccion
         Me.TBNOMBRE1.Location = New System.Drawing.Point(89, 22)
         Me.TBNOMBRE1.Name = "TBNOMBRE1"
         Me.TBNOMBRE1.Size = New System.Drawing.Size(100, 24)
-        Me.TBNOMBRE1.TabIndex = 29
+        Me.TBNOMBRE1.TabIndex = 1
         '
         'TBFECHA1
         '
@@ -459,7 +427,7 @@ Partial Class frm_Transaccion
         Me.TBFECHA1.Location = New System.Drawing.Point(90, 96)
         Me.TBFECHA1.Name = "TBFECHA1"
         Me.TBFECHA1.Size = New System.Drawing.Size(100, 24)
-        Me.TBFECHA1.TabIndex = 31
+        Me.TBFECHA1.TabIndex = 9
         '
         'TBCUENTA1
         '
@@ -467,7 +435,7 @@ Partial Class frm_Transaccion
         Me.TBCUENTA1.Location = New System.Drawing.Point(89, 59)
         Me.TBCUENTA1.Name = "TBCUENTA1"
         Me.TBCUENTA1.Size = New System.Drawing.Size(100, 24)
-        Me.TBCUENTA1.TabIndex = 30
+        Me.TBCUENTA1.TabIndex = 5
         '
         'TextBox6
         '
@@ -483,7 +451,7 @@ Partial Class frm_Transaccion
         Me.Button1.Location = New System.Drawing.Point(425, 241)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(141, 32)
-        Me.Button1.TabIndex = 6
+        Me.Button1.TabIndex = 9
         Me.Button1.Text = "Realizar"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -503,7 +471,39 @@ Partial Class frm_Transaccion
         Me.TBMONTOD.Location = New System.Drawing.Point(425, 95)
         Me.TBMONTOD.Name = "TBMONTOD"
         Me.TBMONTOD.Size = New System.Drawing.Size(141, 24)
-        Me.TBMONTOD.TabIndex = 5
+        Me.TBMONTOD.TabIndex = 6
+        '
+        'Button2
+        '
+        Me.Button2.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(383, 18)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(50, 41)
+        Me.Button2.TabIndex = 3
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Image = Global.Banco.My.Resources.Resources.search
+        Me.Button5.Location = New System.Drawing.Point(327, 18)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(50, 41)
+        Me.Button5.TabIndex = 2
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(383, 13)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(50, 41)
+        Me.Button4.TabIndex = 3
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '

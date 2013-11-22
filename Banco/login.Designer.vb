@@ -22,25 +22,13 @@ Partial Class login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.userbox = New System.Windows.Forms.TextBox()
         Me.passbox = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = Global.Banco.My.Resources.Resources.cancel
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Red
-        Me.Button2.Location = New System.Drawing.Point(158, 101)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(41, 38)
-        Me.Button2.TabIndex = 5
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'userbox
         '
@@ -79,8 +67,22 @@ Partial Class login
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Usuario"
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackgroundImage = Global.Banco.My.Resources.Resources.cancel
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Red
+        Me.Button2.Location = New System.Drawing.Point(158, 101)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(41, 38)
+        Me.Button2.TabIndex = 5
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
         Me.Button1.BackgroundImage = Global.Banco.My.Resources.Resources.accept
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -89,7 +91,7 @@ Partial Class login
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(43, 38)
         Me.Button1.TabIndex = 4
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'login
         '

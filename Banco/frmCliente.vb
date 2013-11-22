@@ -30,7 +30,7 @@ Public Class frmCliente
 
     End Sub
     Private Sub codigo1()
-        cadena = "SELECT MAX(idcliente) FROM cliente"
+        cadena = "SELECT MAX(IDCUENTA) FROM CUENTA"
         codigoc1 = datos.consulta(cadena).ToString
         Tbnc.Text = codigoc1 + 1
 
@@ -38,7 +38,7 @@ Public Class frmCliente
 
 
     Private Sub codigo()
-        cadena = "SELECT MAX(idcliente) FROM cliente"
+        cadena = "SELECT MAX(IDCUENTA) FROM CUENTA"
         codigoc = datos.consulta(cadena).ToString
         If codigoc = 0 Then
             codigoc = codigoc + 1
@@ -278,6 +278,10 @@ Public Class frmCliente
    
     
     Private Sub TELEFONOTextBox_TextChanged(sender As Object, e As EventArgs) Handles TELEFONOTextBox.TextChanged
+
+    End Sub
+
+    Private Sub Tbnc_TextChanged(sender As Object, e As EventArgs) Handles Tbnc.TextChanged
 
     End Sub
 End Class

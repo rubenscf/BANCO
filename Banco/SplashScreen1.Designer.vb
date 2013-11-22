@@ -24,11 +24,16 @@ Partial Class SplashScreen1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashScreen1))
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MainLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MainLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 10
         '
         'MainLayoutPanel
         '
@@ -53,16 +58,12 @@ Partial Class SplashScreen1
         'ProgressBar1
         '
         Me.ProgressBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ProgressBar1.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.ProgressBar1.ForeColor = System.Drawing.Color.Red
         Me.ProgressBar1.Location = New System.Drawing.Point(3, 290)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(490, 10)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 0
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 50
         '
         'SplashScreen1
         '

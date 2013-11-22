@@ -45,14 +45,8 @@ Partial Class frmCliente
         Dim Label18 As System.Windows.Forms.Label
         Dim Label19 As System.Windows.Forms.Label
         Dim Label20 As System.Windows.Forms.Label
-        Me.DS = New Banco.DS()
-        Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CLIENTETableAdapter = New Banco.DSTableAdapters.CLIENTETableAdapter()
-        Me.TableAdapterManager = New Banco.DSTableAdapters.TableAdapterManager()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TBTCUENTA = New System.Windows.Forms.TextBox()
@@ -62,9 +56,7 @@ Partial Class frmCliente
         Me.TBAPELLIDO = New System.Windows.Forms.TextBox()
         Me.TBDIR = New System.Windows.Forms.TextBox()
         Me.TBTEL = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.CBTCUENTA = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Tbnc = New System.Windows.Forms.TextBox()
@@ -74,13 +66,10 @@ Partial Class frmCliente
         Me.DIRECCIONTextBox = New System.Windows.Forms.TextBox()
         Me.TELEFONOTextBox = New System.Windows.Forms.TextBox()
         Me.TBMONTOA = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.TBC = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TBTC = New System.Windows.Forms.TextBox()
@@ -90,7 +79,18 @@ Partial Class frmCliente
         Me.TBA = New System.Windows.Forms.TextBox()
         Me.TBD = New System.Windows.Forms.TextBox()
         Me.TBT = New System.Windows.Forms.TextBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.DS = New Banco.DS()
+        Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CLIENTETableAdapter = New Banco.DSTableAdapters.CLIENTETableAdapter()
+        Me.TableAdapterManager = New Banco.DSTableAdapters.TableAdapterManager()
         Label9 = New System.Windows.Forms.Label()
         Label8 = New System.Windows.Forms.Label()
         Label7 = New System.Windows.Forms.Label()
@@ -113,8 +113,6 @@ Partial Class frmCliente
         Label18 = New System.Windows.Forms.Label()
         Label19 = New System.Windows.Forms.Label()
         Label20 = New System.Windows.Forms.Label()
-        CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -122,6 +120,8 @@ Partial Class frmCliente
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label9
@@ -328,48 +328,20 @@ Partial Class frmCliente
         Label20.TabIndex = 8
         Label20.Text = "TELEFONO:"
         '
-        'DS
-        '
-        Me.DS.DataSetName = "DS"
-        Me.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CLIENTEBindingSource
-        '
-        Me.CLIENTEBindingSource.DataMember = "CLIENTE"
-        Me.CLIENTEBindingSource.DataSource = Me.DS
-        '
-        'CLIENTETableAdapter
-        '
-        Me.CLIENTETableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.CLIENTETableAdapter = Me.CLIENTETableAdapter
-        Me.TableAdapterManager.CUENTATableAdapter = Nothing
-        Me.TableAdapterManager.DEPARTAMENTOTableAdapter = Nothing
-        Me.TableAdapterManager.EMPLEADOTableAdapter = Nothing
-        Me.TableAdapterManager.PUESTOTableAdapter = Nothing
-        Me.TableAdapterManager.TARJETATableAdapter = Nothing
-        Me.TableAdapterManager.TIPOCUENTATableAdapter = Nothing
-        Me.TableAdapterManager.TRANSACIONTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = Banco.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.USUARIOTableAdapter = Nothing
-        '
         'TabPage3
         '
+        Me.TabPage3.BackColor = System.Drawing.Color.White
         Me.TabPage3.Controls.Add(Me.Label11)
-        Me.TabPage3.Controls.Add(Me.Button3)
-        Me.TabPage3.Controls.Add(Me.Button4)
         Me.TabPage3.Controls.Add(Me.TextBox8)
         Me.TabPage3.Controls.Add(Me.GroupBox2)
+        Me.TabPage3.Controls.Add(Me.Button3)
+        Me.TabPage3.Controls.Add(Me.Button4)
         Me.TabPage3.Controls.Add(Me.Button2)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(622, 315)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Deshabilitar Cuenta"
-        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -379,27 +351,6 @@ Partial Class frmCliente
         Me.Label11.Size = New System.Drawing.Size(76, 13)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "No. de Cuenta"
-        '
-        'Button3
-        '
-        Me.Button3.BackgroundImage = Global.Banco.My.Resources.Resources._38
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(390, 18)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(50, 41)
-        Me.Button3.TabIndex = 3
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Image = Global.Banco.My.Resources.Resources.search
-        Me.Button4.Location = New System.Drawing.Point(334, 18)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(50, 41)
-        Me.Button4.TabIndex = 2
-        Me.Button4.UseVisualStyleBackColor = True
         '
         'TextBox8
         '
@@ -488,23 +439,10 @@ Partial Class frmCliente
         Me.TBTEL.Size = New System.Drawing.Size(121, 24)
         Me.TBTEL.TabIndex = 9
         '
-        'Button2
-        '
-        Me.Button2.Enabled = False
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Image = Global.Banco.My.Resources.Resources.accept
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.Location = New System.Drawing.Point(461, 93)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(129, 41)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "ACEPTAR"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'TabPage1
         '
         Me.TabPage1.AutoScroll = True
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.Button5)
         Me.TabPage1.Controls.Add(Me.CBTCUENTA)
         Me.TabPage1.Controls.Add(Label2)
@@ -519,18 +457,6 @@ Partial Class frmCliente
         Me.TabPage1.Size = New System.Drawing.Size(622, 315)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Aperturar Cuenta"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.BackgroundImage = Global.Banco.My.Resources.Resources._38
-        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(391, 206)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(46, 43)
-        Me.Button5.TabIndex = 7
-        Me.Button5.UseVisualStyleBackColor = True
         '
         'CBTCUENTA
         '
@@ -619,19 +545,6 @@ Partial Class frmCliente
         Me.TBMONTOA.Size = New System.Drawing.Size(121, 24)
         Me.TBMONTOA.TabIndex = 3
         '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = Global.Banco.My.Resources.Resources.accept
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(264, 206)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(121, 42)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "ACEPTAR"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -656,18 +569,18 @@ Partial Class frmCliente
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.Controls.Add(Me.Label13)
-        Me.TabPage2.Controls.Add(Me.Button6)
-        Me.TabPage2.Controls.Add(Me.Button7)
         Me.TabPage2.Controls.Add(Me.TBC)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
+        Me.TabPage2.Controls.Add(Me.Button6)
+        Me.TabPage2.Controls.Add(Me.Button7)
         Me.TabPage2.Controls.Add(Me.Button8)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Size = New System.Drawing.Size(622, 315)
         Me.TabPage2.TabIndex = 3
         Me.TabPage2.Text = "Habilitar Cuenta"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'Label13
         '
@@ -677,27 +590,6 @@ Partial Class frmCliente
         Me.Label13.Size = New System.Drawing.Size(76, 13)
         Me.Label13.TabIndex = 6
         Me.Label13.Text = "No. de Cuenta"
-        '
-        'Button6
-        '
-        Me.Button6.BackgroundImage = Global.Banco.My.Resources.Resources._38
-        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(377, 9)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(50, 41)
-        Me.Button6.TabIndex = 9
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Image = Global.Banco.My.Resources.Resources.search
-        Me.Button7.Location = New System.Drawing.Point(321, 9)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(50, 41)
-        Me.Button7.TabIndex = 8
-        Me.Button7.UseVisualStyleBackColor = True
         '
         'TBC
         '
@@ -786,6 +678,86 @@ Partial Class frmCliente
         Me.TBT.Size = New System.Drawing.Size(121, 24)
         Me.TBT.TabIndex = 9
         '
+        'Button5
+        '
+        Me.Button5.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(391, 206)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(46, 43)
+        Me.Button5.TabIndex = 7
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Image = Global.Banco.My.Resources.Resources.accept
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(264, 206)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(121, 42)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "ACEPTAR"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(390, 18)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(50, 41)
+        Me.Button3.TabIndex = 3
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Image = Global.Banco.My.Resources.Resources.search
+        Me.Button4.Location = New System.Drawing.Point(334, 18)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(50, 41)
+        Me.Button4.TabIndex = 2
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Enabled = False
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Image = Global.Banco.My.Resources.Resources.accept
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.Location = New System.Drawing.Point(461, 93)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(129, 41)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "ACEPTAR"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(377, 9)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(50, 41)
+        Me.Button6.TabIndex = 9
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Image = Global.Banco.My.Resources.Resources.search
+        Me.Button7.Location = New System.Drawing.Point(321, 9)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(50, 41)
+        Me.Button7.TabIndex = 8
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'Button8
         '
         Me.Button8.Enabled = False
@@ -800,6 +772,34 @@ Partial Class frmCliente
         Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button8.UseVisualStyleBackColor = True
         '
+        'DS
+        '
+        Me.DS.DataSetName = "DS"
+        Me.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CLIENTEBindingSource
+        '
+        Me.CLIENTEBindingSource.DataMember = "CLIENTE"
+        Me.CLIENTEBindingSource.DataSource = Me.DS
+        '
+        'CLIENTETableAdapter
+        '
+        Me.CLIENTETableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CLIENTETableAdapter = Me.CLIENTETableAdapter
+        Me.TableAdapterManager.CUENTATableAdapter = Nothing
+        Me.TableAdapterManager.DEPARTAMENTOTableAdapter = Nothing
+        Me.TableAdapterManager.EMPLEADOTableAdapter = Nothing
+        Me.TableAdapterManager.PUESTOTableAdapter = Nothing
+        Me.TableAdapterManager.TARJETATableAdapter = Nothing
+        Me.TableAdapterManager.TIPOCUENTATableAdapter = Nothing
+        Me.TableAdapterManager.TRANSACIONTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Banco.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.USUARIOTableAdapter = Nothing
+        '
         'frmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -808,8 +808,6 @@ Partial Class frmCliente
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "frmCliente"
         Me.Text = "Apertura de cuenta"
-        CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -823,6 +821,8 @@ Partial Class frmCliente
         Me.TabPage2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

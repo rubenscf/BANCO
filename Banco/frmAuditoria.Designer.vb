@@ -106,6 +106,7 @@ Partial Class frmAuditoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(744, 317)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
