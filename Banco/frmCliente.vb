@@ -194,6 +194,13 @@ Public Class frmCliente
         TBTEL.Text = ""
         CBTCUENTA.Text = ""
         TextBox8.Text = ""
+        TBDPI2.Text = ""
+        TBN.Text = ""
+        TBA.Text = ""
+        TBT.Text = ""
+        TBD.Text = ""
+        TBTC.Text = ""
+        TBS.Text = ""
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         limpiar()
@@ -202,5 +209,75 @@ Public Class frmCliente
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         limpiar()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+
+        If TBC.Text = "" Then
+
+            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio")
+
+        Else
+            Try
+
+                cadena = "SELECT  CLIENTE.DPI, CLIENTE.NOMBRE, CLIENTE.APELLIDO,CLIENTE.TELEFONO,CLIENTE.DIRECCION, TIPOCUENTA.TIPOCUENTA,  CUENTA.SALDO FROM CLIENTE, CUENTA,TIPOCUENTA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND CUENTA.ESTADO= 0 AND  CUENTA.IDTIPOCUENTA  = TIPOCUENTA.IDTIPOCUENTA  AND  CUENTA.IDCUENTA  = '" + TBC.Text.ToString() + "' "
+
+
+                DTS = datos.llenar(cadena)
+                TBDPI2.Text = DTS.Tables(0).Rows(0)(0).ToString
+                TBN.Text = DTS.Tables(0).Rows(0)(1).ToString
+                TBA.Text = DTS.Tables(0).Rows(0)(2).ToString
+                TBT.Text = DTS.Tables(0).Rows(0)(3).ToString
+                TBD.Text = DTS.Tables(0).Rows(0)(4).ToString
+                TBTC.Text = DTS.Tables(0).Rows(0)(5).ToString
+                TBS.Text = DTS.Tables(0).Rows(0)(6).ToString
+
+
+                Button8.Enabled = True
+
+
+            Catch ex As Exception
+
+                MessageBox.Show("La cuenta esta activa", ex.Message.ToString())
+
+
+                Return
+            End Try
+
+        End If
+
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Try
+
+            cadena = "UPDATE  CUENTA SET ESTADO =  '1' where IDCUENTA =" + TBC.Text + ""
+
+            cos = datos.insertar(cadena)
+            MessageBox.Show("Su Cuenta ha sido Habilitada Exitosamente")
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message.ToString())
+
+            Return
+        End Try
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        limpiar()
+    End Sub
+
+    Private Sub DPITextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DPITextBox.KeyPress
+        If InStr(1, "1234567890" & Chr(15), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+        End If
+    End Sub
+
+  
+   
+    
+    Private Sub TELEFONOTextBox_TextChanged(sender As Object, e As EventArgs) Handles TELEFONOTextBox.TextChanged
+
     End Sub
 End Class

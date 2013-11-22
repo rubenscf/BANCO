@@ -19,7 +19,7 @@ Public Class frm_Transaccion
       
         If TextBox8.Text = "" Then
 
-            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio")
+            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio", MsgBoxStyle.Exclamation)
 
         Else
 
@@ -38,7 +38,7 @@ Public Class frm_Transaccion
 
             Catch ex As Exception
 
-                MessageBox.Show(ex.Message.ToString(), "La Cuenta no existe O se encuentra deshabilitada ")
+                MsgBox("La Cuenta no existe O se encuentra deshabilitada ", MsgBoxStyle.Critical)
 
 
                 Return
@@ -77,7 +77,9 @@ Public Class frm_Transaccion
 
         If TextBox6.Text = "" Then
 
-            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio")
+            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio", MsgBoxStyle.Exclamation)
+            TextBox6.Focus()
+
 
         Else
 
@@ -95,7 +97,7 @@ Public Class frm_Transaccion
 
             Catch ex As Exception
 
-                MessageBox.Show(ex.Message.ToString(), "La Cuenta no existe O Se encuentra deshabilitada")
+                MsgBox("La Cuenta no existe O Se encuentra deshabilitada", MsgBoxStyle.Critical)
 
 
                 Return
@@ -167,7 +169,7 @@ Public Class frm_Transaccion
                 Conexionbanco.Close()
             End Try
         Else
-            MessageBox.Show("ERROR EN EL SERVIDOR")
+            MsgBox("ERROR EN EL SERVIDOR", MsgBoxStyle.Critical)
 
         End If
 
@@ -198,7 +200,7 @@ Public Class frm_Transaccion
                 com.Parameters.Add(New OracleParameter("VEstado", OracleDbType.Varchar2, ParameterDirection.Output))
 
                 com.ExecuteNonQuery()
-                MsgBox("solicitud enviada")
+                MsgBox("solicitud enviada", MsgBoxStyle.Information)
                 datos.desconexion()
 
                 limpiar()
@@ -213,7 +215,7 @@ Public Class frm_Transaccion
                 Conexionbanco.Close()
             End Try
         Else
-            MessageBox.Show("ERROR EN EL SERVIDOR")
+            MsgBox("ERROR EN EL SERVIDOR", MsgBoxStyle.Critical)
 
         End If
     End Sub
@@ -230,4 +232,15 @@ Public Class frm_Transaccion
     End Sub
 
     
+    Private Sub TBMONTOR_TextChanged(sender As Object, e As EventArgs) Handles TBMONTOR.TextChanged
+        If TBSALDO.Text < TBMONTOR.Text Then
+            MsgBox("La cantidad ingresada Excede el limite de su cuenta", vbCritical)
+            TBMONTOR.Text = ""
+            TBMONTOR.Focus()
+        End If
+    End Sub
+
+    
+
+
 End Class

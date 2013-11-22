@@ -38,6 +38,13 @@ Partial Class frmCliente
         Dim NOMBRELabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim Label12 As System.Windows.Forms.Label
+        Dim Label14 As System.Windows.Forms.Label
+        Dim Label15 As System.Windows.Forms.Label
+        Dim Label16 As System.Windows.Forms.Label
+        Dim Label17 As System.Windows.Forms.Label
+        Dim Label18 As System.Windows.Forms.Label
+        Dim Label19 As System.Windows.Forms.Label
+        Dim Label20 As System.Windows.Forms.Label
         Me.DS = New Banco.DS()
         Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CLIENTETableAdapter = New Banco.DSTableAdapters.CLIENTETableAdapter()
@@ -60,6 +67,7 @@ Partial Class frmCliente
         Me.Button5 = New System.Windows.Forms.Button()
         Me.CBTCUENTA = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tbnc = New System.Windows.Forms.TextBox()
         Me.DPITextBox = New System.Windows.Forms.TextBox()
         Me.NOMBRETextBox = New System.Windows.Forms.TextBox()
         Me.APELLIDOTextBox = New System.Windows.Forms.TextBox()
@@ -69,7 +77,20 @@ Partial Class frmCliente
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.Tbnc = New System.Windows.Forms.TextBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.TBC = New System.Windows.Forms.TextBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TBTC = New System.Windows.Forms.TextBox()
+        Me.TBDPI2 = New System.Windows.Forms.TextBox()
+        Me.TBN = New System.Windows.Forms.TextBox()
+        Me.TBS = New System.Windows.Forms.TextBox()
+        Me.TBA = New System.Windows.Forms.TextBox()
+        Me.TBD = New System.Windows.Forms.TextBox()
+        Me.TBT = New System.Windows.Forms.TextBox()
+        Me.Button8 = New System.Windows.Forms.Button()
         Label9 = New System.Windows.Forms.Label()
         Label8 = New System.Windows.Forms.Label()
         Label7 = New System.Windows.Forms.Label()
@@ -85,6 +106,13 @@ Partial Class frmCliente
         NOMBRELabel = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         Label12 = New System.Windows.Forms.Label()
+        Label14 = New System.Windows.Forms.Label()
+        Label15 = New System.Windows.Forms.Label()
+        Label16 = New System.Windows.Forms.Label()
+        Label17 = New System.Windows.Forms.Label()
+        Label18 = New System.Windows.Forms.Label()
+        Label19 = New System.Windows.Forms.Label()
+        Label20 = New System.Windows.Forms.Label()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
@@ -92,6 +120,8 @@ Partial Class frmCliente
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label9
@@ -224,6 +254,80 @@ Partial Class frmCliente
         Label2.Text = "TIPO DE CUENTA"
         Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label12
+        '
+        Label12.AutoSize = True
+        Label12.Location = New System.Drawing.Point(11, 20)
+        Label12.Name = "Label12"
+        Label12.Size = New System.Drawing.Size(58, 13)
+        Label12.TabIndex = 10
+        Label12.Text = "No.Cuenta"
+        '
+        'Label14
+        '
+        Label14.AutoSize = True
+        Label14.Location = New System.Drawing.Point(178, 139)
+        Label14.Name = "Label14"
+        Label14.Size = New System.Drawing.Size(97, 13)
+        Label14.TabIndex = 12
+        Label14.Text = "TIPO DE CUENTA"
+        Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Label15.AutoSize = True
+        Label15.Location = New System.Drawing.Point(13, 59)
+        Label15.Name = "Label15"
+        Label15.Size = New System.Drawing.Size(57, 13)
+        Label15.TabIndex = 2
+        Label15.Text = "NOMBRE:"
+        '
+        'Label16
+        '
+        Label16.AutoSize = True
+        Label16.Location = New System.Drawing.Point(13, 132)
+        Label16.Name = "Label16"
+        Label16.Size = New System.Drawing.Size(43, 13)
+        Label16.TabIndex = 10
+        Label16.Text = "SALDO"
+        Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label17
+        '
+        Label17.AutoSize = True
+        Label17.Location = New System.Drawing.Point(181, 59)
+        Label17.Name = "Label17"
+        Label17.Size = New System.Drawing.Size(62, 13)
+        Label17.TabIndex = 4
+        Label17.Text = "APELLIDO:"
+        '
+        'Label18
+        '
+        Label18.AutoSize = True
+        Label18.Location = New System.Drawing.Point(42, 22)
+        Label18.Name = "Label18"
+        Label18.Size = New System.Drawing.Size(28, 13)
+        Label18.TabIndex = 0
+        Label18.Text = "DPI:"
+        '
+        'Label19
+        '
+        Label19.AutoSize = True
+        Label19.Location = New System.Drawing.Point(1, 97)
+        Label19.Name = "Label19"
+        Label19.Size = New System.Drawing.Size(69, 13)
+        Label19.TabIndex = 6
+        Label19.Text = "DIRECCION:"
+        '
+        'Label20
+        '
+        Label20.AutoSize = True
+        Label20.Location = New System.Drawing.Point(181, 101)
+        Label20.Name = "Label20"
+        Label20.Size = New System.Drawing.Size(67, 13)
+        Label20.TabIndex = 8
+        Label20.Text = "TELEFONO:"
+        '
         'DS
         '
         Me.DS.DataSetName = "DS"
@@ -262,9 +366,9 @@ Partial Class frmCliente
         Me.TabPage3.Controls.Add(Me.Button2)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(590, 315)
+        Me.TabPage3.Size = New System.Drawing.Size(622, 315)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Cancelar cuenta"
+        Me.TabPage3.Text = "Deshabilitar Cuenta"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'Label11
@@ -388,11 +492,14 @@ Partial Class frmCliente
         '
         Me.Button2.Enabled = False
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Image = Global.Banco.My.Resources.Resources.accept
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.Location = New System.Drawing.Point(461, 93)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 28)
+        Me.Button2.Size = New System.Drawing.Size(129, 41)
         Me.Button2.TabIndex = 5
         Me.Button2.Text = "ACEPTAR"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.UseVisualStyleBackColor = True
         '
         'TabPage1
@@ -409,7 +516,7 @@ Partial Class frmCliente
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(590, 315)
+        Me.TabPage1.Size = New System.Drawing.Size(622, 315)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Aperturar Cuenta"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -419,9 +526,9 @@ Partial Class frmCliente
         Me.Button5.BackgroundImage = Global.Banco.My.Resources.Resources._38
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(435, 137)
+        Me.Button5.Location = New System.Drawing.Point(391, 206)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(50, 41)
+        Me.Button5.Size = New System.Drawing.Size(46, 43)
         Me.Button5.TabIndex = 7
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -454,6 +561,15 @@ Partial Class frmCliente
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos personales"
+        '
+        'Tbnc
+        '
+        Me.Tbnc.Enabled = False
+        Me.Tbnc.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tbnc.Location = New System.Drawing.Point(75, 13)
+        Me.Tbnc.Name = "Tbnc"
+        Me.Tbnc.Size = New System.Drawing.Size(100, 24)
+        Me.Tbnc.TabIndex = 11
         '
         'DPITextBox
         '
@@ -506,11 +622,14 @@ Partial Class frmCliente
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(435, 92)
+        Me.Button1.Image = Global.Banco.My.Resources.Resources.accept
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(264, 206)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 28)
+        Me.Button1.Size = New System.Drawing.Size(121, 42)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "ACEPTAR"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
@@ -527,36 +646,165 @@ Partial Class frmCliente
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(598, 341)
+        Me.TabControl1.Size = New System.Drawing.Size(630, 341)
         Me.TabControl1.TabIndex = 0
         '
-        'Tbnc
+        'TabPage2
         '
-        Me.Tbnc.Enabled = False
-        Me.Tbnc.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tbnc.Location = New System.Drawing.Point(75, 13)
-        Me.Tbnc.Name = "Tbnc"
-        Me.Tbnc.Size = New System.Drawing.Size(100, 24)
-        Me.Tbnc.TabIndex = 11
+        Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.Controls.Add(Me.Button6)
+        Me.TabPage2.Controls.Add(Me.Button7)
+        Me.TabPage2.Controls.Add(Me.TBC)
+        Me.TabPage2.Controls.Add(Me.GroupBox3)
+        Me.TabPage2.Controls.Add(Me.Button8)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Size = New System.Drawing.Size(622, 315)
+        Me.TabPage2.TabIndex = 3
+        Me.TabPage2.Text = "Habilitar Cuenta"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Label12
+        'Label13
         '
-        Label12.AutoSize = True
-        Label12.Location = New System.Drawing.Point(11, 20)
-        Label12.Name = "Label12"
-        Label12.Size = New System.Drawing.Size(58, 13)
-        Label12.TabIndex = 10
-        Label12.Text = "No.Cuenta"
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(24, 28)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(76, 13)
+        Me.Label13.TabIndex = 6
+        Me.Label13.Text = "No. de Cuenta"
+        '
+        'Button6
+        '
+        Me.Button6.BackgroundImage = Global.Banco.My.Resources.Resources._38
+        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(377, 9)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(50, 41)
+        Me.Button6.TabIndex = 9
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Image = Global.Banco.My.Resources.Resources.search
+        Me.Button7.Location = New System.Drawing.Point(321, 9)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(50, 41)
+        Me.Button7.TabIndex = 8
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'TBC
+        '
+        Me.TBC.Location = New System.Drawing.Point(114, 21)
+        Me.TBC.Name = "TBC"
+        Me.TBC.Size = New System.Drawing.Size(201, 20)
+        Me.TBC.TabIndex = 7
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.TBTC)
+        Me.GroupBox3.Controls.Add(Me.TBDPI2)
+        Me.GroupBox3.Controls.Add(Label14)
+        Me.GroupBox3.Controls.Add(Me.TBN)
+        Me.GroupBox3.Controls.Add(Label15)
+        Me.GroupBox3.Controls.Add(Label16)
+        Me.GroupBox3.Controls.Add(Me.TBS)
+        Me.GroupBox3.Controls.Add(Me.TBA)
+        Me.GroupBox3.Controls.Add(Label17)
+        Me.GroupBox3.Controls.Add(Label18)
+        Me.GroupBox3.Controls.Add(Me.TBD)
+        Me.GroupBox3.Controls.Add(Label19)
+        Me.GroupBox3.Controls.Add(Label20)
+        Me.GroupBox3.Controls.Add(Me.TBT)
+        Me.GroupBox3.Enabled = False
+        Me.GroupBox3.Location = New System.Drawing.Point(13, 71)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(418, 216)
+        Me.GroupBox3.TabIndex = 10
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "INFORMACION DE LA CUENTA"
+        '
+        'TBTC
+        '
+        Me.TBTC.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBTC.Location = New System.Drawing.Point(281, 132)
+        Me.TBTC.Name = "TBTC"
+        Me.TBTC.Size = New System.Drawing.Size(121, 24)
+        Me.TBTC.TabIndex = 13
+        '
+        'TBDPI2
+        '
+        Me.TBDPI2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBDPI2.Location = New System.Drawing.Point(76, 19)
+        Me.TBDPI2.Name = "TBDPI2"
+        Me.TBDPI2.Size = New System.Drawing.Size(100, 24)
+        Me.TBDPI2.TabIndex = 1
+        '
+        'TBN
+        '
+        Me.TBN.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBN.Location = New System.Drawing.Point(76, 56)
+        Me.TBN.Name = "TBN"
+        Me.TBN.Size = New System.Drawing.Size(100, 24)
+        Me.TBN.TabIndex = 3
+        '
+        'TBS
+        '
+        Me.TBS.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBS.Location = New System.Drawing.Point(76, 132)
+        Me.TBS.Name = "TBS"
+        Me.TBS.Size = New System.Drawing.Size(100, 24)
+        Me.TBS.TabIndex = 11
+        '
+        'TBA
+        '
+        Me.TBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBA.Location = New System.Drawing.Point(281, 52)
+        Me.TBA.Name = "TBA"
+        Me.TBA.Size = New System.Drawing.Size(121, 24)
+        Me.TBA.TabIndex = 5
+        '
+        'TBD
+        '
+        Me.TBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBD.Location = New System.Drawing.Point(76, 94)
+        Me.TBD.Name = "TBD"
+        Me.TBD.Size = New System.Drawing.Size(100, 24)
+        Me.TBD.TabIndex = 7
+        '
+        'TBT
+        '
+        Me.TBT.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBT.Location = New System.Drawing.Point(281, 90)
+        Me.TBT.Name = "TBT"
+        Me.TBT.Size = New System.Drawing.Size(121, 24)
+        Me.TBT.TabIndex = 9
+        '
+        'Button8
+        '
+        Me.Button8.Enabled = False
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.Image = Global.Banco.My.Resources.Resources.accept
+        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button8.Location = New System.Drawing.Point(448, 84)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(124, 44)
+        Me.Button8.TabIndex = 11
+        Me.Button8.Text = "ACEPTAR"
+        Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'frmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(598, 341)
+        Me.ClientSize = New System.Drawing.Size(630, 341)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "frmCliente"
         Me.Text = "Apertura de cuenta"
@@ -571,6 +819,10 @@ Partial Class frmCliente
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -606,4 +858,18 @@ Partial Class frmCliente
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents Tbnc As System.Windows.Forms.TextBox
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents TBC As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents TBTC As System.Windows.Forms.TextBox
+    Friend WithEvents TBDPI2 As System.Windows.Forms.TextBox
+    Friend WithEvents TBN As System.Windows.Forms.TextBox
+    Friend WithEvents TBS As System.Windows.Forms.TextBox
+    Friend WithEvents TBA As System.Windows.Forms.TextBox
+    Friend WithEvents TBD As System.Windows.Forms.TextBox
+    Friend WithEvents TBT As System.Windows.Forms.TextBox
+    Friend WithEvents Button8 As System.Windows.Forms.Button
 End Class

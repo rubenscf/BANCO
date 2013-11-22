@@ -42,7 +42,7 @@ Public Class frmtarjeta
 
                 com.ExecuteNonQuery()
                
-                MsgBox("Procesando Solicitud")
+                MsgBox("Procesando Solicitud", MsgBoxStyle.Information)
 
 
                 datos.desconexion()
@@ -64,7 +64,7 @@ Public Class frmtarjeta
                 Conexionbanco.Close()
             End Try
         Else
-            MessageBox.Show("ERROR EN EL SERVIDOR")
+            MsgBox("ERROR EN EL SERVIDOR", MsgBoxStyle.Critical)
             limpiar()
 
         End If
@@ -85,7 +85,7 @@ Public Class frmtarjeta
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         If TextBox8.Text = "" Then
 
-            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio")
+            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio", MsgBoxStyle.Exclamation)
 
         Else
 
@@ -103,7 +103,7 @@ Public Class frmtarjeta
                 
             Catch ex As Exception
 
-                MessageBox.Show(ex.Message.ToString(), "No. de Cuenta no existe")
+                MsgBox("No. de Cuenta no existe", MsgBoxStyle.Critical)
 
 
                 Return
@@ -115,12 +115,12 @@ Public Class frmtarjeta
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         If TBBCUENTA.Text = "" Then
 
-            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio")
+            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio", MsgBoxStyle.Exclamation)
 
         Else
 
 
-            cadena = "SELECT   CLIENTE.NOMBRE, CUENTA.IDCUENTA, CLIENTE.APELLIDO, TARJETA.LIMITE, TARJETA.TIPO FROM CLIENTE, CUENTA,TARJETA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND CLIENTE.IDCLIENTE = TARJETA.IDCLIENTE AND  CUENTA.IDCUENTA  = '" + TBBCUENTA.Text.ToString() + "' "
+            cadena = "SELECT   CLIENTE.NOMBRE, CUENTA.IDCUENTA, CLIENTE.APELLIDO, TARJETA.LIMITE, TARJETA.TIPO FROM CLIENTE, CUENTA,TARJETA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND CLIENTE.IDCLIENTE = TARJETA.IDCLIENTE AND TARJETA.ESTADO=1 AND  TARJETA.IDTARJETA  = '" + TBBCUENTA.Text.ToString() + "' "
             Try
 
                 DTS = datos.llenar(cadena)
@@ -132,7 +132,7 @@ Public Class frmtarjeta
 
             Catch ex As Exception
 
-                MessageBox.Show(ex.Message.ToString(), "No. de Cuenta no existe")
+                MsgBox("No. de Cuenta no existe", MsgBoxStyle.Critical)
 
 
                 Return
@@ -157,15 +157,15 @@ Public Class frmtarjeta
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Try
 
-            cadena = "UPDATE  TARJETA SET ESTADO =  '0' where IDCUENTA =" + TBBCUENTA.Text + ""
+            cadena = "UPDATE  TARJETA SET ESTADO =  '0' where IDTARJETA =" + TBBCUENTA.Text + ""
 
             cos = datos.insertar(cadena)
-            MessageBox.Show("SU TARJETA A SIDO BLOQUEADA EXITOSAMENTE")
+            MsgBox("SU TARJETA A SIDO BLOQUEADA EXITOSAMENTE", MsgBoxStyle.Information)
 
             limpiar()
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message.ToString())
+            MsgBox(ex.Message.ToString(), MsgBoxStyle.Critical)
             limpiar()
 
             Return
@@ -181,4 +181,90 @@ Public Class frmtarjeta
         limpiar()
 
     End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        If TBBTARJERA.Text = "" Then
+
+            MsgBox("Ingrese un numero de tarjeta", MsgBoxStyle.Exclamation)
+            TBBTARJERA.Focus()
+
+        Else
+
+
+            cadena = "SELECT   CLIENTE.NOMBRE, CUENTA.IDCUENTA, CLIENTE.APELLIDO, TARJETA.LIMITE, TARJETA.TIPO FROM CLIENTE, CUENTA,TARJETA WHERE CLIENTE.IDCLIENTE = CUENTA.IDCLIENTE AND CLIENTE.IDCLIENTE = TARJETA.IDCLIENTE AND TARJETA.ESTADO=0 AND  TARJETA.IDTARJETA  = '" + TBBTARJERA.Text.ToString() + "' "
+            Try
+
+                DTS = datos.llenar(cadena)
+                TBNOM.Text = DTS.Tables(0).Rows(0)(0).ToString
+                TBNC.Text = DTS.Tables(0).Rows(0)(1).ToString
+                TBAPE.Text = DTS.Tables(0).Rows(0)(2).ToString
+                TBLIM.Text = DTS.Tables(0).Rows(0)(3).ToString
+                TBTIPO.Text = DTS.Tables(0).Rows(0)(4).ToString
+
+            Catch ex As Exception
+
+                MessageBox.Show(ex.Message.ToString(), "No. de Cuenta no existe")
+
+
+                Return
+            End Try
+
+        End If
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Try
+
+            cadena = "UPDATE  TARJETA SET ESTADO =  '1' where IDTARJETA =" + TBBTARJERA.Text + ""
+
+            cos = datos.insertar(cadena)
+            cadena = "UPDATE  TARJETA SET LIMITE =  '" + TBLIM.Text.ToString + "' where IDTARJETA =" + TBBTARJERA.Text + ""
+            cos = datos.insertar(cadena)
+            MessageBox.Show("SU TARJETA A SIDO BLOQUEADA EXITOSAMENTE")
+
+            limpiar()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message.ToString())
+            limpiar()
+
+            Return
+        End Try
+    End Sub
+
+    Private Sub TBBTARJERA_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TBBTARJERA.KeyPress
+        If InStr(1, "1234567890" & Chr(6), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+        End If
+    End Sub
+
+    Private Sub TBBCUENTA_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TBBCUENTA.KeyPress
+        If InStr(1, "1234567890" & Chr(6), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+        End If
+    End Sub
+
+    Private Sub TextBox8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox8.KeyPress
+        If InStr(1, "1234567890" & Chr(6), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+        End If
+    End Sub
+
+    Private Sub TBLIMITE_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TBLIMITE.KeyPress
+        If InStr(1, "1234567890" & Chr(8), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+        End If
+    End Sub
+
+    Private Sub TBPIN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TBPIN.KeyPress
+        If InStr(1, "1234567890" & Chr(4), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+        End If
+    End Sub
+
+    
+    
+    
+    
+    
 End Class

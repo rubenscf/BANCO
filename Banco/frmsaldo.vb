@@ -9,7 +9,9 @@
 
         If TextBox8.Text = "" Then
 
-            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio")
+            MsgBox("El campo Numero de Cuenta  NO puede estar Vacio", MsgBoxStyle.Exclamation)
+            TextBox8.Focus()
+
 
         Else
 
@@ -28,7 +30,7 @@
 
             Catch ex As Exception
 
-                MessageBox.Show(ex.Message.ToString(), "No. de Cuenta no existe")
+                MsgBox("No. de Cuenta no existe", MsgBoxStyle.Critical)
 
 
                 Return
@@ -51,4 +53,12 @@
        
 
     End Sub
+
+    Private Sub TextBox8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox8.KeyPress
+        If InStr(1, "1234567890" & Chr(8), e.KeyChar) = 0 Then
+            e.KeyChar = ""
+        End If
+    End Sub
+
+    
 End Class

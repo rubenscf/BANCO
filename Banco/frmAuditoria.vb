@@ -14,7 +14,7 @@ Public Class frmAuditoria
         Try
 
 
-            cadena = "SELECT * FROM TRANSACCION WHERE FECHA >= '" & DTPI.Value.ToShortDateString & "' AND FECHA <='" & DTPF.Value.ToShortDateString & "'"
+            cadena = "SELECT * FROM TRANSACCION WHERE TRANSACCION.FECHA BETWEEN '" + DTPI.Value.ToShortDateString + "' AND '" + DTPF.Value.ToShortDateString + "'"
             DTS = datos.llenarDGV(cadena)
             dg.DataSource = DTS
 

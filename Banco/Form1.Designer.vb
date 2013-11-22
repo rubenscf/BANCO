@@ -24,6 +24,9 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.SesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IniciaS = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerarS = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCuenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevaTarjetaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,9 +35,6 @@ Partial Class Form1
         Me.mnuAuditoria = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuEmpleados = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IniciaS = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerarS = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -59,6 +59,30 @@ Partial Class Form1
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'SesionToolStripMenuItem
+        '
+        Me.SesionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IniciaS, Me.CerarS})
+        Me.SesionToolStripMenuItem.Image = Global.Banco.My.Resources.Resources.user
+        Me.SesionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.SesionToolStripMenuItem.Name = "SesionToolStripMenuItem"
+        Me.SesionToolStripMenuItem.Size = New System.Drawing.Size(44, 52)
+        '
+        'IniciaS
+        '
+        Me.IniciaS.Image = Global.Banco.My.Resources.Resources.connect
+        Me.IniciaS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IniciaS.Name = "IniciaS"
+        Me.IniciaS.Size = New System.Drawing.Size(143, 22)
+        Me.IniciaS.Text = "Iniciar Sesión"
+        '
+        'CerarS
+        '
+        Me.CerarS.Image = Global.Banco.My.Resources.Resources.cancel
+        Me.CerarS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CerarS.Name = "CerarS"
+        Me.CerarS.Size = New System.Drawing.Size(143, 22)
+        Me.CerarS.Text = "Cerrar Sesión"
+        '
         'mnuCuenta
         '
         Me.mnuCuenta.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem1, Me.NuevaTarjetaToolStripMenuItem})
@@ -74,16 +98,16 @@ Partial Class Form1
         Me.ClientesToolStripMenuItem1.Image = Global.Banco.My.Resources.Resources.registro_icono_8748_32
         Me.ClientesToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ClientesToolStripMenuItem1.Name = "ClientesToolStripMenuItem1"
-        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(181, 38)
-        Me.ClientesToolStripMenuItem1.Text = "Aperturar Cuenta"
+        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(217, 38)
+        Me.ClientesToolStripMenuItem1.Text = "ADMINISTRAR CUENTA"
         '
         'NuevaTarjetaToolStripMenuItem
         '
         Me.NuevaTarjetaToolStripMenuItem.Image = Global.Banco.My.Resources.Resources.credit
         Me.NuevaTarjetaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.NuevaTarjetaToolStripMenuItem.Name = "NuevaTarjetaToolStripMenuItem"
-        Me.NuevaTarjetaToolStripMenuItem.Size = New System.Drawing.Size(181, 38)
-        Me.NuevaTarjetaToolStripMenuItem.Text = "Nueva Tarjeta"
+        Me.NuevaTarjetaToolStripMenuItem.Size = New System.Drawing.Size(217, 38)
+        Me.NuevaTarjetaToolStripMenuItem.Text = "ADMINISTRAR TARJETA"
         '
         'mnuConsultarSaldo
         '
@@ -128,31 +152,7 @@ Partial Class Form1
         Me.EmpleadosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
         Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(168, 38)
-        Me.EmpleadosToolStripMenuItem.Text = "Empleados"
-        '
-        'SesionToolStripMenuItem
-        '
-        Me.SesionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IniciaS, Me.CerarS})
-        Me.SesionToolStripMenuItem.Image = Global.Banco.My.Resources.Resources.user
-        Me.SesionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.SesionToolStripMenuItem.Name = "SesionToolStripMenuItem"
-        Me.SesionToolStripMenuItem.Size = New System.Drawing.Size(44, 52)
-        '
-        'IniciaS
-        '
-        Me.IniciaS.Image = Global.Banco.My.Resources.Resources.connect
-        Me.IniciaS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IniciaS.Name = "IniciaS"
-        Me.IniciaS.Size = New System.Drawing.Size(152, 22)
-        Me.IniciaS.Text = "Iniciar Sesión"
-        '
-        'CerarS
-        '
-        Me.CerarS.Image = Global.Banco.My.Resources.Resources.cancel
-        Me.CerarS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CerarS.Name = "CerarS"
-        Me.CerarS.Size = New System.Drawing.Size(152, 22)
-        Me.CerarS.Text = "Cerrar Sesión"
+        Me.EmpleadosToolStripMenuItem.Text = "EMPLEADOS"
         '
         'StatusStrip1
         '

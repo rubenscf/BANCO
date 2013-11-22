@@ -13,8 +13,8 @@ Public Class login
     Private Sub login()
         Dim hash As String
 
-        Using md5Hash As MD5 = MD5.Create()
-            hash = _ObtieneMd5Hash(md5Hash, passbox.Text)
+        Using umgmazate As MD5 = MD5.Create()
+            hash = _ObtieneMd5Hash(umgmazate, passbox.Text)
         End Using
         Try
 
@@ -32,7 +32,7 @@ Public Class login
                 If ID Is Nothing Then
                     userbox.Text = ""
                     passbox.Text = ""
-                    MsgBox("Usuario y/o contrasena inválida")
+                    MsgBox("Usuario y/o contrasena inválida", MsgBoxStyle.Exclamation)
                     userbox.Focus()
 
                 Else
@@ -151,12 +151,12 @@ Public Class login
 
             Else
 
-                MessageBox.Show("Uno o más campos estan vacios")
+                MsgBox("Uno o más campos estan vacios", MsgBoxStyle.Exclamation)
                 userbox.Focus()
 
             End If
         Catch ex As Exception
-            MessageBox.Show("Error")
+            MsgBox("Error", MsgBoxStyle.Critical)
 
         End Try
     End Sub
